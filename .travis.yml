@@ -1,8 +1,3 @@
 language: ruby
 rvm:
  - 2.7.0
-
-install:
-  - bundle install --path vendor/bundle
-
-script: bundle exec rake build && bundle exec rake builddoc
