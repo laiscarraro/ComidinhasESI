@@ -8,7 +8,7 @@
 
 ## Integrantes
  - Levi de Oliveira Fernandes
- - Lais Carraro Leme Cavalheiro
+ - Laís Carraro Leme Cavalheiro
  - Amanda Carvalho Venturin
  - Matheus Aquati Kurianski
  - Daniel de Jesus Lima
