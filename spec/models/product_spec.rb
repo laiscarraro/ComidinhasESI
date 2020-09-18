@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  it 'produto valido' do
+    product = Product.new
+    product.name = "Cone trufado"
+    product.price = 6.00
+    product.description = "Um delicioso cone trufado!"
+    expect(product).to be_valid
+  end
+
   it 'invalido sem nome' do
     product = Product.new
     product.price = 10.99
@@ -53,4 +61,29 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     expect(product).to be_valid
   end
+
+  it 'produto inválido com um preço muito alto' do
+    product = Product.new
+    product.name = "Cone trufado"
+    product.price = 6000000000000.00
+    product.description = "Desculpa o preço galera a culpa é do PT :("
+    expect(product).to be_invalid
+  end
+
+  it 'produto inválido com um preço muito alto (por pouco)' do
+    product = Product.new
+    product.name = "Cone trufado premium"
+    product.price = 10001.00
+    product.description = "Caro? Ah o que importa é a qualidade né"
+    expect(product).to be_invalid
+  end
+
+  it 'produto inválido com um preço muito alto (por pouco)' do
+    product = Product.new
+    product.name = "Cone trufado gourmet"
+    product.price = 9999.00
+    product.description = "Cone caro sem tompero. Vergonha da profissión!"
+    expect(product).to be_valid
+  end
+
 end
