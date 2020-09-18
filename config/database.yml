@@ -23,10 +23,9 @@ default: &default
 
 development:
   <<: *default
-  host: <%= ENV.fetch("DB_HOST") { 0 } %>
-  username: <%= ENV.fetch("DB_USERNAME") { 0 } %>
-  database: <%= ENV.fetch("DB_DATABASE") { 0 } %>
-  password: <%= ENV.fetch("DB_PASSWORD") { 0 } %>
+  adapter: sqlite3
+  database: comidinhas_dev.sqlite3
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,7 +60,7 @@ development:
 test:
   <<: *default
   adapter: sqlite3
-  database: myapp_test
+  database: comidinhas_test.sqlite3
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV.fetch("DB_HOST") { 0 } %>
+  username: <%= ENV.fetch("DB_USERNAME") { 0 } %>
+  database: <%= ENV.fetch("DB_DATABASE") { 0 } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { 0 } %>

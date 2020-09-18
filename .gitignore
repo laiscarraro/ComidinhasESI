@@ -70,3 +70,5 @@ yarn-debug.log*
 
 # ignora o banco de dados para testes
 myapp_test
+comidinhas_dev.sqlite3
+comidinhas_test.sqlite3
