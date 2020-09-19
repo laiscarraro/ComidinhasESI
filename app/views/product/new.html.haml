@@ -1,21 +1,8 @@
-.container
-  .row
-    .col-sm
-      %h1.title Cadastre-se!
-      %h3.subtitle Crie uma conta para continuar
-  .row
-    .col-sm
-      %form
-        .form-group
-          %label{:for => "Nome do Produto"} Nome do Produto
-          %input.form-control{:type => "text", :id => "Nome do Produto", :placeholder => "Cone do Wilson"}
-        .form-group
-          %label{:for => "Preço"} Preço
-          %input.form-control{:type => "number", :id => "Preço", :placeholder => "2.50"}
-        .form-group
-          %label{:for => "Descrição"} Descrição
-          %input.form-control{:type => "text", :id => "Descrição", :placeholder => "O mais barato da estação"}
-        .form-group
-          %input.btn-primary{:type => "submit",:id => "Adicionar", :value => "Adicionar Produto"} 
-            
-            
+= form_for @product, url: {action: "create"}, html: {multipart: true} do |f|
+  %label{:for => "product_name"}> Name
+  = f.text_field(:name,)
+  %label{:for => "product_price"}> Price
+  = f.text_field :price
+  %label{:for => "product_description"}> Description
+  = f.text_area :description, size: "60x12"
+  = f.submit("Create", class:'button')
