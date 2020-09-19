@@ -1,5 +1,5 @@
 Dado('que estou na paǵina de cadastro de usuário') do
-    pending # Write code here that turns the phrase above into concrete actions
+    visit 'usuarios/new'
   end
   
   Quando('preencho o campo {string} com {string}') do |string, string2|

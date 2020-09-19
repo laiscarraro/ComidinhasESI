@@ -60,4 +60,3 @@ Dado que estou na página de cadastro de usuário
 Quando não clico em Aceitar os termos e condições
 E clico em Criar
 Então deverei ver a mensagem de erro "É obrigatório aceitar os termos e condições"
-
