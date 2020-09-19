@@ -1,6 +1,23 @@
-.container-fluid
+.container
     .row
-        .col-sm-3
-            %p test
-        .col-sm-9
-            %p test2
+        .col-sm
+            %h1.title Cadastre-se!
+            %h3.subtitle Crie uma conta para continuar
+    .row
+        .col-sm
+            %form
+                .form-group
+                    %label{:for => "Email"} Email
+                    %input.form-control{:type => "email", :id => "Email", :placeholder => "comidinhas@usp.br"}
+                .form-group
+                    %label{:for => "Login"} Login
+                    %input.form-control{:type => "text", :id => "Login", :placeholder => "comidinhaseach"}
+                .form-group
+                    %label{:for => "Senha"} Senha
+                    %input.form-control{:type => "password", :id => "Senha", :placeholder => "Senha"}
+                %div{ :class => "form-group form-check"}
+                    %input.form-check-input{:type => "checkbox", :id => "Termos", :placeholder => "Senha"}
+                    %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
+    .row
+        .col-sm
+            %p Já tem uma conta? <b>Login</b>
