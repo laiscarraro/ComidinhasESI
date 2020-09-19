@@ -29,3 +29,9 @@ Cenário: Acessar dados do usuário
 Dado que estou na página home
 Quando aperto no icone de perfil
 Então deve mostrar as informações do usuário
+
+Cenário: Sem internet
+Dado que estou na página home
+Quando estou sem internet
+Então deve mostrar mensagem "Conecte-se a internet para ultilizar o comidinhas"
+
