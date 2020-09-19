@@ -23,7 +23,7 @@ Então deve mostrar apenas comidinhas da categoria selecionada
 Cenário: Explorar produtos
 Dado que estou na página home
 Quando aperto no icone de explorar
-Então deve mostrar comidinhas diferentes
+Então vou para a página explorar
 
 Cenário: Acessar dados do usuário
 Dado que estou na página home
@@ -35,3 +35,12 @@ Dado que estou na página home
 Quando estou sem internet
 Então deve mostrar mensagem "Conecte-se a internet para ultilizar o comidinhas"
 
+Cenário: Não encontrou a comidinha
+Dado que estou na página home
+Quando pesquiso uma comidinha que não existe
+Então devo ver uma mensagem de "sem resultados"
+
+Cenário: Acessar comidinhas
+Dado que estou na página home
+Quando escolho uma comidinha
+Então vou para a página dessa comidinha
