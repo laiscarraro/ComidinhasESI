@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Mostrar as comidinhas na home
+Funcionalidade: Home
 Como usuário
 Para que eu possa comprar comidinhas de vendedores
 Eu preciso vê-las na home
