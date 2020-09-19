@@ -14,3 +14,18 @@ Dado que estou na página home
 Quando eu preencho o campo "search" com "cone"
 E aperto "pesquisar"
 Então devo ver comidinhas que contenham esse nome
+ 
+Cenário: Acessar comidinhas em uma categoria
+Dado que estou na página home
+Quando aperto em uma categoria
+Então deve mostrar apenas comidinhas da categoria selecionada 
+
+Cenário: Explorar produtos
+Dado que estou na página home
+Quando aperto no icone de explorar
+Então deve mostrar comidinhas diferentes
+
+Cenário: Acessar dados do usuário
+Dado que estou na página home
+Quando aperto no icone de perfil
+Então deve mostrar as informações do usuário
