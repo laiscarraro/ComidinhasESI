@@ -3,37 +3,45 @@ Dado('que estou na paǵina de cadastro de usuário') do
   end
   
   Quando('preencho o campo {string} com {string}') do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in string, :with => string2
   end
   
-  Quando('clico em Concordo com todos os Termos e Condições') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('clico termos') do
+    check 'termos'
   end
   
-  Quando('clico em Criar') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('clico em criar') do
+    click_on 'criar'
   end
   
   Então('ele deve ter sido salvo no banco de dados') do
-    pending # Write code here that turns the phrase above into concrete actions
+    usuario = Usuario.order("id").last
+    expect(Usuario.login).to eq('Maria')
+    expect(Usuario.email).to eq('maria@usp.br')
+    expect(Usuario.senha).to eq('senha123')
   end
   
   Então('ser redirecionado para a home') do
-    pending # Write code here that turns the phrase above into concrete actions
+    visit 'home'
   end
   
   Dado('que estou na página de cadastro de usuário') do
-    pending # Write code here that turns the phrase above into concrete actions
+    visit 'usuarios/new'
   end
   
   Quando('deixo o campo {string} vazio') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in string, :with => ""
   end
   
   Então('deverei ver a mensagem de erro {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content(string)
+  end
+
+  Quando('não clico em termos') do
+    uncheck 'termos'
+  end
+
+  Quando('clico em termos') do
+    check 'termos'
   end
   
-  Quando('não clico em Aceitar os termos e condições') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
