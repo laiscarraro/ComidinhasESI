@@ -1,3 +1,4 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 .container
     .row
         .col-sm
@@ -7,14 +8,33 @@
         .col-sm
             %form
                 .form-group
-                    %label{:for => "Email"} Email
-                    %input.form-control{:type => "email", :id => "Email", :placeholder => "comidinhas@usp.br"}
+                    .form-row
+                        %label{:for => "Email"} Email
+                    .form-row.input-icon
+                        %i.fas.fa-envelope
+                        %input.form-control{:type => "email", :id => "Email", :placeholder => "comidinhas@usp.br"}
+                        %i.fas.fa-check
                 .form-group
-                    %label{:for => "Login"} Login
-                    %input.form-control{:type => "text", :id => "Login", :placeholder => "comidinhaseach"}
+                    .form-row
+                        %label{:for => "Login"} Login
+                    .form-row.input-icon
+                        %i.fas.fa-user
+                        %input.form-control{:type => "text", :id => "Login", :placeholder => "comidinhaseach"}
+                        %i.fas.fa-check
                 .form-group
-                    %label{:for => "Senha"} Senha
-                    %input.form-control{:type => "password", :id => "Senha", :placeholder => "Senha"}
+                    .form-row
+                        %label{:for => "Senha"} Senha
+                    .form-row.input-icon
+                        %i.fas.fa-lock
+                        %input.form-control{:type => "password", :id => "Senha", :placeholder => "Senha"}
+                        %i.far.fa-eye
+                .form-group
+                    .form-row
+                        %label{:for => "Confirma_senha"} Confirme a senha
+                    .form-row.input-icon
+                        %i.fas.fa-lock
+                        %input.form-control{:type => "password", :id => "Confirma_senha", :placeholder => "Senha"}
+                        %i.fas.fa-check
                 %div{ :class => "form-group form-check"}
                     %input.form-check-input{:type => "checkbox", :id => "Termos", :placeholder => "Senha"}
                     %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
