@@ -44,6 +44,14 @@ Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
 E clico em adicionar
 Então deverei ver a mensagem de erro "O formato de preço é inválido"
 
+Cenário: Adição de produto com erro - Preço com mais de duas casas decimais
+Dado que estou na página de adição de produto
+Quando preencho o campo "Nome do Produto" com "Cone"
+Quando preencho o campo "Preço" com "0.10"
+Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+E clico em adicionar
+Então deverei ver a mensagem de erro "O preço precisa ser um número entre R$ 0,50 e R$ 10.000"
+
 Cenário: Adição de produto com erro - Preço com 1 casa decimal
 Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
