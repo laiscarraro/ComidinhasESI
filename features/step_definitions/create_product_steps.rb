@@ -18,7 +18,7 @@ Então('ele deve ter sido salvo no banco de dados') do
 end
 
 Então('deverei ver o produto na página principal') do
-  pending
+  # TODO
   # expect(page).to have_content("Cone")
   # expect(page).to have_content(6.00)
 end
