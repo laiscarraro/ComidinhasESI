@@ -7,15 +7,15 @@ Dado('que estou na página home') do
   end
   
   Quando('eu preencho o campo {string} com {string}') do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in string, :with => string2
   end
   
-  Quando('aperto {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('aperto em pesquisar') do
+    click_on 'inspect'
   end
   
-  Então('devo ver comidinhas que contenham esse nome') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Então('devo ver comidinhas que contenham esse nome') do |string|
+    expect(page).to have_content(string)
   end
   
   Quando('aperto em uma categoria') do
@@ -27,19 +27,19 @@ Dado('que estou na página home') do
   end
   
   Quando('aperto no icone de explorar') do
-    pending # Write code here that turns the phrase above into concrete actions
+    click_link 'explore'
   end
   
   Então('vou para a página explorar') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_current_path('/explore/index')
   end
   
   Quando('aperto no icone de perfil') do
-    pending # Write code here that turns the phrase above into concrete actions
+    click_link 'user'
   end
   
   Então('deve mostrar as informações do usuário') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_current_path('/user/index')
   end
   
   Quando('estou sem internet') do
@@ -51,11 +51,12 @@ Dado('que estou na página home') do
   end
   
   Quando('pesquiso uma comidinha que não existe') do
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in 'search', :with => 'ruby on rails is aweasome'
+    click_on 'inspect'
   end
   
   Então('devo ver uma mensagem de {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content(string)
   end
   
   Quando('escolho uma comidinha') do
