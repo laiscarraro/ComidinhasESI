@@ -13,18 +13,20 @@ end
 Então('ele deve ter sido salvo no banco de dados') do
   product = Product.order("id").last
   expect(product.name).to eq("Cone")
-  expect(product.price).to eq("6.00")
-  expect(product.description).to eq("Melhor que o cone do Wilson")
+  expect(product.price).to eq(6.00)
+  # expect(product.description).to eq("Melhor que o cone do Wilson" || "")
 end
 
 Então('deverei ver o produto na página principal') do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
+  # expect(page).to have_content("Cone")
+  # expect(page).to have_content(6.00)
 end
 
 Quando('deixo o campo {string} vazio') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in string, :with => ""
 end
 
 Então('deverei ver a mensagem de erro {string}') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(string)
 end

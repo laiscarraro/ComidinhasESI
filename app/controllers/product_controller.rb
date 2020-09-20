@@ -6,8 +6,11 @@ class ProductController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    # TODO  - redirecionar usuário para a página do produto
-    @product.save
+    if @product.save
+      # TODO  - redirecionar usuário para a página do produto
+    else 
+      render 'new'
+    end
   end
 
   private

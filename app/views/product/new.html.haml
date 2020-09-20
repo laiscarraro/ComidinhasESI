@@ -1,8 +1,18 @@
-= form_for @product, url: {action: "create"}, html: {multipart: true} do |f|
-  %label{:for => "Nome do Produto"}> Nome do Produto
-  = f.text_field :name, id: "Nome do Produto"
-  %label{:for => "product_price"}> Preço
-  = f.text_field :price, id: "Preço"
-  %label{:for => "product_description"}> Descrição
-  = f.text_area :description, id: "Descrição", size: "60x12"
-  = f.submit("Create", class:'btn', value: 'Adicionar Produto', id:"Adicionar")
+.container
+  = if @product.errors.any?
+    #error_explanation
+      %h2
+        = @product.errors.count
+        erro(s) impedem que o produto seja salvo:
+      %ul
+        = @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  = form_for @product, url: {action: "create"}, html: {multipart: true} do |f|
+    %label{:for => "Nome do Produto"}> Nome do Produto
+    = f.text_field :name, id: "Nome do Produto", class: 'form-group'
+    %label{:for => "product_price"}> Preço
+    = f.text_field :price, id: "Preço", class: 'form-group'
+    %label{:for => "product_description"}> Descrição
+    = f.text_area :description, id: "Descrição", size: "60x12", class: 'form-group'
+    = f.submit("Adicionar Produto", class:'btn btn-primary', id:"Adicionar")
