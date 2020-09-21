@@ -16,9 +16,9 @@ Dado('que estou na paǵina de cadastro de usuário') do
   
   Então('ele deve ter sido salvo no banco de dados') do
     user = User.order("id").last
-    expect(User.username).to eq('Maria')
-    expect(User.email).to eq('maria@usp.br')
-    expect(User.senha).to eq('senha123')
+    expect(user.email).to eq('maria@usp.br')
+    expect(user.username).to eq('Maria')
+    expect(user.password).to eq('senha123')
   end
   
   Então('ser redirecionado para a home') do
