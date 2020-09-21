@@ -1,5 +1,5 @@
 Dado('que estou na paǵina de cadastro de usuário') do
-    visit 'usuarios/new'
+    visit 'user/new'
   end
   
   Quando('preencho o campo {string} com {string}') do |string, string2|
@@ -15,10 +15,10 @@ Dado('que estou na paǵina de cadastro de usuário') do
   end
   
   Então('ele deve ter sido salvo no banco de dados') do
-    usuario = Usuario.order("id").last
-    expect(Usuario.login).to eq('Maria')
-    expect(Usuario.email).to eq('maria@usp.br')
-    expect(Usuario.senha).to eq('senha123')
+    user = User.order("id").last
+    expect(User.username).to eq('Maria')
+    expect(User.email).to eq('maria@usp.br')
+    expect(User.senha).to eq('senha123')
   end
   
   Então('ser redirecionado para a home') do
@@ -26,7 +26,7 @@ Dado('que estou na paǵina de cadastro de usuário') do
   end
   
   Dado('que estou na página de cadastro de usuário') do
-    visit 'usuarios/new'
+    visit 'user/new'
   end
   
   Quando('deixo o campo {string} vazio') do |string|

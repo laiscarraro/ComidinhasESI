@@ -10,7 +10,7 @@ Para que eu possa avaliar produtos
 Cenário: Cadastro de usuário com sucesso
 Dado que estou na paǵina de cadastro de usuário
 Quando preencho o campo "email" com "maria@usp.br"
-Quando preencho o campo "login" com "Maria"
+Quando preencho o campo "username" com "Maria"
 Quando preencho o campo "senha" com "senha123"
 Quando preencho o campo "confirmar_senha" com "senha123"
 E clico em termos
@@ -30,17 +30,17 @@ Quando preencho o campo "email" com "banana"
 E clico em criar
 Então deverei ver a mensagem de erro "O email informado é inválido"
 
-Cenário: Cadastro de usuário com erro - sem login
+Cenário: Cadastro de usuário com erro - sem username
 Dado que estou na página de cadastro de usuário
-Quando deixo o campo "login" vazio
+Quando deixo o campo "username" vazio
 E clico em criar
-Então deverei ver a mensagem de erro "É obrigatório informar o login"
+Então deverei ver a mensagem de erro "É obrigatório informar o username"
 
-Cenário: Cadastro de usuário com erro - login já existe
+Cenário: Cadastro de usuário com erro - username já existe
 Dado que estou na página de cadastro de usuário
-Quando preencho o campo "login" com "Wilson" 
+Quando preencho o campo "username" com "Wilson" 
 E clico em criar
-Então deverei ver a mensagem de erro "O login informado já existe"
+Então deverei ver a mensagem de erro "O username informado já existe"
 
 Cenário: Cadastro de usuário com erro - sem senha
 Dado que estou na página de cadastro de usuário
