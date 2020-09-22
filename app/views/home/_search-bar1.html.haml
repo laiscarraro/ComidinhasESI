@@ -1,0 +1,12 @@
+%nav.navbar-light-grey.bg-light-grey.shadow.pb-4.pt-4
+    .container
+        .row
+            .col-xg-8.col-lg-8.col-md-8.col-sm-4.col-1
+            .col-xg-4.col-lg-4.col-md-4.col-sm-8.col-10
+                %form
+                    .input-group
+                        %input.form-control.border-0.bg-light{:type => "text", :id => "search", :placeholder => "Pesquisa", :style => "border-top-left-radius: 35px; border-bottom-left-radius: 35px;"}
+                        .input-group-append
+                            %button.btn.btn-light.text-warning{:type => "submit", :id => "inspect", :style => "border-top-right-radius: 35px; border-bottom-right-radius: 35px;"}
+                                %span
+                                    .i.fa.fa-search.fa-sm
