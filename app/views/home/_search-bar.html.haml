@@ -1,0 +1,8 @@
+.search-bar
+  %form
+    .p-1.bg-light.rounded.rounded-pill.shadow-sm.mb-4
+      .input-group
+        %input.form-control.border-0.bg-light{"aria-describedby" => "button-addon1", :placeholder => "Pesquise sua comidinha", :type => "search"}/
+        .input-group-append
+          %button#button-addon1.btn.btn-link.text-primary{:type => "submit"}
+            %i.fa.fa-search

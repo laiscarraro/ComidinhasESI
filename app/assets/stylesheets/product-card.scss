@@ -1,0 +1,11 @@
+.product-card {
+    flex-direction: row;
+    height: 100px;
+    border-width: 0.8;
+    border-color: '#E0E0E0';
+    border-radius: 5;
+    background-color: '#fff';
+    margin-bottom: 8;
+    isolation: 2;
+    box-shadow: 0px 3px 4px #888, 1px 1px #888;
+}
