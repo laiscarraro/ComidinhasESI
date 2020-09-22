@@ -1,17 +1,12 @@
-.product-card
-  %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
-  .description
-    %h4.product-text Cones do Wilson
-    .vendor-text Wilson    
-  .bottom-card
-    .price-text R$ 5,00
-    .local-text Está na Biblioteca
+%h3 Populares
 
-.product-card
-  %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
-  .description
-    %h4.product-text Cones do Wilson
-    .vendor-text Wilson    
-  .bottom-card
-    .price-text R$ 5,00
-    .local-text Está na Biblioteca
+- @products.each do |product|
+  .product-card
+    %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
+    .description 
+      %h4.product-text #{product.name}
+      .vendor-text Wilson    
+    .bottom-card
+      .price-text R$ #{product.price}
+      .local-text Está na Biblioteca
+

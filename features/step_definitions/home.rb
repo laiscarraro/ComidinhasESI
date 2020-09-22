@@ -10,11 +10,11 @@ Dado('que estou na página home') do
     fill_in string, :with => string2
   end
   
-  Quando('aperto em pesquisar') do
+  E('aperto em pesquisar') do
     click_on 'inspect'
   end
   
-  Então('devo ver comidinhas que contenham esse nome') do |string|
+  Então('devo ver comidinhas que contenham esse nome como {string}') do |string|
     expect(page).to have_content(string)
   end
   

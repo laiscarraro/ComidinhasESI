@@ -3,8 +3,8 @@ class HomeController < ApplicationController
         @products = Product.all
     end
 
-    def show
-        @products = Product.find_by(name: params[:name])
+    def search
+        @products = Product.where("name LIKE ?","%"+params[:prodname]+"%")     
         render 'index'
     end
 end

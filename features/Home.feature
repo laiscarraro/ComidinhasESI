@@ -11,9 +11,9 @@ Então deve aparecer para mim todas as comidinhas
 
 Cenário: Mostrar comidinhas que eu pesquisei
 Dado que estou na página home
-Quando eu preencho o campo "search" com "con"
+Quando eu preencho o campo "prodname" com "prod"
 E aperto em pesquisar
-Então devo ver comidinhas que contenham esse nome como "cone"
+Então devo ver comidinhas que contenham esse nome como "prod2"
  
 Cenário: Acessar comidinhas em uma categoria
 Dado que estou na página home
