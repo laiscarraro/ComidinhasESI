@@ -1,44 +1,51 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 .container
-    .row
-        .col-sm
+    - if @user.errors.any?
+        %h2
+            = @user.errors.count
+                erro(s) impedem que a conta seja criada:
+        %ul
+            - @user.errors.each do |attribute, error|
+            %li= error
+    %div.row
+        %div.col-sm
             %h1.title Cadastre-se!
             %h3.subtitle Crie uma conta para continuar
-    .row
-        .col-sm
-            %form
-                .form-group
-                    .form-row
-                        %label{:for => "email"} Email
-                    .form-row.input-icon
-                        %i.fas.fa-envelope
-                        %input.form-control{:type => "email", :id => "email", :placeholder => "comidinhas@usp.br"}
-                        %i.fas.fa-check
-                .form-group
-                    .form-row
-                        %label{:for => "username"} Login
-                    .form-row.input-icon
-                        %i.fas.fa-user
-                        %input.form-control{:type => "text", :id => "username", :placeholder => "comidinhaseach"}
-                        %i.fas.fa-check
-                .form-group
-                    .form-row
-                        %label{:for => "senha"} Senha
-                    .form-row.input-icon
-                        %i.fas.fa-lock
-                        %input.form-control{:type => "password", :id => "senha", :placeholder => "Senha"}
-                        %i.far.fa-eye
-                .form-group
-                    .form-row
-                        %label{:for => "confirmar_senha"} Confirme a senha
-                    .form-row.input-icon
-                        %i.fas.fa-lock
-                        %input.form-control{:type => "password", :id => "confirmar_senha", :placeholder => "Senha"}
-                        %i.fas.fa-check
-                .form-group.form-check
-                    %input.form-check-input{:type => "checkbox", :id => "termos", :placeholder => "Senha"}
-                    %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
-                %button.btn.btn-primary{:type => "submit", :id => "criar"} Criar
-    .row
-        .col-sm
+    %div.row
+        %div.col-sm
+        = form_for @user, url: {action: "create"}, html: {multipart: true} do |f|
+            %div.form-group
+                %div.form-row
+                    %label{:for => "email"} Email
+                %div.form-row.input-icon
+                    %i.fas.fa-envelope
+                    = f.text_field :email, id: "email", placeholder: "comidinhas@usp.br", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group
+                %div.form-row
+                    %label{:for => "username"} Login
+                %div.form-row.input-icon
+                    %i.fas.fa-user
+                    = f.text_field :username, id: "username", placeholder: "comidinhaseach", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group
+                %div.form-row
+                    %label{:for => "password"} Senha
+                %div.form-row.input-icon
+                    %i.fas.fa-lock
+                    = f.text_field :password, id: "password", placeholder: "Senha", class: 'form-control'
+                    %i.far.fa-eye
+            %div.form-group
+                %div.form-row
+                    %label{:for => "password_confirmation"} Confirme a senha
+                %div.form-row.input-icon
+                    %i.fas.fa-lock
+                    = f.text_field :password_confirmation, id: "password_confirmation", placeholder: "Senha", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group.form-check
+                %input.form-check-input{:type => "checkbox", :id => "termos", :placeholder => "Senha"}
+                %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
+            = f.submit("criar", id: "create")
+    %div.row
+        %div.col-sm
             %p Já tem uma conta? <b>Login</b>

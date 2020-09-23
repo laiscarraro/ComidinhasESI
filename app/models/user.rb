@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :password, presence: { message: "É obrigatório informar a senhha" },
             length: { minimum: 8 }
 
-  validates_confirmation_of :email_address, message: 'Senha não corresponde'
+  validates_confirmation_of :password, message: 'Senha não corresponde'
 
   validates :termos, acceptance: { message: "É obrigatório aceitar os termos e condições"}
 end
