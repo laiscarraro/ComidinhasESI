@@ -2,12 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+
+a {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+a:hover {
+    color: black !important;
+}
+
 .title {
+    margin-top: 10%;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: bold;
     letter-spacing: -0.8px;
-    line-height: 133%;
+    font-size: 250%;
     color: #171717;
 }
 
@@ -15,6 +26,7 @@
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 500;
+    font-size: 150%;
     letter-spacing: -0.4px;
     color: #171717;
     mix-blend-mode: normal;
@@ -38,4 +50,21 @@ label {
     border-bottom: 2px solid hsla(230,9,60,0.2);
     display:flex;
     align-items:center;
+}
+
+.input-icon:hover {
+    border-bottom: 2px solid #F78100;
+}
+
+.btn-primary {
+    width: 100%;
+    font-weight: bold !important;
+    color: white !important;
+    background-color: #F78100 !important;
+    border-color: #F78100 !important;
+}
+
+.fim {
+    text-align: center;
+    margin-top: 10%;
 }
