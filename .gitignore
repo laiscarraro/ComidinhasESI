@@ -72,3 +72,4 @@ yarn-debug.log*
 myapp_test
 comidinhas_dev.sqlite3
 comidinhas_test.sqlite3
+env
