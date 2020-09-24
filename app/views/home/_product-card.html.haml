@@ -1,12 +1,15 @@
-%h3 Populares
 
-- @products.each do |product|
-  .product-card
-    %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
-    .description 
-      %h4.product-text #{product.name}
-      .vendor-text Wilson    
-    .bottom-card
-      .price-text R$ #{product.price}
-      .local-text Está na Biblioteca
-
+-if @products.empty?
+    %h5.col-lg-3 Nenhnum resultado encontrado.
+-else 
+    .row.mt-3
+        %b.col-lg-1 Populares
+    -@products.each do |product|           
+        .product-card
+            %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
+            .description 
+                %b.product-text #{product.name}
+                .vendor-text Wilson
+            .bottom-card
+                %b.price-text R$ #{product.price}
+                %b.local-text Está na Biblioteca
