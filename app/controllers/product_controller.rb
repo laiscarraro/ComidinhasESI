@@ -7,7 +7,7 @@ class ProductController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      # TODO  - redirecionar usuário para a página do produto
+      redirect_to root_path
     else 
       render 'new'
     end
