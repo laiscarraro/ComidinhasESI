@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2020_09_22_211638) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories_users", id: false, force: :cascade do |t|
+  create_table "categories_products", id: false, force: :cascade do |t|
     t.integer "category_id", null: false
-    t.integer "user_id", null: false
-    t.index ["category_id"], name: "index_categories_users_on_category_id"
-    t.index ["user_id"], name: "index_categories_users_on_user_id"
+    t.integer "product_id", null: false
+    t.index ["category_id"], name: "index_categories_products_on_category_id"
+    t.index ["product_id"], name: "index_categories_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|

@@ -5,4 +5,6 @@
   = f.number_field :price, id: "Preço",value: number_to_currency(f.object.price.to_f, delimiter: ',', unit: 'R$ '), min: 0.5, max: 10000, step: 0.01, class: 'form-group'
   %label{:for => "Descrição"}> Descrição
   = f.text_area :description, id: "Descrição", size: "60x12", class: 'form-group'
+  - @categories.each do |category|
+    = check_box("product", "categories", {:multiple => true}, category.id, nil)
   = f.submit("Adicionar Produto", class:'btn btn-primary', id:"Adicionar")
