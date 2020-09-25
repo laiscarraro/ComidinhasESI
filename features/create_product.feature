@@ -8,7 +8,7 @@ Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.00"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
 E clico em adicionar
-Então ele deve ter sido salvo no banco de dados
+Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal
 
 Cenário: Adição de produto com erro - Sem nome do produto
@@ -33,7 +33,7 @@ Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.00"
 E deixo o campo "Descrição" vazio
 E clico em adicionar
-Então ele deve ter sido salvo no banco de dados
+Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal
 
 Cenário: Adição de produto com erro - Preço com mais de duas casas decimais
@@ -58,5 +58,5 @@ Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.0"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
 E clico em adicionar
-Então ele deve ter sido salvo no banco de dados
+Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal

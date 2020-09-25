@@ -11,11 +11,11 @@ Cenário: Cadastro de usuário com sucesso
 Dado que estou na paǵina de cadastro de usuário
 Quando preencho o campo "email" com "maria@usp.br"
 Quando preencho o campo "username" com "Maria"
-Quando preencho o campo "senha" com "senha123"
-Quando preencho o campo "confirmar_senha" com "senha123"
+Quando preencho o campo "password" com "senha123"
+Quando preencho o campo "password_confirmation" com "senha123"
 E clico em termos
 E clico em criar
-Então ele deve ter sido salvo no banco de dados 
+Então o usuario deve ter sido salvo no banco de dados 
 E ser redirecionado para a home
 
 Cenário: Cadastro de usuário com erro - sem email
@@ -36,27 +36,16 @@ Quando deixo o campo "username" vazio
 E clico em criar
 Então deverei ver a mensagem de erro "É obrigatório informar o username"
 
-Cenário: Cadastro de usuário com erro - username já existe
-Dado que estou na página de cadastro de usuário
-Quando preencho o campo "username" com "Wilson" 
-E clico em criar
-Então deverei ver a mensagem de erro "O username informado já existe"
-
 Cenário: Cadastro de usuário com erro - sem senha
 Dado que estou na página de cadastro de usuário
-Quando deixo o campo "senha" vazio
+Quando deixo o campo "password" vazio
 E clico em criar
 Então deverei ver a mensagem de erro "É obrigatório informar a senha"
 
 Cenário: Cadastro de usuário com erro - senha não corresponde
 Dado que estou na página de cadastro de usuário
-Quando preencho o campo "senha" com "senha123"
-E preencho o campo "confirmar_senha" com "senha1234"
+Quando preencho o campo "password" com "senha123"
+E preencho o campo "password_confirmation" com "senha1234"
 E clico em criar
-Então deverei ver a mensagem de erro "Senha não correponde"
+Então deverei ver a mensagem de erro "Senha não corresponde"
 
-Cenário: Cadastro de usuário com erro - não aceitou os termos
-Dado que estou na página de cadastro de usuário
-Quando não clico em termos
-E clico em criar
-Então deverei ver a mensagem de erro "É obrigatório aceitar os termos e condições"
