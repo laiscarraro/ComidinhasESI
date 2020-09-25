@@ -8,8 +8,7 @@ class User < ApplicationRecord
   validates :username, presence: { message: "É obrigatório informar o username" }, 
           uniqueness: { message: "O username informado já existe"}
 
-  validates :password, presence: { message: "É obrigatório informar a senha" }
-
-  validates_confirmation_of :password, :message => "Senha não corresponde"
+  validates :password, presence: { message: "É obrigatório informar a senha" },
+            confirmation: { message: "Senha não corresponde" }
 
 end

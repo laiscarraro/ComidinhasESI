@@ -10,7 +10,7 @@
                 erro(s) impedem que a conta seja criada:
         %p
             - @user.errors.each do |attribute, error|
-            %li= error
+            %li.text-warning= error
     %div.row
         = form_for @user, url: {action: "create"}, html: {multipart: true, class: "col-sm"} do |f|
             %div.form-group
