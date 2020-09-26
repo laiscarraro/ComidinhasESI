@@ -21,9 +21,10 @@ Dado('que estou na página home') do
   end
   
   Então('deve aparecer para mim todas as comidinhas') do
-    expect(page).to have_content("Cones do Wilson")
-    expect(page).to have_content("Lanches Naturais")
-    expect(page).to have_content("Cereais")
+    products = Product.all
+    products.each do |product|
+      expect(page).to have_content(product.name)
+    end
   end
   
   Quando('eu preencho o campo {string} com {string}') do |string, string2|
@@ -36,6 +37,11 @@ Dado('que estou na página home') do
   
   Então('devo ver comidinhas que contenham esse nome como {string}') do |string|
     expect(page).to have_content(string)
+  end
+
+  E('não devo ver comidinhas que contenham o nome {string} ou {string}') do |string, string2|
+    expect(page).to have_no_content(string)
+    expect(page).to have_no_content(string2)
   end
   
   Quando('aperto em uma categoria') do

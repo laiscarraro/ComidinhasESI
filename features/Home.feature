@@ -14,6 +14,7 @@ Dado que estou na página home
 Quando eu preencho o campo "prodname" com "Con"
 E aperto em pesquisar
 Então devo ver comidinhas que contenham esse nome como "Cones do Wilson"
+E não devo ver comidinhas que contenham o nome "Lanches Naturais" ou "Cereais"
  
 Cenário: Acessar comidinhas em uma categoria
 Dado que estou na página home
