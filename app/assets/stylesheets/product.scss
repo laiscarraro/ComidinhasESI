@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .wrapper {
-  padding: 120px 24px;
-  padding-top: 200px;
+  padding: 100px 16px;
+  // padding-top: 200px;
 }
 
 form {
@@ -15,7 +15,7 @@ form {
 label {
   // width: 100%;
   text-align: left;
-  font-size: 30px;
+  // font-size: 30px;
   letter-spacing: 0.32px;
   font-weight: bold;
 }
@@ -23,8 +23,9 @@ label {
 input {
   width: 100%;
   outline: none;
-  min-height: 60px;
-  border: 1px solid grey;
+  // min-height: 60px;
+  padding: 8px;
+  border: 1px solid lightblue 4px;
 }
 
 #Preço {
@@ -32,7 +33,29 @@ input {
   margin: 0 auto;
 }
 
+.btn-comidinhas {
+  background-color: #F78100 !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  padding: 8px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 textarea {
   outline: none;
-  border: 1px solid grey;
+  border: 1px lightblue 4px;
+  resize: none;
 }
