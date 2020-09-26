@@ -1,7 +1,11 @@
 class ProductController < ApplicationController
+  def initialize_categories
+    @categories = Category.all
+  end
+
   def new
     @product = Product.new
-    @categories = Category.all
+    initialize_categories
   end
 
   def create
@@ -18,6 +22,7 @@ class ProductController < ApplicationController
     if @product.save
       redirect_to root_path
     else 
+      initialize_categories
       render 'new'
     end
   end

@@ -1,9 +1,9 @@
 = form_for @product, url: {action: "create"}, html: {multipart: true} do |f|
   %label{:for => "Nome do Produto"}> Nome do Produto
   = f.text_field :name, id: "Nome do Produto", class: 'form-group'
-  %label{:for => "Preço"}> Preço
+  %label{:for => "Preço", class: 'mt-4'}> Preço
   = f.number_field :price, id: "Preço",value: number_to_currency(f.object.price.to_f, delimiter: ',', unit: 'R$ '), min: 0.5, max: 10000, step: 0.01, class: 'form-group'
-  %label{:for => "categories"}> Categorias
+  %label{:for => "categories", class: 'mt-4'}> Categorias
   .row.justify-content-around
     - @categories.each do |category|
       = check_box("product", "categories", {:multiple => true, class: 'category-tag'}, category.id, nil)
