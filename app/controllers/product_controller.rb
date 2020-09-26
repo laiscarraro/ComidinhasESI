@@ -11,9 +11,9 @@ class ProductController < ApplicationController
     @product.price = product_params['price']
     @product.description = product_params['description']
 
-    product_params['categories'].each { |category_id|
-      @product.categories << Category.find(category_id)
-    }
+    if product_params.has_key?(:categories)
+      @product.categories << Category.find(product_params['categories'])
+    end
 
     if @product.save
       redirect_to root_path
