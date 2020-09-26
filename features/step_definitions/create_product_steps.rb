@@ -1,9 +1,16 @@
 Dado('que estou na página de adição de produto') do
+  category = Category.new
+  category.name = "Doce"
+  category.save
   visit 'product/new'
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|
-  fill_in string, :with => string2  
+  fill_in string, :with => string2 
+end
+
+Quando('seleciono a categoria {string}') do |string |
+  check(string)
 end
 
 Quando('clico em adicionar') do
@@ -14,13 +21,7 @@ Então('ele deve ter sido salvo no banco de dados') do
   product = Product.order("id").last
   expect(product.name).to eq("Cone")
   expect(product.price).to eq(6.00)
-  # expect(product.description).to eq("Melhor que o cone do Wilson" || "")
-end
-
-Então('deverei ver o produto na página principal') do
-  # TODO
-  # expect(page).to have_content("Cone")
-  # expect(page).to have_content(6.00)
+  expect(product.categories[0].name).to eq('Doce')
 end
 
 Quando('deixo o campo {string} vazio') do |string|
