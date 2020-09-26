@@ -1,0 +1,6 @@
+%h2
+  = @product.errors.count
+  erro(s) impedem que o produto seja salvo:
+%ul
+  - @product.errors.each do |attribute, error|
+    %li= error

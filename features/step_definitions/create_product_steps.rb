@@ -1,4 +1,7 @@
 Dado('que estou na página de adição de produto') do
+  category = Category.new
+  category.name = "Doce"
+  category.save
   visit 'product/new'
 end
 

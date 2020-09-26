@@ -7,6 +7,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.00"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal
@@ -16,6 +17,7 @@ Dado que estou na página de adição de produto
 E deixo o campo "Nome do Produto" vazio
 Quando preencho o campo "Preço" com "6.00"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então deverei ver a mensagem de erro "É obrigatório informar o nome do produto"
 
@@ -24,6 +26,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 E deixo o campo "Preço" vazio
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então deverei ver a mensagem de erro "É obrigatório informar o preço do produto"
 
@@ -32,6 +35,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.00"
 E deixo o campo "Descrição" vazio
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal
@@ -41,6 +45,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.052"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então deverei ver a mensagem de erro "O formato de preço é inválido"
 
@@ -49,6 +54,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "0.10"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então deverei ver a mensagem de erro "O preço precisa ser um número entre R$ 0,50 e R$ 10.000"
 
@@ -57,6 +63,7 @@ Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.0"
 Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 E deverei ver o produto na página principal
