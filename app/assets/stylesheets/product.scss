@@ -71,18 +71,23 @@ input {
 
 .category-tag {
   display: none;
+  font-weight: lighter;
 }
 
 .category-tag + label {
   padding: 6px 14px;
-  border-radius: 4px;
+  border-radius: 10px;
   margin: 10px;
-  border: 1px solid lightgray;
+  color: grey;
+  background-color: white;
   transition: background-color 100ms linear;
+  border: 1px solid lightgray;
+  font-weight: bolder;
 }
 
 .category-tag[type=checkbox]:checked + label {
-  background-color: #D69C07;
+  background-color: #F56000;
+  border: 1px solid #F56000;
   color: white;
 }
 
