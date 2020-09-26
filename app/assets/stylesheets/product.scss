@@ -50,6 +50,8 @@ input {
   padding: 6px 14px;
   border-radius: 8px;
   margin: 10px;
+  border: 1px solid lightgray;
+  transition: background-color 100ms linear;
 }
 
 .category-tag[type=checkbox]:checked + label {
