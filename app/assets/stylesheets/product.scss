@@ -44,9 +44,12 @@ input {
 .currency-label {
   font-weight: bold;
   text-align: center;
+  align-items: center;
   border-radius: 4px;
+
   border: 1px solid lightgray;
-  margin: 10px 100px;
+  margin: 10px auto;
+  min-width: 160px;
 }
 
 .currency-input {
