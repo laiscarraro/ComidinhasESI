@@ -4,9 +4,11 @@
             .col-xg-8.col-lg-8.col-md-8.col-sm-4.col-1
             .col-xg-4.col-lg-4.col-md-4.col-sm-8.col-10
                 %form{:action => "/home/search"}
-                    .input-group
-                        %input.form-control.border-0.bg-light.round-left{:type => "text", :name => "prodname", :id => "search", :placeholder => "Pesquisa"}
-                        .input-group-append
-                            %button.btn.btn-light.text-warning.round-right{:type => "submit", :id => "inspect"}
+                    %div{:id => "search-border"}
+                        .input-group
+                            %input.search-bar.round-left{:type => "text", :name => "prodname", :id => "search", :placeholder => "Pesquisa",
+                             :onfocus => "document.getElementById(\"search-border\").classList.add(\"search-border\");",
+                              :onblur => "document.getElementById(\"search-border\").classList.remove(\"search-border\");"}
+                            %button.search-btn.round-right{:type => "submit", :id => "inspect"}
                                 %span
                                     .i.fa.fa-search.fa-sm
