@@ -38,6 +38,14 @@ Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então ele deve ter sido salvo no banco de dados
 
+Cenário: Adição de produto com sucesso - Sem categorias
+Dado que estou na página de adição de produto
+Quando preencho o campo "Nome do Produto" com "Cone"
+Quando preencho o campo "Preço" com "6.0"
+Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
+E clico em adicionar
+Então deverei ver a mensagem de erro "Selecione pelo menos uma categoria"
+
 Cenário: Adição de produto com erro - Preço com mais de duas casas decimais
 Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
@@ -64,3 +72,4 @@ Quando preencho o campo "Descrição" com "Melhor que o cone do Wilson"
 Quando seleciono a categoria "Doce"
 E clico em adicionar
 Então ele deve ter sido salvo no banco de dados
+
