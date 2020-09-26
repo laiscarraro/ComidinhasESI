@@ -22,5 +22,9 @@ Então('o produto deve ter sido salvo no banco de dados') do
   # expect(product.description).to eq("Melhor que o cone do Wilson" || "")
 end
 
+Quando('seleciono a categoria {string}') do |string |
+  check(string)
+end
+
 
 
