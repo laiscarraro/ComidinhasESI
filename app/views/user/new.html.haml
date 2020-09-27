@@ -15,28 +15,28 @@
         = form_for @user, url: {action: "create"}, html: {multipart: true, class: "col-sm"} do |f|
             %div.form-group
                 %div.form-row
-                    %label{:for => "email"} Email
+                    %label{:for => "email", :class => "label-cadastro"} Email
                 %div.form-row.input-icon
                     %i.fas.fa-envelope
                     = f.text_field :email, id: "email", placeholder: "comidinhas@usp.br", class: 'form-control'
                     %i.fas.fa-check
             %div.form-group
                 %div.form-row
-                    %label{:for => "username"} Login
+                    %label{:for => "username", :class => "label-cadastro"} Login
                 %div.form-row.input-icon
                     %i.fas.fa-user
                     = f.text_field :username, id: "username", placeholder: "comidinhaseach", class: 'form-control'
                     %i.fas.fa-check
             %div.form-group
                 %div.form-row
-                    %label{:for => "password"} Senha
+                    %label{:for => "password", :class => "label-cadastro"} Senha
                 %div.form-row.input-icon
                     %i.fas.fa-lock
                     = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
                     %i.far.fa-eye
             %div.form-group
                 %div.form-row
-                    %label{:for => "password_confirmation"} Confirme a senha
+                    %label{:for => "password_confirmation", :class => "label-cadastro"} Confirme a senha
                 %div.form-row.input-icon
                     %i.fas.fa-lock
                     = f.text_field :password_confirmation, type: "password", id: "password_confirmation", placeholder: "Senha", class: 'form-control'
@@ -46,5 +46,8 @@
                 %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
             = f.submit("criar", id: "create", class: "btn btn-primary")
     %div.row
-        %div.col-sm
-            %p.fim Já tem uma conta? <a href = "#">Login</a>
+        .col-sm
+            %br
+            %p
+                Já tem uma conta? &nbsp;
+                %a{class: "login-link", href: "#"}>Login
