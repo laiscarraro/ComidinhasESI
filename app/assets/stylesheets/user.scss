@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
 
-a {
+.login-link {
     color: black !important;
     font-weight: bold !important;
 }
 
-a:hover {
+.login-link:hover {
     color: black !important;
 }
 
@@ -33,7 +33,7 @@ a:hover {
     opacity: 0.6;
 }
 
-label {
+.label-cadastro {
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 500;
