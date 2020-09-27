@@ -1,0 +1,15 @@
+
+-if @products.empty?
+    %b.col-lg-3 sem resultados
+-else 
+    .row.mt-3
+        %b.col-lg-1 Populares
+    -@products.each do |product|           
+        .product-card
+            %img.product-img{:alt => "Cone Trufado", :src => "cone.jpg"}
+            .description 
+                %b.product-text #{product.name}
+                .vendor-text Wilson
+            .bottom-card
+                %b.price-text R$ #{"%0.2f" % [product.price]}
+                %b.local-text Está na Biblioteca

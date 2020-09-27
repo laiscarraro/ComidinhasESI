@@ -1,0 +1,51 @@
+.product-card {
+    flex-direction: row;
+    height: 100px;
+    //min-width: 380px;    
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-width: 0.8;
+    border-color: #FFFFFF;
+    border-radius: 8px;
+    background-color: '#fff';
+    margin-bottom: 8;
+    isolation: 2;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.product-text {
+    font-size: 12px;
+}
+
+.product-img{
+    float: left;
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0;
+}
+
+.vendor-text{
+    font-size: 8px;
+    font-style: italic;
+    line-height: 0.2px;
+}
+
+.price-text{
+    color: #4A4A4A;
+    float:right;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.bottom-card{
+   margin-top: 50px;
+   font-size: 11px;
+}
+
+.local-text{
+    font-size: 10px;
+    color:green;
+}
