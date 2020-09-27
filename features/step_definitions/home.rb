@@ -1,30 +1,36 @@
 Dado('que estou na página home') do
+    category = Category.new
+    category.name = "Categoria para me ajudar a passar em ESI"
+    category.save
+
     product1 = Product.new
     product1.name = "Cones do Wilson"
     product1.price = 6.00
     product1.description = "Cone bom para testes!"
+    product1.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product1.save
 
     product2 = Product.new
     product2.name = "Lanches Naturais"
     product2.price = 4.00
     product2.description = "Um lanche para salvar seus projetos!"
+    product2.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product2.save
 
     product3 = Product.new
     product3.name = "Cereais"
     product3.price = 10.00
     product3.description = "Cereais que ajudam você a não trancar o curso!"
+    product3.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product3.save
 
     visit 'home/index'
   end
   
   Então('deve aparecer para mim todas as comidinhas') do
-    products = Product.all
-    products.each do |product|
-      expect(page).to have_content(product.name)
-    end
+    expect(page).to have_content("Cones do Wilson")
+    expect(page).to have_content("Lanches Naturais")
+    expect(page).to have_content("Cereais")
   end
   
   Quando('eu preencho o campo {string} com {string}') do |string, string2|
