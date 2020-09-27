@@ -1,0 +1,50 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+.container
+    %div.row
+        %div.col-sm
+            %h1.title Cadastre-se!
+            %h3.subtitle Crie uma conta para continuar
+    - if @user.errors.any?
+        %p.text-warning
+            = @user.errors.count
+                erro(s) impedem que a conta seja criada:
+        %p
+            - @user.errors.each do |attribute, error|
+            %li.text-warning= error
+    %div.row
+        = form_for @user, url: {action: "create"}, html: {multipart: true, class: "col-sm"} do |f|
+            %div.form-group
+                %div.form-row
+                    %label{:for => "email"} Email
+                %div.form-row.input-icon
+                    %i.fas.fa-envelope
+                    = f.text_field :email, id: "email", placeholder: "comidinhas@usp.br", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group
+                %div.form-row
+                    %label{:for => "username"} Login
+                %div.form-row.input-icon
+                    %i.fas.fa-user
+                    = f.text_field :username, id: "username", placeholder: "comidinhaseach", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group
+                %div.form-row
+                    %label{:for => "password"} Senha
+                %div.form-row.input-icon
+                    %i.fas.fa-lock
+                    = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
+                    %i.far.fa-eye
+            %div.form-group
+                %div.form-row
+                    %label{:for => "password_confirmation"} Confirme a senha
+                %div.form-row.input-icon
+                    %i.fas.fa-lock
+                    = f.text_field :password_confirmation, type: "password", id: "password_confirmation", placeholder: "Senha", class: 'form-control'
+                    %i.fas.fa-check
+            %div.form-group.form-check
+                %input.form-input-check{:type => "checkbox", :id => "termos"}
+                %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
+            = f.submit("criar", id: "create", class: "btn btn-primary")
+    %div.row
+        %div.col-sm
+            %p.fim Já tem uma conta? <a href = "#">Login</a>
