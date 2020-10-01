@@ -2,10 +2,5 @@
     %b.col-lg-1 Categorias
 .container.overflow-auto
     .row.flex-nowrap.row-flex
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Doces
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Salgado
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Vegano
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Fitness
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Massa
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Medieval
-        %button.category.col-lg-1.col-md-2.col-sm-2.col-3 Bandejão
+        -@categories.each do |category|
+            =link_to category.name, product_category_path(category.id), :class => 'category col-lg-1 col-md-2 col-sm-2 col-3'
