@@ -20,3 +20,12 @@ Cenário: Não encontrou a comidinha
 Dado que estou na página home
 Quando pesquiso uma comidinha que não existe
 Então devo ver uma mensagem de "sem resultados"
+
+Cenário: Ver todas as categorias
+Dado que estou na página home
+Então devo ver todas as categorias cadastradas
+
+Cenário: Acessar comidinhas em uma categoria
+Dado que estou na página home
+Quando aperto a categoria "Massa"
+Então deve mostrar apenas comidinhas da categoria como "Pizza" e não "Cones do Wilson", "Lanches Naturais" ou "Cereais"

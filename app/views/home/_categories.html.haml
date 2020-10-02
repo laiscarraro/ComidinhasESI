@@ -3,4 +3,4 @@
 .container.overflow-auto
     .row.flex-nowrap.row-flex
         -@categories.each do |category|
-            =link_to category.name, product_category_path(category.id), :class => 'category col-lg-1 col-md-2 col-sm-2 col-3'
+            =link_to category.name, product_category_path(category.id), :id => category.name, :class => 'category col-lg-1 col-md-2 col-sm-2 col-3'
