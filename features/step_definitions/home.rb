@@ -24,6 +24,17 @@ Dado('que estou na página home') do
     product3.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product3.save
 
+    category = Category.new
+    category.name = "Massa"
+    category.save
+
+    product4 = Product.new
+    product4.name = "Pizza"
+    product4.price = 50.00
+    product4.description = "Pizzas caseiras e entregues na hora."
+    product4.categories << Category.where("name LIKE 'Massa'")
+    product4.save
+
     visit 'home/index'
   end
   
@@ -57,4 +68,20 @@ Dado('que estou na página home') do
   
   Então('devo ver uma mensagem de {string}') do |string|
     expect(page).to have_content(string)
+  end
+
+  Então('devo ver todas as categorias cadastradas') do
+    expect(page).to have_content("Categoria para me ajudar a passar em ESI")
+    expect(page).to have_content("Massa")
+  end
+
+  Quando('aperto a categoria {string}') do |string|
+    click_on string
+  end
+
+  Então('deve mostrar apenas comidinhas da categoria como {string} e não {string}, {string} ou {string}') do |string, string2, string3, string4|
+    expect(page).to have_content(string)
+    expect(page).to have_no_content(string2)
+    expect(page).to have_no_content(string3)
+    expect(page).to have_no_content(string4)
   end
