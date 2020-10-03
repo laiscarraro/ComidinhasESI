@@ -17,7 +17,7 @@
         Não há categorias cadastradas! :( Contate um administrador para entender o problema
 
   %label{:for => "Descrição", class: 'mt-4 label-product'} Envie uma foto do produto!
-  = f.file_field :photo
+  = f.file_field :photo, id: "Foto"
 
   %label{:for => "Descrição", class: 'mt-4 label-product'} Descrição
   = f.text_area :description, id: "Descrição", size: "60x10", class: 'form-group pl-2 pr-2 pt-1 textarea-product', resize: 'none'

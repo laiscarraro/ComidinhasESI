@@ -26,5 +26,8 @@ Quando('seleciono a categoria {string}') do |string |
   check(string)
 end
 
+Quando('clico em fazer upload de uma foto') do
+  attach_file('Foto', Rails.root.join('public', 'cone.jpg'))
+end
 
 
