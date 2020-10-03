@@ -11,7 +11,6 @@ Quando seleciono a categoria "Doce"
 Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
-E deverei ver o produto na página principal
 
 Cenário: Adição de produto com erro - Sem nome do produto
 Dado que estou na página de adição de produto
@@ -42,7 +41,6 @@ Quando seleciono a categoria "Doce"
 Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
-E deverei ver o produto na página principal
 
 Cenário: Adição de produto com erro - Preço com mais de duas casas decimais
 Dado que estou na página de adição de produto
@@ -73,4 +71,3 @@ Quando seleciono a categoria "Doce"
 Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
-E deverei ver o produto na página principal
