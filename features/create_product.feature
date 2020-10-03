@@ -42,6 +42,15 @@ Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 
+Cenário: Adição de produto com sucesso - Sem foto
+Dado que estou na página de adição de produto
+Quando preencho o campo "Nome do Produto" com "Cone"
+Quando preencho o campo "Preço" com "6.00"
+E deixo o campo "Descrição" vazio
+Quando seleciono a categoria "Doce"
+E clico em adicionar
+Então deverei ver a mensagem de erro "É obrigatório adicionar uma foto do produto"
+
 Cenário: Adição de produto com erro - Preço com mais de duas casas decimais
 Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
