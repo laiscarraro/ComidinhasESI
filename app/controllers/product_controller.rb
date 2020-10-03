@@ -14,6 +14,7 @@ class ProductController < ApplicationController
     @product.name = product_params['name']
     @product.price = product_params['price']
     @product.description = product_params['description']
+    @product.photo = product_params['photo']
 
     if product_params.has_key?(:categories)
       @product.categories << Category.find(product_params['categories'])
@@ -29,6 +30,6 @@ class ProductController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, categories: [])
+    params.require(:product).permit(:name, :price, :description, :photo, categories: [])
   end
 end
