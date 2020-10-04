@@ -1,0 +1,6 @@
+exclude_patterns:
+    - "public/"
+    - "app/assets/"
+    - "db/migrate/"
+    - "doc/js/"
+    - "babel.config.js"
