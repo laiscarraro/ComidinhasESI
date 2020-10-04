@@ -5,9 +5,7 @@ class Product < ApplicationRecord
   validates :categories, :length => { :minimum => 1 , message: "Selecione pelo menos uma categoria"}
   has_and_belongs_to_many :categories
 
-  has_attached_file :photo, :styles => {:large => '900x' }, :default_url => "cone.jpg"
+  has_one_attached :photo
   
   validates :photo, presence: { message: "É obrigatório adicionar uma foto do produto"}
-
-  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/, :message => "Apenas imagens são permitidas"
 end

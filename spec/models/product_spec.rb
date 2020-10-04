@@ -6,7 +6,7 @@ RSpec.describe Product, type: :model do
     @category = Category.new
     @category.name = "Doce"
     @category.save
-    @photo = File.open(File.join(Rails.root, 'public', 'cone.jpg'))
+    @photo = fixture_file_upload(File.join(Rails.root, 'public', 'cone.jpg'))
   end
 
   it 'produto valido' do

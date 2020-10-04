@@ -3,7 +3,7 @@ Dado('que estou na página home') do
     category.name = "Categoria para me ajudar a passar em ESI"
     category.save
 
-    photo = File.open(File.join(Rails.root, 'public', 'cone.jpg'))
+    photo = fixture_file_upload((File.join(Rails.root, 'public', 'cone.jpg')))
 
     product1 = Product.new
     product1.name = "Cones do Wilson"
