@@ -17,7 +17,7 @@
         Não há categorias cadastradas! :( Contate um administrador para entender o problema
 
   %label{class: 'mt-4 mb-4 label-product'} Envie uma foto do produto!
-  = f.file_field :photo, id: "Foto", class: 'hidden_input_file', accept: 'image/png,image/jpg,image/jpeg'
+  = f.file_field :photo, id: "Foto", class: 'hidden_input_file', accept:'image/*'
   %label{:for => "Foto", class: "m-auto btn btn-comidinhas", id: "label_input_file"} Adicione uma foto
 
   %label{:for => "Descrição", class: 'mt-4 label-product'} Descrição

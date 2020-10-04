@@ -6,7 +6,7 @@
         %b.col-lg-1 Populares
     -@products.each do |product|           
         .product-card
-            %img.product-img{:alt => "Cone Trufado", :src => product.photo.url}
+            %img.product-img{:src => url_for(product.photo)}
             .description 
                 %b.product-text #{product.name}
                 .vendor-text Wilson
