@@ -42,7 +42,7 @@ Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 
-Cenário: Adição de produto com sucesso - Sem foto
+Cenário: Adição de produto com erro - Sem foto
 Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"
 Quando preencho o campo "Preço" com "6.00"

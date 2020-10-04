@@ -1,4 +1,4 @@
-= form_for @product, url: {action: "create"}, html: {multipart: true, :class => 'form-product'}, multipart: true do |f|
+= form_for @product, url: {action: "create"}, html: {:class => 'form-product'} do |f|
   %label{:for => "Nome do Produto", class: 'label-product'} Nome do Produto
   = f.text_field :name, id: "Nome do Produto", class: 'form-group'
   %label{:for => "Preço", class: 'mt-4 label-product'} Preço
