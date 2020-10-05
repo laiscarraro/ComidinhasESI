@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get 'home/search' => 'home#search'
     get 'home/category' => 'home#category'
     get '/login/index' => 'login#index'
+    post '/login/authenticate' => 'login#authenticate'
     resources :product, :except => [:index]
 end

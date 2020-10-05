@@ -6,3 +6,25 @@
         .row.mt-1
             .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
             %p.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.login-font Para anunciar produtos, você precisa estar logado
+    = form_with url: {action: "authenticate"} do |f|
+        .container
+            .row.mt-5
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .login-user.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-user"}
+                    = f.text_field :user, id: "login-user-text"
+                    %svg.login-user-check{:id => "email-check", :width => "10", :height => "10", :viewBox =>"0 0 100 100", :fill => "none"}
+                        <path id="check" d="M10 40 L35 65 L85 15" stroke-width="15"/>
+                    %label.login-user-label{:id => "login-user-label", :for => "user"}Usuário
+            .row.mt-5
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .login-password.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
+                    = f.text_field :password, id: "login-password-text", type: "password"
+                    %label.login-password-label{:id => "login-password-label", :for => "password"}Senha
+            .row.mt-5.mb-3
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                    %button.login-submit-btn{:type => "submit"}Logar
+            .row
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                    %p Não tem conta? Cadastre-se
