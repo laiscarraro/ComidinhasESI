@@ -5,7 +5,7 @@ class LoginController < ApplicationController
     def authenticate
         @user = User.find_by_username(params[:user])
         if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.in
+            session[:user_id] = @user.id
             redirect_to '/home/index'
         else
             render '/login/index'
