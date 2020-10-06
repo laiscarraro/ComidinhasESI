@@ -129,3 +129,54 @@
     font-size: 14px;
     visibility: hidden;
 }
+
+.password-visibility {
+    position: absolute;
+    cursor: pointer;
+    z-index: 4;
+    border: none;
+    outline-style: none !important;
+    background-color: transparent;
+}
+
+#eye, #eye-ball {
+    stroke: #8F92A1;
+    stroke-width: 75;
+    transition: 0.2s;
+}
+
+#eye {
+    fill: none;
+}
+
+#eye-ball {
+    fill: #000000;
+}
+
+#eye-cross {
+    stroke: #8F92A1;
+    stroke-width: 75;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dashoffset: 0px;
+    stroke-dasharray:	1000px;
+    transition: 0.2s;
+}
+
+#other-eye-cross {
+    stroke: #FFFFFF;
+    stroke-width: 75;
+    fill: none;
+    stroke-dashoffset: 0px;
+    stroke-dasharray:	1000px;
+    animation: draw-cross-eye 1s linear forwards;
+    transition: 0.2s;
+}
+
+.password-visible-color{
+    stroke: #000000 !important;
+}
+
+.password-visible-cross {
+    stroke-dashoffset: 1000px !important;
+}

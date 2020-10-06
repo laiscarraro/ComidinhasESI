@@ -23,6 +23,9 @@
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
                     = f.text_field :password, id: "login-password-text", type: "password", class: "login-text", onfocus: "addClassLoginPasswordHighlight()", onblur: "removeClassLoginPasswordHighlight()"
+                    %button.password-visibility{:onclick => "toggleVisibility(event)"}
+                        %svg{:width => "30", :height =>"30", :viewBox =>"0 0 1000 1000"}
+                            <path id="eye" d="M100 500 Q500 50 900 500 Q500 950 100 500 Z"/><circle id="eye-ball" cx="500" cy="500" r="100" /><path id="other-eye-cross" d="M230 100 L830 900"/><path id="eye-cross" d="M150 100 L750 900"/>
                     %label.login-label{:id => "login-password-label", :for => "password"}Senha
             .row.mt-5.mb-3
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
@@ -92,5 +95,28 @@
 
         if(document.getElementById("login-password-text").value == "") {
             document.getElementById("login-password-label").classList.remove("login-label-float");
+        }
+    }
+
+    function toggleVisibility(e) {
+        e.preventDefault();
+
+        var password = document.getElementById("login-password-text");
+
+        if(password.getAttribute("type") == "password") {
+            password.setAttribute("type", "text");
+            document.getElementById("eye").classList.add("password-visible-color");
+            document.getElementById("eye-ball").classList.add("password-visible-color");
+            document.getElementById("eye-cross").classList.add("password-visible-color");
+            document.getElementById("eye-cross").classList.add("password-visible-cross");
+            document.getElementById("other-eye-cross").classList.add("password-visible-cross");
+        }
+        else {
+            password.setAttribute("type", "password");
+            document.getElementById("eye").classList.remove("password-visible-color");
+            document.getElementById("eye-ball").classList.remove("password-visible-color");
+            document.getElementById("eye-cross").classList.remove("password-visible-color");
+            document.getElementById("eye-cross").classList.remove("password-visible-cross");
+            document.getElementById("other-eye-cross").classList.remove("password-visible-cross");
         }
     }
