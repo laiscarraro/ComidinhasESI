@@ -6,7 +6,7 @@
     font-size: 12px;
 }
 
-.login-user {
+.login {
     &::before {
         content: "";
         position: absolute;
@@ -19,7 +19,7 @@
     }
 }
 
-.login-user-border {
+.login-border {
     &::after {
         content: "";
         position: absolute;
@@ -47,7 +47,7 @@
     }
 }
 
-.login-user-text {
+.login-text {
     width: 90%;
     position: relative;
     padding-left: 15px;
@@ -60,7 +60,7 @@
     z-index: 3; //!arrumar
 }
 
-.login-user-label {
+.login-label {
     position: relative;
     color: #8F92A1;
     display: block;
@@ -70,11 +70,11 @@
     z-index: 0; //!arrumar
 }
 
-.login-user-text:focus~.login-user-label {
+.login-text:focus~.login-label {
     color: #F78100;
 }
 
-.login-user-label-float {
+.login-label-float {
     transform: translate(5px, -45px) scale(0.8, 0.8);
 }
 
@@ -95,4 +95,30 @@
     100% {
         stroke-dashoffset: 0px;
     }
+}
+
+.login-submit-btn {
+    width: 100%;
+    outline: none !important;
+    border: none;
+    height: 38px;
+    border-radius: 4px;
+    color: white;
+    background-color: #F78100;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.login-submit-btn:hover {
+    background-color: #F56000;
+}
+
+.sign-up-link {
+    color: #F78100;
+    text-emphasis: none;
+}
+
+.sign-up-link:hover {
+    color: #F56000;
 }
