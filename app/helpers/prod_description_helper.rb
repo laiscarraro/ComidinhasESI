@@ -1,0 +1,2 @@
+module ProdDescriptionHelper
+end
