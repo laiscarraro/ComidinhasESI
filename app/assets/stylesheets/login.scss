@@ -5,3 +5,94 @@
 .login-font {
     font-size: 12px;
 }
+
+.login-user {
+    &::before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #8F92A1;
+        height: 0px;
+        width: 85%;
+        left: 20px;
+        bottom: 45%;
+        z-index: 1; //!arrumar
+    }
+}
+
+.login-user-border {
+    &::after {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid #F78100;
+        height: 0px;
+        width: 0%; 
+        left: 20px;
+        bottom: 45%;
+        z-index: 2; //!arrumar
+        animation: draw-bottom 0.2s linear forwards;
+    }
+}
+
+@keyframes draw-bottom {
+    0% {
+        width: 0%;
+
+        border-bottom: 2px solid #F78100;
+    }
+
+    100% {
+        width: 100%;
+
+        border-bottom: 2px solid #F78100;
+    }
+}
+
+.login-user-text {
+    width: 90%;
+    position: relative;
+    padding-left: 15px;
+    border: none;
+    margin: 0;
+    outline-style: none;
+    background-color: transparent;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    z-index: 3; //!arrumar
+}
+
+.login-user-label {
+    position: relative;
+    color: #8F92A1;
+    display: block;
+    transform-origin: 0 0;
+    transform: translate(20px, -25px);
+    transition: all 0.2s;
+    z-index: 0; //!arrumar
+}
+
+.login-user-text:focus~.login-user-label {
+    color: #F78100;
+}
+
+.login-user-label-float {
+    transform: translate(5px, -45px) scale(0.8, 0.8);
+}
+
+.user-check-draw {
+    stroke: #F78100;
+    right: 0;
+    top: 10px;
+    stroke-dasharray: 110px;
+    stroke-dashoffset: 110px;
+    animation: draw-check 0.2s linear forwards;
+}
+
+@keyframes draw-check {
+    0% {
+        stroke-dashoffset: 110px;
+    }
+
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
