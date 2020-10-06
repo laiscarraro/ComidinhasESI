@@ -122,3 +122,10 @@
 .sign-up-link:hover {
     color: #F56000;
 }
+
+.login-warning {
+    margin-left: 10px;
+    transform: translateY(-30px);
+    font-size: 14px;
+    visibility: hidden;
+}

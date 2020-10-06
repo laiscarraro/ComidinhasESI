@@ -14,12 +14,19 @@ window.addEventListener("load", function() {
         password.addEventListener("focus", addClassLoginPasswordHighlight);
         password.addEventListener("blur", removeClassLoginPasswordHighlight);
     }
+
+    var submit = document.getElementById("login-submit-btn")
+
+    if(submit) {
+        submit.addEventListener("click", checkSubmit(user)(password));
+    }
 });
 
 function addClassLoginUserHighlight() {
     document.getElementById("login-user").classList.add("login-border");
     document.getElementById("login-user-label").classList.add("login-label-float");
     document.getElementById("user-check").classList.remove("user-check-draw");
+    document.getElementById("invalid-user").style.visibility = "hidden";
 }
 
 function removeClassLoginUserHighlight() {
@@ -31,12 +38,23 @@ function removeClassLoginUserHighlight() {
     else {
         checkUserExists("/login/user_exists").then(function() {
             document.getElementById("user-check").classList.add("user-check-draw");
+        }, function() {
+            document.getElementById("invalid-user").style.visibility = "visible";
         });
     }
 }
 
+const checkSubmit = (user) => (password) => {
+    return function(e) {
+        if(user.value == "" || password.value == "") {
+            alert("Preencha os campos de Usuário e Senha!");
+            e.preventDefault();
+        }
+    }
+}
+
 function checkUserExists(url) {
-    return new Promise(function(resolve) {
+    return new Promise(function(resolve, reject) {
         var params = '?user='.concat(document.getElementById("login-user-text").value);
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url.concat(params), true);
@@ -45,6 +63,8 @@ function checkUserExists(url) {
                 var response = JSON.parse(xhr.responseText);
                 if(response.message == "true")
                     resolve();
+                else
+                    reject();
             }
         };
         xhr.send();

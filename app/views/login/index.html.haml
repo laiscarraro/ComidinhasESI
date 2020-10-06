@@ -15,7 +15,11 @@
                     %svg.login-user-check{:id => "user-check", :width => "15", :height => "15", :viewBox =>"0 0 100 100", :fill => "none"}
                         <path id="check" d="M10 40 L35 65 L85 15" stroke-width="15"/>
                     %label.login-label{:id => "login-user-label", :for => "user"}Usuário
-            .row.mt-5
+            .row
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                    %p.login-warning.text-danger{:id => "invalid-user"}Usuário inexistente
+            .row.mt-2
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
                     = f.text_field :password, id: "login-password-text", type: "password", class: "login-text"
@@ -23,8 +27,8 @@
             .row.mt-5.mb-3
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
-                    %button.login-submit-btn{:type => "submit"}Logar
+                    %button.login-submit-btn{:id => "login-submit-btn", :type => "submit"}Logar
             .row
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.text-center
-                    %p Não tem conta? <a class="sign-up-link" href="#">Cadastre-se</a>
+                    %p Não tem conta? <a class="sign-up-link" href="/product/new">Cadastre-se</a>

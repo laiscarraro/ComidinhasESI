@@ -17,7 +17,7 @@ class LoginController < ApplicationController
             session[:user_id] = @user.id
             redirect_to '/home/index'
         else
-            render '/login/index'
+            render js: "alert('Erro de Autenticação: Verifique Usuário e Senha!');"
         end
     end
 end
