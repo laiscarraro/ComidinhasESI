@@ -1,29 +1,27 @@
 Dado('que estou na tela de login') do
+    user = User.new
+    user.username = "usuario"
+    user.email = "usuario@usuario"
+    user.password = "senha"
+    user.save
+
     visit '/login/index'
   end
   
-  Quando('eu aperto a barra de usuário') do
-    click_on 'user'
-  end
-  
   Quando('insiro meu nome de usuário {string}') do |string|
-    fill_in 'user', :with => string
-  end
-  
-  Quando('aperto a barra de senha') do
-    click_on 'password'
+    fill_in 'login-user-text', :with => string
   end
   
   Quando('insiro minha senha {string}') do |string|
-    fill_in 'password', :with => string
+    fill_in 'login-password-text', :with => string
   end
   
   Quando('aperto em login') do
-    click_on 'login'
+    click_on 'login-submit-btn'
   end
   
   Então('devo estar logado no sistema') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(session[:user_id]).to eq(User.order("id").last)
   end
   
   Quando('insiro um usuário errado {string}') do |string|
