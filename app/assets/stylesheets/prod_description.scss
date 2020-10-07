@@ -1,6 +1,39 @@
 // Place all the styles related to the prod_description controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+  font-family: 'Roboto', sans-serif;  
+}
+
 span.fa.fa-heart.checked {
     color: red;
   }
+
+.img-prod{ 
+ display: block;
+  max-width: 100%;  
+  height: auto;
+}
+
+.col-prod-img{
+  padding: 0 !important;
+}
+
+.product-desc{
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  padding-left: 20px;  
+  font-weight: 700;
+}
+
+.product-desc lead{
+  font-weight: 400 !important;
+}
+
+.wrapper .box-rating{
+  border:2px;
+  border-color: grey;
+  border-style: groove;
+}

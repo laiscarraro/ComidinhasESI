@@ -1,20 +1,39 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap", :rel => "stylesheet"}/
+
+
 
 %nav.navbar-white.bg-white.shadow.py-4.fixed-top
   .container-fluid
-    .row.align-items-center.m-0
+    .row.align-items-center
       = link_to :back, :class => "no-link mr-4 ml-2" do
         %i.fas.fa-arrow-left{style: "font-size: 20px"}
-      %b{style: "font-size: 16px"} product_name
+      %b{style: "font-size: 16px"} product_name 
 
-.row.align-items-center.mt-1
-  %img.img-fluid.mx-auto.d-block{:src => '/prodpic.png'}
 
 .container.overflow-auto
   .row.flex-nowrap.row-flex
-    .col-fluid.mx-auto.d-block
-      %span.fa.fa-heart.checked.fa-2x
-      %span.fa.fa-heart.checked.fa-2x
-      %span.fa.fa-heart.checked.fa-2x
-      %span.fa.fa-heart.fa-2x
-      %span.fa.fa-heart.fa-2x
+    .col.d-flex.flex-column-reverse.col-prod-img
+      %img.img-prod.mx-auto{:src => '/prodpic.png'}
+
+  .row.flex-nowrap.row-flex.mt-4    
+    .product-desc.d-flex.justify-content-left
+      %h5 Descrição
+  .row.flex-nowrap.row-flex.mt-1 
+    .product-desc.justify-content-left       
+      %lead comida deliciosa
+
+  
+  .wrapper.rating 
+    .row.flex-nowrap.row-flex.mt-4    
+      .product-desc.d-flex.justify-content-left
+        %h5 Avaliações 
+    .d-flex.justify-content-center.no-glutters
+      .wrapper.box-rating.col-lg-8.d-flex.justify-content-center
+        %span.fa.fa-heart.checked.fa-2x
+        %span.fa.fa-heart.checked.fa-2x
+        %span.fa.fa-heart.checked.fa-2x
+        %span.fa.fa-heart.fa-2x
+        %span.fa.fa-heart.fa-2x
+
+
