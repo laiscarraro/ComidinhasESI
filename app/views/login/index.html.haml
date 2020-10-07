@@ -24,8 +24,8 @@
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
                     = f.text_field :password, id: "login-password-text", type: "password", class: "login-text", onfocus: "addClassLoginPasswordHighlight()", onblur: "removeClassLoginPasswordHighlight()"
                     %button.password-visibility{:onclick => "toggleVisibility(event)"}
-                        %svg{:width => "30", :height =>"30", :viewBox =>"0 0 24 24"}
-                            <path id="eye" fill-rule="evenodd" clip-rule="evenodd" d="M23.6218 12C22.2897 6.82432 17.5914 3 11.9999 3C6.40836 3 1.71006 6.82432 0.37793 12C1.71006 17.1757 6.40836 21 11.9999 21C17.5914 21 22.2897 17.1757 23.6218 12ZM2.45711 12C3.7312 16.0581 7.52431 19 11.9999 19C16.4754 19 20.2686 16.0581 21.5426 12C20.2686 7.94186 16.4754 5 11.9999 5C7.52431 5 3.7312 7.94186 2.45711 12ZM11.9999 16C14.209 16 15.9999 14.2091 15.9999 12C15.9999 9.79086 14.209 8 11.9999 8C9.79074 8 7.99988 9.79086 7.99988 12C7.99988 14.2091 9.79074 16 11.9999 16ZM11.9999 14C13.1044 14 13.9999 13.1046 13.9999 12C13.9999 10.8954 13.1044 10 11.9999 10C10.8953 10 9.99988 10.8954 9.99988 12C9.99988 13.1046 10.8953 14 11.9999 14Z"/><path id="other-eye-cross" d="M5.52 2.4 L19.92 21.6"/><path id="eye-cross" d="M3.6 2.4 L18 21.6"/>
+                        %svg{:width => "30", :height =>"30", :viewBox =>"0 0 189 146", :fill =>"none"}
+                            <path id="eye" d="M8 75.0624C37.6975 -16.6874 151.302 -14.682 181 75.0624C143.76 162.801 45.2398 157.787 8 75.0624Z"/><circle id="eye-ball" cx="95" cy="73" r="23"/><path id="other-eye-cross" d="M47 10 L170 136"/><path id="eye-cross" d="M31 10 L154 136"/>
                     %label.login-label{:id => "login-password-label", :for => "password"}Senha
             .row.mt-5.mb-3
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
@@ -106,7 +106,7 @@
         if(password.getAttribute("type") == "password") {
             password.setAttribute("type", "text");
             document.getElementById("eye").classList.add("password-visible-color");
-            document.getElementById("eye").classList.add("password-visible-fill-color");
+            document.getElementById("eye-ball").classList.add("password-visible-color");
             document.getElementById("eye-cross").classList.add("password-visible-color");
             document.getElementById("eye-cross").classList.add("password-visible-cross");
             document.getElementById("other-eye-cross").classList.add("password-visible-cross");
@@ -114,7 +114,7 @@
         else {
             password.setAttribute("type", "password");
             document.getElementById("eye").classList.remove("password-visible-color");
-            document.getElementById("eye").classList.remove("password-visible-fill-color");
+            document.getElementById("eye-ball").classList.remove("password-visible-color");
             document.getElementById("eye-cross").classList.remove("password-visible-color");
             document.getElementById("eye-cross").classList.remove("password-visible-cross");
             document.getElementById("other-eye-cross").classList.remove("password-visible-cross");
