@@ -25,18 +25,20 @@ span.fa.fa-heart.checked {
   height: auto;
   width: 100%;
   padding-left: 20px;  
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .product-desc lead{
-  font-weight: 400 !important;
+  font-weight: 00 !important;
   font-size: 0.8em;
 }
 
 .box-rating{
   padding:0; 
-  margin:0; 
+  margin:0;    
+  border-color: rgba(0, 0, 0, 0.15) !important;
 }
+
 .category-desc{
   padding: 6px 14px;
   border-radius: 10px;
@@ -44,20 +46,32 @@ span.fa.fa-heart.checked {
   color: black;
   background-color: white;  
   border: 1px solid lightgray;
-  font-weight: 700;
+  font-weight: 900;
   text-align: center;
 }
 
-.btn-rating {
- position:relative;
+.btn-buy, .btn-call{
+  background-color: #F78100 !important;
+  padding:0;
+  margin:0;
+  border: none;
 }
 
-h5 h1{
-  font-weight: 700;
+.product-desc b , h2{
+  font-weight: 700 !important;  
+
 }
 
-button{
+.box-rating button{
   color: black !important;  
-  border-left: none;
-  border-right: none;
+ // border-left: none;
+  //border-bottom: none;
+ border-color: rgba(0, 0, 0, 0.15) !important;
+
+}
+
+.row-hr{
+  border-style:ridge;
+  border-color:  rgba(0, 0, 0, 0.11);
+  border-top:1px;
 }

@@ -1,5 +1,5 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
-%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap", :rel => "stylesheet"}/
+%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
 
 
 
@@ -19,7 +19,7 @@
 
   .row.flex-nowrap.row-flex.mt-4    
     .product-desc.d-flex.justify-content-left
-      %h5 Descrição
+      %b Descrição
   .row.flex-nowrap.row-flex.mt-1 
     .product-desc.justify-content-left.ml-2       
       %lead comida deliciosa
@@ -27,18 +27,18 @@
 
   .row.flex-nowrap.row-flex.mt-5
     .product-desc.d-flex.justify-content-left
-      %h5 Avaliações 
+      %b Avaliações 
   .container.mt-2  
     .d-flex.justify-content-center
       .container.box-rating.col-lg-8.justify-content-center.border.border-secondary
         .row.align-items-start.justify-content-center
-          %h1 5
+          %h2.mt-2 3
         .row.align-items-center.justify-content-center.mt-1
-          %span.fa.fa-heart.checked.fa-2x
-          %span.fa.fa-heart.checked.fa-2x
-          %span.fa.fa-heart.checked.fa-2x
-          %span.fa.fa-heart.fa-2x
-          %span.fa.fa-heart.fa-2x
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.fa-lg.p-1
+          %span.fa.fa-heart.fa-lg.p-1
         .row.align-items-end.justify-content-center.no-gutters.mt-3
           .col.col-btn
             %button.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Avaliar
@@ -48,7 +48,7 @@
 
   .row.flex-nowrap.row-flex.mt-5
     .product-desc.d-flex.justify-content-left
-      %h5 Categorias
+      %b Categorias
   .container.overflow-auto    
     .row.flex-nowrap.row-flex.align-items-center
       .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 aaa
@@ -58,4 +58,19 @@
 
   .row.flex-nowrap.row-flex.mt-5
     .product-desc.d-flex.justify-content-left
-      %h5 Fale com o vendedor  
+      %b Fale com o vendedor!  
+  .row.align-items-end.justify-content-center.mt-3
+    .col-0
+    .col.col-btn
+      %button.btn.btn-secondary.btn-call.w-100.p-2{:type => "button"} 
+        %i.fa.fa-whatsapp
+        Enviar Mensagem
+    .col-0
+    .col.col-btn
+      %button.btn.btn-secondary.btn-buy.w-100.p-2{:type => "button"} 
+        %i.fa.fa-shopping-cart
+        Comprar
+    .col-0 
+  .row.row-hr.align-items-end.justify-content-center.no-gutters.mt-5
+  .wrapper  
+  .wrapper
