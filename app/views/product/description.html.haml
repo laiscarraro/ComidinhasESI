@@ -8,7 +8,7 @@
     .row.align-items-center
       = link_to :back, :class => "no-link mr-4 ml-2" do
         %i.fas.fa-arrow-left{style: "font-size: 20px"}
-      %b{style: "font-size: 16px"} product_name 
+      %b{style: "font-size: 16px"} product.name 
 
 
 .container.overflow-auto
@@ -16,24 +16,46 @@
     .col.d-flex.flex-column-reverse.col-prod-img
       %img.img-prod.mx-auto{:src => '/prodpic.png'}
 
+
   .row.flex-nowrap.row-flex.mt-4    
     .product-desc.d-flex.justify-content-left
       %h5 Descrição
   .row.flex-nowrap.row-flex.mt-1 
-    .product-desc.justify-content-left       
+    .product-desc.justify-content-left.ml-2       
       %lead comida deliciosa
 
-  
-  .wrapper.rating 
-    .row.flex-nowrap.row-flex.mt-4    
-      .product-desc.d-flex.justify-content-left
-        %h5 Avaliações 
-    .d-flex.justify-content-center.no-glutters
-      .wrapper.box-rating.col-lg-8.d-flex.justify-content-center
-        %span.fa.fa-heart.checked.fa-2x
-        %span.fa.fa-heart.checked.fa-2x
-        %span.fa.fa-heart.checked.fa-2x
-        %span.fa.fa-heart.fa-2x
-        %span.fa.fa-heart.fa-2x
+
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %h5 Avaliações 
+  .container.mt-2  
+    .d-flex.justify-content-center
+      .container.box-rating.col-lg-8.justify-content-center.border.border-secondary
+        .row.align-items-start.justify-content-center
+          %h1 5
+        .row.align-items-center.justify-content-center.mt-1
+          %span.fa.fa-heart.checked.fa-2x
+          %span.fa.fa-heart.checked.fa-2x
+          %span.fa.fa-heart.checked.fa-2x
+          %span.fa.fa-heart.fa-2x
+          %span.fa.fa-heart.fa-2x
+        .row.align-items-end.justify-content-center.no-gutters.mt-3
+          .col.col-btn
+            %button.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Avaliar
+          .col.col-btn
+            %button.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Ver avaliações
 
 
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %h5 Categorias
+  .container.overflow-auto    
+    .row.flex-nowrap.row-flex.align-items-center
+      .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 aaa
+      .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 aaa
+      .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 aaa
+      .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 aaa
+
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %h5 Fale com o vendedor  

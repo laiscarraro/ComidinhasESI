@@ -30,10 +30,34 @@ span.fa.fa-heart.checked {
 
 .product-desc lead{
   font-weight: 400 !important;
+  font-size: 0.8em;
 }
 
-.wrapper .box-rating{
-  border:2px;
-  border-color: grey;
-  border-style: groove;
+.box-rating{
+  padding:0; 
+  margin:0; 
+}
+.category-desc{
+  padding: 6px 14px;
+  border-radius: 10px;
+  margin: 10px;
+  color: black;
+  background-color: white;  
+  border: 1px solid lightgray;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-rating {
+ position:relative;
+}
+
+h5 h1{
+  font-weight: 700;
+}
+
+button{
+  color: black !important;  
+  border-left: none;
+  border-right: none;
 }
