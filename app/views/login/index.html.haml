@@ -24,7 +24,7 @@
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
                     = f.text_field :password, id: "login-password-text", type: "password", class: "login-text", onfocus: "addClassLoginPasswordHighlight()", onblur: "removeClassLoginPasswordHighlight()"
                     %button.password-visibility{:onclick => "toggleVisibility(event)"}
-                        %svg{:width => "30", :height =>"30", :viewBox =>"0 0 189 146", :fill =>"none"}
+                        %svg{:width => "20", :height =>"20", :viewBox =>"0 0 189 146", :fill =>"none"}
                             <path id="eye" d="M8 75.0624C37.6975 -16.6874 151.302 -14.682 181 75.0624C143.76 162.801 45.2398 157.787 8 75.0624Z"/><circle id="eye-ball" cx="95" cy="73" r="23"/><path id="other-eye-cross" d="M47 10 L170 136"/><path id="eye-cross" d="M31 10 L154 136"/>
                     %label.login-label{:id => "login-password-label", :for => "password"}Senha
             .row.mt-5.mb-3
