@@ -58,7 +58,12 @@ span.fa.fa-heart.checked {
   background-color: #F78100 !important;
   padding:0;
   margin:0;
-  border: none;
+  border: none;  
+}
+.btn-buy:hover, .btn-call:hover{
+  background-color:#F78100 !important; 
+  box-shadow: 5px 5px 30px 5px #F78100;
+  transition: 2s; 
 }
 
 .product-desc b , h2{
@@ -111,5 +116,11 @@ margin-bottom: -20px;
 .row-prod-img{
   border-style:ridge;
   border-color:  rgba(0, 0, 0, 0);
-  border-bottom-color:  rgba(0, 0, 0, 0.1); 
+  border-bottom-color:  rgba(0, 0, 0, 0.1);
+  transition: 0.5s; 
+}
+.btn-rating:hover{
+  background-color: #F78100 !important;
+  color:white !important;
+  transition: 1s;
 }
