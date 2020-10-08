@@ -3,6 +3,14 @@ class ProductController < ApplicationController
     @categories = Category.all
   end
 
+  def description
+    @prod_desc = Product.find_by(id:params[:id])
+    @cat_desc = @prod_desc.categories  
+    render 'description'
+  end
+
+  
+
   def new
     @product = Product.new
     initialize_categories
@@ -31,5 +39,8 @@ class ProductController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name, :price, :description, :photo, categories: [])
-  end
+  end 
+
 end
+
+

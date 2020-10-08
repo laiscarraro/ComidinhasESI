@@ -75,3 +75,28 @@ span.fa.fa-heart.checked {
   border-color:  rgba(0, 0, 0, 0.11);
   border-top:1px;
 }
+
+.seller-pic{
+  display: block;
+  max-width:100%;
+  border-radius: 50%;
+  height: auto;
+  padding:0;
+}
+.box-pic{
+background-color: red;
+border-radius:50%;
+padding:0;
+}
+
+.footer{  
+  border-style:ridge;  
+}
+
+.footer-text{
+  margin-left: -35px;
+}
+
+.footer-prod-desc{
+display: inline;
+}
