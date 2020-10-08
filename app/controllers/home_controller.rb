@@ -4,7 +4,7 @@ class HomeController < ApplicationController
         @products = Product.all
     end
 
-    def abc
+    def search
         @categories = Category.all
         @products = Product.where("name LIKE ?","%"+params[:prodname]+"%")     
         render 'index'
