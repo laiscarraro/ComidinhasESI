@@ -11,7 +11,7 @@ span.fa.fa-heart.checked {
   }
 
 .img-prod{ 
- display: block;
+  display: inline-block;
   max-width: 100%;  
   height: auto;
  /* border-style:ridge;
@@ -88,7 +88,6 @@ span.fa.fa-heart.checked {
   padding:0;
 }
 .box-pic{
-background-color: red;
 border-radius:50%;
 padding:0;
 }
@@ -101,6 +100,16 @@ padding:0;
   margin-left: -35px;
 }
 
-.footer-prod-desc{
-//display: inline;
+.box-price{
+background-color: #F78100 !important;
+border-radius: 5px 5px;
+color: white;
+position: absolute;
+margin-bottom: -20px;
+}
+
+.row-prod-img{
+  border-style:solid;
+  border-color:  rgba(0, 0, 0, 0);
+  border-bottom-color:  rgba(0, 0, 0, 0.15); 
 }
