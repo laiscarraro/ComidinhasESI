@@ -4,12 +4,14 @@ class ProductController < ApplicationController
   end
 
   def show
-    @prod_desc = Product.find_by(id:params[:id])
-    @cat_desc = @prod_desc.categories  
-    render 'description'
-  end
-
-  
+    @products = Product.new
+    if @prod_desc = Product.find_by(id:params[:id])      
+      @cat_desc = @prod_desc.categories  
+      render 'description'
+    else
+      redirect_to root_path
+    end  
+  end  
 
   def new
     @product = Product.new
@@ -42,5 +44,3 @@ class ProductController < ApplicationController
   end 
 
 end
-
-
