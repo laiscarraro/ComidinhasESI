@@ -8,7 +8,7 @@
         .product-card
             %img.product-img{:src => url_for(product.photo)}
             .description 
-                =link_to product.name,product.name, {'href'=>"/product/description?id="+product.id.to_s, :class=>"product-text stretched-link"}
+                =link_to product.name,product_path(id: product.id),{:class=>"product-text stretched-link"}
                 .vendor-text Wilson
             .bottom-card
                 %b.price-text R$ #{"%0.2f" % [product.price]}

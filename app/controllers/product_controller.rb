@@ -3,7 +3,7 @@ class ProductController < ApplicationController
     @categories = Category.all
   end
 
-  def description
+  def show
     @prod_desc = Product.find_by(id:params[:id])
     @cat_desc = @prod_desc.categories  
     render 'description'
