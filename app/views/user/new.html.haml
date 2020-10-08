@@ -12,7 +12,13 @@
             - @user.errors.each do |attribute, error|
             %li.text-warning= error
     %div.row
-        = form_for @user, url: {action: "create"}, html: {multipart: true, class: "col-sm"} do |f|
+        = form_for @user, url: {action: "create"}, html: { class: "col-sm"} do |f|
+            %div.form-group
+                %div.form-row
+                    %label{:class => "label-cadastro"} Foto
+                %div.form-row
+                    = f.file_field :photo, id: "avatar", class: 'hidden_input_file', accept:'image/*'
+                    %label{:for => "avatar", class: "m-auto btn btn-comidinhas", id: "label_input_file"} Adicione uma foto
             %div.form-group
                 %div.form-row
                     %label{:for => "email", :class => "label-cadastro"} Email
@@ -44,7 +50,7 @@
             %div.form-group.form-check
                 %input.form-input-check{:type => "checkbox", :id => "termos"}
                 %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
-            = f.submit("criar", id: "create", class: "btn btn-primary")
+            = f.submit("Cadastrar Usuário", id: "create", class: "btn btn-primary")
     %div.row
         .col-sm
             %br

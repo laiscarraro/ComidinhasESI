@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :password, presence: { message: "É obrigatório informar a senha" },
             confirmation: { message: "Senha não corresponde" }
 
+  has_one_attached :avatar
 end
