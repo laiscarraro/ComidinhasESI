@@ -1,10 +1,4 @@
-class HomeController < ApplicationController
-
-    def self.prodesc
-        @prod_desc = Product.find_by(id:params[:id])
-        @cat_desc = @prod_desc.categories  
-        render 'description'        
-    end
+class HomeController < ApplicationController   
 
     def index
         @categories = Category.all
