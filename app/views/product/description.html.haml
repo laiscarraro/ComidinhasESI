@@ -54,9 +54,8 @@
   .container.overflow-auto    
     .row.flex-nowrap.row-flex.align-items-center    
       - @cat_desc.each do |category|
-        .category-desc.align-items-center.col-lg-1.col-md-2.col-sm-2.col-3 #{category.name}
+        =link_to category.name, product_category_path(category.id),{:class=> "category-desc align-items-center col-lg-1 col-md-2 col-sm-2 col-3"}           
       
-
   .row.flex-nowrap.row-flex.mt-5
     .product-desc.d-flex.justify-content-left
       %b Fale com o vendedor!  

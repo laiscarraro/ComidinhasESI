@@ -52,6 +52,14 @@ span.fa.fa-heart.checked {
   border: 1px solid lightgray;
   font-weight: 900;
   text-align: center;
+  text-decoration: none;
+}
+.category-desc:hover{
+  text-decoration: none;
+  color: white;
+  background-color:#F78100 !important; 
+  box-shadow: 1px 1px 10px 1px #F78100;
+  transition: 0.5s; 
 }
 
 .btn-buy, .btn-call{
