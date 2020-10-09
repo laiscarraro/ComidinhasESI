@@ -7,21 +7,21 @@ Dado('que estou na página do usuário') do
   end
   
   Então('o usuário deve ser redirecionado para a página de adicionar produto') do
-    pending # Write code here that turns the phrase above into concrete actions
+    vistit 'product/new'
   end
   
   Quando('clico em produto') do
-    pending # Write code here that turns the phrase above into concrete actions
+    click_on 'product'
   end
   
   Então('o usuario deve ser redirecionado para a página do produto') do
-    pending # Write code here that turns the phrase above into concrete actions
+    #visit 'product'
   end
   
   Quando('clico sair') do
-    pending # Write code here that turns the phrase above into concrete actions
+    click_on 'logout'
   end
   
   Então('o usuário deve ser redirecionado para a página de login') do
-    pending # Write code here that turns the phrase above into concrete actions
+    #visit 'login'
   end
