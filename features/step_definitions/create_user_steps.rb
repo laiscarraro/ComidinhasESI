@@ -5,9 +5,13 @@ Dado('que estou na paǵina de cadastro de usuário') do
   Quando('clico termos') do
     check 'termos'
   end
+
+  Quando('clico em fazer upload de um avatar') do
+    attach_file('avatar', File.join(Rails.root, 'public', 'estudante.jpg'))
+  end
   
   Quando('clico em criar') do
-    click_on 'criar'
+    click_on 'create'
   end
   
   Então('ser redirecionado para a home') do

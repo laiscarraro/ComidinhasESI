@@ -1,4 +1,5 @@
-class HomeController < ApplicationController
+class HomeController < ApplicationController   
+
     def index
         @categories = Category.all
         @products = Product.all
@@ -17,4 +18,5 @@ class HomeController < ApplicationController
 
         render 'index'
     end
+    
 end

@@ -1,0 +1,81 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
+
+
+
+%nav.navbar-white.bg-white.shadow.py-4
+  .container-fluid
+    .row.align-items-center
+      = link_to :back, :class => "no-link mr-4 ml-2" do
+        %i.fas.fa-arrow-left{style: "font-size: 20px"}
+      %b{style: "font-size: 16px"} #{@product.name} 
+
+
+.container.overflow-auto  
+  .row.row-prod-img.flex-nowrap.row-flex
+    .col.d-flex.flex-column-reverse.col-prod-img
+      %img.img-prod.mx-auto{:src => url_for(@product.photo)}
+      .d-flex.flex-row.box-price.col-3.justify-content-center.align-self-end.mr-3
+        .row.justify-content-center.p-2
+          %b R$ #{@product.price}
+
+  .row.flex-nowrap.row-flex.mt-4    
+    .product-desc.d-flex.justify-content-left
+      %b Descrição
+  .row.flex-nowrap.row-flex.mt-1 
+    .product-desc.justify-content-left.ml-2       
+      %lead #{@product.description}
+  .row
+
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %b Avaliações 
+  .container.mt-2  
+    .d-flex.justify-content-center
+      .container.box-rating.col-lg-8.justify-content-center.border.border-secondary
+        .row.align-items-start.justify-content-center
+          %h2.mt-2 3
+        .row.align-items-center.justify-content-center.mt-1
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.checked.fa-lg.p-1
+          %span.fa.fa-heart.fa-lg.p-1
+          %span.fa.fa-heart.fa-lg.p-1
+        .row.align-items-end.justify-content-center.no-gutters.mt-3
+          .col.col-btn
+            %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Avaliar
+          .col.col-btn
+            %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Ver avaliações
+
+
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %b Categorias
+  .container.overflow-auto    
+    .row.flex-nowrap.row-flex.align-items-center    
+      - @categories.each do |category|
+        =link_to category.name, home_category_path(id:category.id),{:class=> "category-desc align-items-center col-lg-1 col-md-2 col-sm-2 col-3"}           
+      
+  .row.flex-nowrap.row-flex.mt-5
+    .product-desc.d-flex.justify-content-left
+      %b Fale com o vendedor!  
+  .row.align-items-end.justify-content-center.mt-3
+    .col-2
+    .col.col-btn
+      %button.btn.btn-secondary.btn-call.w-100.p-2{:type => "button"} 
+        %i.fa.fa-whatsapp
+        Enviar Mensagem
+    .col-2
+  .row.row-hr.align-items-end.justify-content-center.no-gutters.mt-5.mb-1
+  .wrapper.footer-prod-desc    
+    .row.justify-content-center 
+      .col-2.col-lg-4.col-md-3.col-sm-3.col-xl-4     
+      .col-3.col-lg-2.col-md-2.col-sm-3.col-xl-2    
+        .container.box-pic.col-md-10.col-lg-8.col-sm-10.col-xl-7    
+          %img.seller-pic.mx-auto{:src => '/seller.png'}
+      .col-5
+        .container.footer-text
+          %p.mb-0 Vendido por 
+          %b.mb-0 Daniel
+      .col-3       
+ 
