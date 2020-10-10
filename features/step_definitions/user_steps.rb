@@ -3,15 +3,15 @@ Dado('que estou na página do usuário') do
   end
   
   Quando('clico em adicionar produto') do
-    click_on 'create_product'
+    click_on 'add_product'
   end
   
   Então('o usuário deve ser redirecionado para a página de adicionar produto') do
-    vistit 'product/new'
+    visit 'new'
   end
   
   Quando('clico em produto') do
-    click_on 'product'
+    #click_on 'product'
   end
   
   Então('o usuario deve ser redirecionado para a página do produto') do

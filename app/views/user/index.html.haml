@@ -2,12 +2,14 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 %div.container
     %div.laranja
+    %a{:href=>"#", id: "logout"}
+        %span.fas.fa-sign-out-alt
     %div.card
         %div.card-body
             %h3.card-title.text-center Jorge Almeida
             %p.card-text.text-center Está na biblioteca
             %ul.list-group.list-group-flush
-                %li.list-group-item Adicionar produto
+                %a{class: "add-product", id: "add_product", href: "product/new"}Adicionar produtos
                 %li.list-group-item Localização
                 %li.list-group-item Vincular conta
     %h5 Produtos 
