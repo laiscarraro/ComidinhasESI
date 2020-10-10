@@ -4,9 +4,9 @@ class ProductController < ApplicationController
   end
 
   def show
-    @products = Product.new
-    if @prod_desc = Product.find_by(id:params[:id])      
-      @cat_desc = @prod_desc.categories  
+    @product = Product.new
+    if @product = Product.find_by(id:params[:id])      
+      @categories = @product.categories  
       render 'description'
     else
       redirect_to root_path

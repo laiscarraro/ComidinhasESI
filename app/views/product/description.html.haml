@@ -8,23 +8,23 @@
     .row.align-items-center
       = link_to :back, :class => "no-link mr-4 ml-2" do
         %i.fas.fa-arrow-left{style: "font-size: 20px"}
-      %b{style: "font-size: 16px"} #{@prod_desc.name} 
+      %b{style: "font-size: 16px"} #{@product.name} 
 
 
 .container.overflow-auto  
   .row.row-prod-img.flex-nowrap.row-flex
     .col.d-flex.flex-column-reverse.col-prod-img
-      %img.img-prod.mx-auto{:src => url_for(@prod_desc.photo)}
+      %img.img-prod.mx-auto{:src => url_for(@product.photo)}
       .d-flex.flex-row.box-price.col-3.justify-content-center.align-self-end.mr-3
         .row.justify-content-center.p-2
-          %b R$ #{@prod_desc.price}
+          %b R$ #{@product.price}
 
   .row.flex-nowrap.row-flex.mt-4    
     .product-desc.d-flex.justify-content-left
       %b Descrição
   .row.flex-nowrap.row-flex.mt-1 
     .product-desc.justify-content-left.ml-2       
-      %lead #{@prod_desc.description}
+      %lead #{@product.description}
   .row
 
   .row.flex-nowrap.row-flex.mt-5
@@ -53,7 +53,7 @@
       %b Categorias
   .container.overflow-auto    
     .row.flex-nowrap.row-flex.align-items-center    
-      - @cat_desc.each do |category|
+      - @categories.each do |category|
         =link_to category.name, home_category_path(id:category.id),{:class=> "category-desc align-items-center col-lg-1 col-md-2 col-sm-2 col-3"}           
       
   .row.flex-nowrap.row-flex.mt-5
