@@ -15,5 +15,5 @@ Dado('que estou na página do usuário') do
   end
   
   Então('o usuário deve ser redirecionado para a página de login') do
-    visit 'login'
+    visit 'login/index'
   end
