@@ -73,3 +73,6 @@ myapp_test
 comidinhas_dev.sqlite3
 comidinhas_test.sqlite3
 env
+.project
+.dbeaver/credentials-config.json
+.dbeaver/data-sources.json

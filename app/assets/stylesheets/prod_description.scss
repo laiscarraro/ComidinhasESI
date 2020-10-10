@@ -1,0 +1,135 @@
+// Place all the styles related to the prod_description controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+  font-family: 'Roboto', sans-serif;  
+}
+
+span.fa.fa-heart.checked {
+    color: red;
+  }
+
+.img-prod{ 
+  display: inline-block;
+  max-width: 100%;  
+  height: auto;
+ /* border-style:ridge;
+  border-color:  rgba(0, 0, 0, 0.11);
+  border-top:1px;*/
+  z-index:-1 !important;
+}
+
+.col-prod-img{
+  padding: 0 !important;
+}
+
+.product-desc{
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  padding-left: 20px;  
+  font-weight: 400;
+}
+
+.product-desc lead{
+  font-weight: 00 !important;
+  font-size: 0.8em;
+}
+
+.box-rating{
+  padding:0; 
+  margin:0;    
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.category-desc{
+  padding: 6px 14px;
+  border-radius: 10px;
+  margin: 10px;
+  color: black;
+  background-color: white;  
+  border: 1px solid lightgray;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+}
+.category-desc:hover{
+  text-decoration: none;
+  color: white;
+  background-color:#F78100 !important; 
+  box-shadow: 1px 1px 10px 1px #F78100;
+  transition: 0.5s; 
+}
+
+.btn-buy, .btn-call{
+  background-color: #F78100 !important;
+  padding:0;
+  margin:0;
+  border: none;  
+}
+.btn-buy:hover, .btn-call:hover{
+  background-color:#F78100 !important; 
+  box-shadow: 5px 5px 30px 5px #F78100;
+  transition: 2s; 
+}
+
+.product-desc b , h2{
+  font-weight: 700 !important;  
+
+}
+
+.box-rating button{
+  color: black !important;  
+ // border-left: none;
+  //border-bottom: none;
+ border-color: rgba(0, 0, 0, 0.15) !important;
+
+}
+
+.row-hr{
+  border-style:ridge;
+  border-color:  rgba(0, 0, 0, 0.11);
+  border-top:1px;
+}
+
+.seller-pic{
+  display: block;
+  max-width:100%;
+  border-radius: 50%;
+  height: auto;
+  padding:0;
+}
+.box-pic{
+border-radius:50%;
+padding:0;
+}
+
+.footer{  
+  border-style:ridge;  
+}
+
+.footer-text{
+  margin-left: -35px;
+}
+
+.box-price{
+background-color: #F78100 !important;
+border-radius: 5px 5px;
+color: white;
+position: absolute;
+margin-bottom: -20px;
+}
+
+.row-prod-img{
+  border-style:ridge;
+  border-color:  rgba(0, 0, 0, 0);
+  border-bottom-color:  rgba(0, 0, 0, 0.1);
+  transition: 0.5s; 
+}
+.btn-rating:hover{
+  background-color: #F78100 !important;
+  color:white !important;
+  box-shadow: 5px 5px 30px 5px #F78100;
+  transition: 1s;
+}
