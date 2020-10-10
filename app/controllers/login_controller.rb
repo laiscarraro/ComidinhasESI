@@ -15,9 +15,9 @@ class LoginController < ApplicationController
         @user = User.find_by_username(params[:user])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to '/home/index'
+            redirect_to root_path
         else
-            render js: "alert('Erro de Autenticação: Verifique Usuário e Senha!');"
+            render js: "alert('Senha incorreta');"
         end
     end
 end

@@ -10,19 +10,16 @@ Dado que estou na tela de login
 Quando insiro meu nome de usuário 'usuario'
 E insiro minha senha 'senha'
 E aperto em login
-Então devo estar logado no sistema
+Então devo ser redirecionado para a página de home
 
 Cenário: Usuário inexistente
 Dado que estou na tela de login
-Quando eu aperto a barra de usuário
-E insiro um usuário errado 'inexistente'
+Quando insiro um usuário errado 'inexistente'
 Então devo ver uma mensagem de erro de usuário
 
 Cenário: Senha incorreta
 Dado que estou na tela de login
-Quando eu aperto a barra de usuário
-E insiro meu nome de usuário correto 'usuario'
-E aperto a barra de senha
+Quando insiro meu nome de usuário correto 'usuario'
 E insiro a senha incorretamente 'errado'
 E aperto em login
 Então devo ver uma mensagem de erro de senha

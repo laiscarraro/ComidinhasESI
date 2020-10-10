@@ -11,7 +11,7 @@ Dado('que estou na paǵina de cadastro de usuário') do
   end
   
   Então('ser redirecionado para a home') do
-    visit root_path
+    expect(page).to have_current_path(root_path)
   end
   
   Dado('que estou na página de cadastro de usuário') do

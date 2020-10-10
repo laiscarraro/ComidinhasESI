@@ -20,10 +20,6 @@ Dado('que estou na tela de login') do
     click_on 'login-submit-btn'
   end
   
-  Então('devo estar logado no sistema') do
-    expect(session[:user_id]).to eq(User.order("id").last)
-  end
-  
   Quando('insiro um usuário errado {string}') do |string|
     fill_in 'user', :with => string
   end
@@ -44,3 +40,6 @@ Dado('que estou na tela de login') do
     expect(page).to have_content('Senha incorreta')
   end
   
+  Então('devo ser redirecionado para a página de home') do
+    expect(page).to have_current_path(root_path)
+  end
