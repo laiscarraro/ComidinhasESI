@@ -9,6 +9,7 @@ Para que eu possa avaliar produtos
 
 Cenário: Cadastro de usuário com sucesso
 Dado que estou na paǵina de cadastro de usuário
+Quando clico em fazer upload de um avatar
 Quando preencho o campo "email" com "maria@usp.br"
 Quando preencho o campo "username" com "Maria"
 Quando preencho o campo "password" com "senha123"
@@ -49,3 +50,13 @@ E preencho o campo "password_confirmation" com "senha1234"
 E clico em criar
 Então deverei ver a mensagem de erro "Senha não corresponde"
 
+Cenário: Cadastro de usuário com sucesso - sem foto
+Dado que estou na paǵina de cadastro de usuário
+Quando preencho o campo "email" com "maria@usp.br"
+Quando preencho o campo "username" com "Maria"
+Quando preencho o campo "password" com "senha123"
+Quando preencho o campo "password_confirmation" com "senha123"
+E clico em termos
+E clico em criar
+Então o usuario deve ter sido salvo no banco de dados 
+E ser redirecionado para a home

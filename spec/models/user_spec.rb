@@ -2,6 +2,19 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe User, type: :model do
+  before(:each) do 
+    @avatar = fixture_file_upload(File.join(Rails.root, 'public', 'estudante.jpg'))
+  end
+
+  it 'usuario valido' do
+    user = User.new
+    user.username = "Reinaldo do Dogão"
+    user.email = "reinaldoDoDogao@gmail.com"
+    user.password = "Rei123"
+    user.avatar = @avatar
+    expect(user).to be_valid
+  end
+
   it 'invalido sem dados' do
     user = User.new
     expect(user).not_to be_valid
@@ -10,20 +23,15 @@ RSpec.describe User, type: :model do
   it 'invalido sem email' do
     user = User.new
     user.username = "teste"
-    user.password_digest = "senha"
+    user.password = "senha"
     expect(user).not_to be_valid
   end
 
-  it 'invalido sem email e username' do
-    user = User.new
-    user.password_digest = "senha"
-    expect(user).not_to be_valid
-  end
 
   it 'invalido sem username' do
     user = User.new
     user.email = "teste@gmail.com"
-    user.password_digest = "senha"
+    user.password = "senha"
     expect(user).not_to be_valid
   end
 
@@ -34,16 +42,12 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
-  it 'invalido sem senha e email' do
+  it 'valido sem avatar' do
     user = User.new
-    user.username = "teste"
-    expect(user).not_to be_valid
-  end
-
-  it 'invalido username e senha' do
-    user = User.new
-    user.email = "teste@gmail.com"
-    expect(user).not_to be_valid
+    user.username = "Reinaldo do Dogão"
+    user.email = "reinaldoDoDogao@gmail.com"
+    user.password = "Rei123"
+    expect(user).to be_valid
   end
 
 end
