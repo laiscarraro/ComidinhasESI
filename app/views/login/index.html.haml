@@ -1,0 +1,123 @@
+.login-wrapper
+    .container
+        .row
+            .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+            %h6.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                =image_tag "three_cookies.svg"
+        .row.mt-1
+            .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+            %p.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.login-font Para anunciar produtos, você precisa estar logado
+    = form_with url: {action: "authenticate"} do |f|
+        .container
+            .row.mt-5
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-user"}
+                    = f.text_field :user, id: "login-user-text", class: "login-text", onfocus: "addClassLoginUserHighlight()", onblur: "removeClassLoginUserHighlight()"
+                    %svg.login-user-check{:id => "user-check", :width => "15", :height => "15", :viewBox =>"0 0 100 100", :fill => "none"}
+                        <path id="check" d="M10 40 L35 65 L85 15" stroke-width="15"/>
+                    %label.login-label{:id => "login-user-label", :for => "user"}Usuário
+            .row
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                    %p.login-warning.text-danger{:id => "invalid-user"}Usuário inexistente
+            .row.mt-2
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
+                    = f.text_field :password, id: "login-password-text", type: "password", class: "login-text", onfocus: "addClassLoginPasswordHighlight()", onblur: "removeClassLoginPasswordHighlight()"
+                    %button.password-visibility{:onclick => "toggleVisibility(event)"}
+                        %svg{:width => "20", :height =>"20", :viewBox =>"0 0 189 146", :fill =>"none"}
+                            <path id="eye" d="M8 75.0624C37.6975 -16.6874 151.302 -14.682 181 75.0624C143.76 162.801 45.2398 157.787 8 75.0624Z"/><circle id="eye-ball" cx="95" cy="73" r="23"/><path id="other-eye-cross" d="M47 10 L170 136"/><path id="eye-cross" d="M31 10 L154 136"/>
+                    %label.login-label{:id => "login-password-label", :for => "password"}Senha
+            .row.mt-5.mb-3
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
+                    %button.login-submit-btn{:id => "login-submit-btn", :type => "submit", :onclick => "checkSubmit(user)(password)(event)"}Logar
+            .row
+                .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
+                .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.text-center
+                    %p Não tem conta? <a class="sign-up-link" href="/user/new">Cadastre-se</a>
+:javascript
+    function addClassLoginUserHighlight() {
+        document.getElementById("login-user").classList.add("login-border");
+        document.getElementById("login-user-label").classList.add("login-label-float");
+        document.getElementById("user-check").classList.remove("user-check-draw");
+        document.getElementById("invalid-user").style.visibility = "hidden";
+    }
+
+    function removeClassLoginUserHighlight() {
+        document.getElementById("login-user").classList.remove("login-border");
+
+        if(document.getElementById("login-user-text").value == "") {
+            document.getElementById("login-user-label").classList.remove("login-label-float");
+        }
+        else {
+            checkUserExists("/login/user_exists").then(function() {
+                document.getElementById("user-check").classList.add("user-check-draw");
+            }, function() {
+                document.getElementById("invalid-user").style.visibility = "visible";
+            });
+        }
+    }
+
+    const checkSubmit = (user) => (password) => {
+        return function(e) {
+            if(user.value == "" || password.value == "") {
+                alert("Preencha os campos de Usuário e Senha!");
+                e.preventDefault();
+            }
+        }
+    }
+
+    function checkUserExists(url) {
+        return new Promise(function(resolve, reject) {
+            var params = '?user='.concat(document.getElementById("login-user-text").value);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url.concat(params), true);
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4 && xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if(response.message == "true")
+                        resolve();
+                    else
+                        reject();
+                }
+            };
+            xhr.send();
+        });
+    }
+
+    function addClassLoginPasswordHighlight() {
+        document.getElementById("login-password").classList.add("login-border");
+        document.getElementById("login-password-label").classList.add("login-label-float");
+    }
+
+    function removeClassLoginPasswordHighlight() {
+        document.getElementById("login-password").classList.remove("login-border");
+
+        if(document.getElementById("login-password-text").value == "") {
+            document.getElementById("login-password-label").classList.remove("login-label-float");
+        }
+    }
+
+    function toggleVisibility(e) {
+        e.preventDefault();
+
+        var password = document.getElementById("login-password-text");
+
+        if(password.getAttribute("type") == "password") {
+            password.setAttribute("type", "text");
+            document.getElementById("eye").classList.add("password-visible-color");
+            document.getElementById("eye-ball").classList.add("password-visible-color");
+            document.getElementById("eye-cross").classList.add("password-visible-color");
+            document.getElementById("eye-cross").classList.add("password-visible-cross");
+            document.getElementById("other-eye-cross").classList.add("password-visible-cross");
+        }
+        else {
+            password.setAttribute("type", "password");
+            document.getElementById("eye").classList.remove("password-visible-color");
+            document.getElementById("eye-ball").classList.remove("password-visible-color");
+            document.getElementById("eye-cross").classList.remove("password-visible-color");
+            document.getElementById("eye-cross").classList.remove("password-visible-cross");
+            document.getElementById("other-eye-cross").classList.remove("password-visible-cross");
+        }
+    }

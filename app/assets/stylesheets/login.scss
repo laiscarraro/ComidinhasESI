@@ -1,0 +1,172 @@
+.login-wrapper {
+    padding-top: 150px !important;
+}
+
+.login-font {
+    font-size: 12px;
+}
+
+.login {
+    &::before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #8F92A1;
+        height: 0px;
+        width: 85%;
+        left: 20px;
+        bottom: 45%;
+        z-index: 1; //!arrumar
+    }
+}
+
+.login-border {
+    &::after {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid #F78100;
+        height: 0px;
+        width: 0%; 
+        left: 20px;
+        bottom: 45%;
+        z-index: 2; //!arrumar
+        animation: draw-bottom 0.2s linear forwards;
+    }
+}
+
+@keyframes draw-bottom {
+    0% {
+        width: 0%;
+
+        border-bottom: 2px solid #F78100;
+    }
+
+    100% {
+        width: 100%;
+
+        border-bottom: 2px solid #F78100;
+    }
+}
+
+.login-text {
+    width: 90%;
+    position: relative;
+    padding-left: 15px;
+    border: none;
+    margin: 0;
+    outline-style: none;
+    background-color: transparent;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    z-index: 3; //!arrumar
+}
+
+.login-label {
+    position: relative;
+    color: #8F92A1;
+    display: block;
+    transform-origin: 0 0;
+    transform: translate(20px, -25px);
+    transition: all 0.2s;
+    z-index: 0; //!arrumar
+}
+
+.login-text:focus~.login-label {
+    color: #F78100;
+}
+
+.login-label-float {
+    transform: translate(5px, -45px) scale(0.8, 0.8);
+}
+
+.user-check-draw {
+    stroke: #F78100;
+    right: 0;
+    top: 10px;
+    stroke-dasharray: 110px;
+    stroke-dashoffset: 110px;
+    animation: draw-check 0.2s linear forwards;
+}
+
+@keyframes draw-check {
+    0% {
+        stroke-dashoffset: 110px;
+    }
+
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+
+.login-submit-btn {
+    width: 100%;
+    outline: none !important;
+    border: none;
+    height: 38px;
+    border-radius: 4px;
+    color: white;
+    background-color: #F78100;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.login-submit-btn:hover {
+    background-color: #F56000;
+}
+
+.sign-up-link {
+    color: #F78100;
+    text-emphasis: none;
+}
+
+.sign-up-link:hover {
+    color: #F56000;
+}
+
+.login-warning {
+    margin-left: 10px;
+    transform: translateY(-30px);
+    font-size: 14px;
+    visibility: hidden;
+}
+
+.password-visibility {
+    transform: translate(-7px, 3px);
+    position: absolute;
+    cursor: pointer;
+    z-index: 4;
+    border: none;
+    outline-style: none !important;
+    background-color: transparent;
+}
+
+#eye, #eye-ball {
+    stroke: #8F92A1;
+    stroke-width: 18;
+    transition: 0.2s;
+}
+
+#eye-cross {
+    stroke: #8F92A1;
+	stroke-width: 16;
+    stroke-linecap: round;
+	stroke-dashoffset: 0px;
+	stroke-dasharray:	177px;
+    transition: 0.2s;
+}
+
+#other-eye-cross {
+    stroke: #FFFFFF;
+	stroke-width: 18;
+	stroke-dashoffset: 0px;
+	stroke-dasharray:	177px;
+    transition: 0.2s;
+}
+
+.password-visible-color{
+    stroke: #000000 !important;
+}
+
+.password-visible-cross {
+    stroke-dashoffset: 177px !important;
+}
