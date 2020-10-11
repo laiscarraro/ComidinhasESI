@@ -5,10 +5,12 @@
     %div.sign-out-tela_usuario
         %a{:href=>"#", id: "logout", :class => "sign-out-tela_usuario"}
             %h3.fas.fa-sign-out-alt
-    = link_to user.username
-    %div.card
+    %div.img-user-center
+        %img{:src =>url_for(current_user.avatar), :class => "img-user"}
+    %div.card{:id => "first-card"}
         %div.card-body
-            %h3.card-title.text-center Jorge Almeida
+            %h3.card-title.text-center 
+                = current_user.username
             %p.card-text.text-center Está na biblioteca
             %ul.list-group.list-group-flush
                 %a{class: "add-product list-group-item", id: "add_product", href: "product/new"} Adicionar produtos
@@ -18,16 +20,19 @@
     %div.card
         %div.card-body
             %h5.card-title Coquinha gelada
-            %p.card-text Jorge Almeida
+            %p.card-text
+                = current_user.username
             %p.text-success Está na biblioteca
     %div.card
         %div.card-body
             %h5.card-title Panecone
-            %p.card-text Jorge Almeida
+            %p.card-text
+                = current_user.username
             %p.text-success Está na biblioteca
     %div.card
         %div.card-body
             %h5.card-title Pizza do rossi
-            %p.card-text Jorge Almeida
+            %p.card-text
+                = current_user.username
             %p.text-success Está na biblioteca
     

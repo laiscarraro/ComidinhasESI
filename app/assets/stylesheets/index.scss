@@ -2,6 +2,15 @@ body {
     background: white;
 }
 
+#first-card {
+    margin-top: 20%;
+    margin-bottom: 15%;
+}
+
+#first-card .card-body {
+    padding-top: 15%;
+}
+
 .card {
     border-radius: 2.5% !important;
     margin-top: 2.5%;
@@ -29,4 +38,13 @@ body {
     color: white;
     text-align: right;
     padding: 2%;
+}
+
+.img-user {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+    left: 35%;
 }
