@@ -10,12 +10,12 @@ Dado('que estou na página do usuário') do
     visit 'new'
   end
   
-  Quando('clico sair') do
+  Quando('clico em sair') do
     click_on 'logout'
   end
   
   Então('o usuário deve ser redirecionado para a página de login') do
-    visit 'login/index'
+    expect(page).to have_current_path('/login/index')
   end
 
   Dado('que estou cadastrado') do
