@@ -17,3 +17,13 @@ Dado('que estou na página do usuário') do
   Então('o usuário deve ser redirecionado para a página de login') do
     visit 'login/index'
   end
+
+  Dado('que estou cadastrado') do
+    @avatar = fixture_file_upload(File.join(Rails.root, 'public', 'estudante.jpg'))
+    user = User.new
+    user.email = "user@usp.br"
+    user.password = "senha"
+    user.username = "user"
+    user.avatar = @avatar
+    user.save
+  end 
