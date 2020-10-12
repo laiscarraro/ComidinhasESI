@@ -3,7 +3,6 @@
 Funcionalidade: Página de usuário
 Como usuário
 Para que eu possa visualizar meu perfil
-Para que eu possa visualizar meus produtos
 Para que eu possa adicionar produtos
 
 Cenário: Adição de produto 
