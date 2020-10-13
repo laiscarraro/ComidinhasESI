@@ -1,8 +1,8 @@
 #language: pt
 
 Funcionalidade: Barra de navegação
-Como usuário
-Preciso conseguir navegar no site
+Como usuário logado
+Preciso conseguir navegar no site e também visitar meu perfil
 
 Contexto: Logado
 Dado que estou cadastrado
