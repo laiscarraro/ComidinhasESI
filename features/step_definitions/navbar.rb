@@ -7,7 +7,7 @@ Quando('clico em perfil na navbar') do
 end
 
 Então('devo ter sido redirecionado para a página de login') do
-  expect(page).to have_current_path(user_path)
+  expect(page).to have_current_path(login_index_path)
 end
 
 Então('devo ser redirecionado para a página de perfil') do
