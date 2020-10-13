@@ -17,7 +17,7 @@
                 %div.form-row
                     %label{:class => "label-cadastro"} Foto
                 %div.form-row
-                    = f.file_field :photo, id: "avatar", class: 'hidden_input_file', accept:'image/*'
+                    = f.file_field :avatar, id: "avatar", class: 'hidden_input_file', accept:'image/*'
                     %label{:for => "avatar", class: "m-auto btn btn-comidinhas", id: "label_input_file"} Adicione uma foto
             %div.form-group
                 %div.form-row
@@ -56,4 +56,4 @@
             %br
             %p
                 Já tem uma conta? &nbsp;
-                %a{class: "login-link", href: "#"}>Login
+                %a{class: "login-link", href: "../login/index"}>Login

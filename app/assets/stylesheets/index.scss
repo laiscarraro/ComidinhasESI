@@ -1,0 +1,50 @@
+body {
+    background: white;
+}
+
+#first-card {
+    margin-top: 20%;
+    margin-bottom: 15%;
+}
+
+#first-card .card-body {
+    padding-top: 15%;
+}
+
+.card {
+    border-radius: 2.5% !important;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.laranja {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: 0px;
+    top: 0px;
+    background: #F78100;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    z-index: -100;
+}
+
+.list-group-item {
+    color: black !important;
+}
+
+.sign-out-tela_usuario {
+    color: white;
+    text-align: right;
+    padding: 2%;
+}
+
+.img-user {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+    left: 35%;
+}
