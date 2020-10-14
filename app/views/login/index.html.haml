@@ -9,7 +9,7 @@
             %p.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.login-font Para anunciar produtos, você precisa estar logado
     = form_with url: {action: "authenticate"} do |f|
         .container
-            .row.mt-5
+            .row.mt-0
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-user"}
                     = f.text_field :user, id: "login-user-text", class: "login-text", onfocus: "addClassLoginUserHighlight()", onblur: "removeClassLoginUserHighlight()"
@@ -20,7 +20,7 @@
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
                     %p.login-warning.text-danger{:id => "invalid-user"}Usuário inexistente
-            .row.mt-2
+            .row.mt-0
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .login.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10{:id => "login-password"}
                     = f.text_field :password, id: "login-password-text", type: "password", class: "login-text", onfocus: "addClassLoginPasswordHighlight()", onblur: "removeClassLoginPasswordHighlight()"
@@ -35,7 +35,9 @@
             .row
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.text-center
-                    %p Não tem conta? <a class="sign-up-link" href="/user/new">Cadastre-se</a>
+                    %p
+                        Não tem conta?
+                        =link_to " Cadastre-se", new_user_path(), :class => "sign-up-link"
 
     = render partial: 'navbar/navbar'
 
