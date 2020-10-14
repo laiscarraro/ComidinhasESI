@@ -47,7 +47,7 @@
                     %i.fas.fa-lock
                     = f.text_field :password_confirmation, type: "password", id: "password_confirmation", placeholder: "Senha", class: 'form-control'
                     %i.fas.fa-check
-            %div.form-group.form-check
+            %div.form-group.row.form-check
                 %input.form-input-check{:type => "checkbox", :id => "termos"}
                 %label{:for => "Termos"} Concordo com todos os <b>Termos e Condições</b>
             = f.submit("Cadastrar", id: "create", class: "btn btn-primary")
