@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     resources :user
+    get '/logout' => 'login#logout'
     root 'home#index'
     get 'home/index'
     get 'home/search' => 'home#search'   

@@ -1,5 +1,5 @@
 .login-wrapper
-    .container
+    .container.pb-5
         .row
             .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
             %h6.col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10
@@ -36,6 +36,9 @@
                 .col-xg-1.col-lg-1.col-md-1.col-sm-1.col-1
                 .col-xg-10.col-lg-10.col-md-10.col-sm-10.col-10.text-center
                     %p Não tem conta? <a class="sign-up-link" href="/user/new">Cadastre-se</a>
+
+    = render partial: 'navbar/navbar'
+
 :javascript
     function addClassLoginUserHighlight() {
         document.getElementById("login-user").classList.add("login-border");
