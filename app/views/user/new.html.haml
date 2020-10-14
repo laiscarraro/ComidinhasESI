@@ -22,28 +22,28 @@
             %div.form-group
                 %div.form-row
                     %label{:for => "email", :class => "label-cadastro"} Email
-                %div.form-row.input-icon
+                %div.input-icon
                     %i.fas.fa-envelope
                     = f.text_field :email, id: "email", placeholder: "comidinhas@usp.br", class: 'form-control'
                     %i.fas.fa-check
             %div.form-group
                 %div.form-row
                     %label{:for => "username", :class => "label-cadastro"} Login
-                %div.form-row.input-icon
+                %div.input-icon
                     %i.fas.fa-user
                     = f.text_field :username, id: "username", placeholder: "comidinhaseach", class: 'form-control'
                     %i.fas.fa-check
             %div.form-group
                 %div.form-row
                     %label{:for => "password", :class => "label-cadastro"} Senha
-                %div.form-row.input-icon
+                %div.input-icon
                     %i.fas.fa-lock
                     = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
                     %i.far.fa-eye
             %div.form-group
                 %div.form-row
                     %label{:for => "password_confirmation", :class => "label-cadastro"} Confirme a senha
-                %div.form-row.input-icon
+                %div.input-icon
                     %i.fas.fa-lock
                     = f.text_field :password_confirmation, type: "password", id: "password_confirmation", placeholder: "Senha", class: 'form-control'
                     %i.fas.fa-check
