@@ -1,4 +1,6 @@
 class ProductController < ApplicationController
+  before_action :require_permission, only: :destroy
+
   def initialize_categories
     @categories = Category.all
   end
@@ -38,6 +40,11 @@ class ProductController < ApplicationController
       initialize_categories
       render 'new'
     end
+  end
+
+  def destroy
+    Product.destroy(params[:id])
+    redirect_to root_path
   end
 
   private
