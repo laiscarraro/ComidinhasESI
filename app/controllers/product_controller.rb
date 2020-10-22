@@ -1,4 +1,6 @@
 class ProductController < ApplicationController
+  before_action :require_permission, only: :destroy
+
   def initialize_categories
     @categories = Category.all
   end
@@ -30,6 +32,8 @@ class ProductController < ApplicationController
       @product.categories << Category.find(product_params['categories'])
     end
 
+    @product.user = User.find(session[:user_id])
+
     if @product.save
       redirect_to root_path
     else 
@@ -38,9 +42,14 @@ class ProductController < ApplicationController
     end
   end
 
+  def destroy
+    Product.destroy(params[:id])
+    redirect_to root_path
+  end
+
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :photo, categories: [])
+    params.require(:product).permit(:name, :price, :description, :photo, :user, categories: [])
   end 
 
 end

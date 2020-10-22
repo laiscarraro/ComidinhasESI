@@ -5,12 +5,20 @@ Dado('que estou na página home') do
 
     photo = fixture_file_upload((File.join(Rails.root, 'public', 'cone.jpg')))
 
+    user = User.new
+    user.username = "Reinaldo do Dogão"
+    user.email = "reinaldoDoDogao@gmail.com"
+    user.password = "Rei123"
+    user.avatar = photo
+    user.save
+
     product1 = Product.new
     product1.name = "Cones do Wilson"
     product1.price = 6.00
     product1.description = "Cone bom para testes!"
     product1.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product1.photo = photo
+    product1.user = user
     product1.save
 
     product2 = Product.new
@@ -19,6 +27,7 @@ Dado('que estou na página home') do
     product2.description = "Um lanche para salvar seus projetos!"
     product2.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product2.photo = photo
+    product2.user = user
     product2.save
 
     product3 = Product.new
@@ -27,6 +36,7 @@ Dado('que estou na página home') do
     product3.description = "Cereais que ajudam você a não trancar o curso!"
     product3.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product3.photo = photo
+    product3.user = user
     product3.save
 
     category = Category.new
@@ -39,6 +49,7 @@ Dado('que estou na página home') do
     product4.description = "Pizzas caseiras e entregues na hora."
     product4.categories << Category.where("name LIKE 'Massa'")
     product4.photo = photo
+    product4.user = user
     product4.save
 
     visit 'home/index'

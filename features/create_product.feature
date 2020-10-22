@@ -2,6 +2,13 @@
 
 Funcionalidade: Adicionar Produto
 
+Contexto: Logado
+Dado que estou cadastrado
+E que estou na tela de login
+Quando insiro meu nome de usuário 'user'
+E insiro minha senha 'senha'
+E aperto em login
+
 Cenário: Adição de produto com sucesso
 Dado que estou na página de adição de produto
 Quando preencho o campo "Nome do Produto" com "Cone"

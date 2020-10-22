@@ -11,6 +11,15 @@ Dado('que estou na página do produto') do
     product1.description = "Cone bom para testes!"
     product1.categories << Category.where("name LIKE 'Doce'")
     product1.photo = photo
+
+    user = User.new
+    user.username = "Reinaldo do Dogão"
+    user.email = "reinaldoDoDogao@gmail.com"
+    user.password = "Rei123"
+    user.avatar = photo
+    user.save
+
+    product1.user = user
     
     product1.save       
 
