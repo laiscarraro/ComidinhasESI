@@ -30,6 +30,8 @@ class ProductController < ApplicationController
       @product.categories << Category.find(product_params['categories'])
     end
 
+    @product.user = User.find(session[:user_id])
+
     if @product.save
       redirect_to root_path
     else 
@@ -40,7 +42,7 @@ class ProductController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :photo, categories: [])
+    params.require(:product).permit(:name, :price, :description, :photo, :user, categories: [])
   end 
 
 end
