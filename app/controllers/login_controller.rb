@@ -20,4 +20,9 @@ class LoginController < ApplicationController
             render js: "alert('Senha incorreta');"
         end
     end
+
+    def logout      
+      session[:user_id] = nil
+      redirect_to login_index_path
+    end 
 end

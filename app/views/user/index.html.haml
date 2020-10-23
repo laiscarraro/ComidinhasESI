@@ -1,6 +1,6 @@
 
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
-%div.container
+%div.container.pb-5
     %div.laranja
     %div.sign-out-tela_usuario
         %a{:href=>"/login/index", id: "logout", :class => "sign-out-tela_usuario"}
@@ -35,4 +35,7 @@
             %p.card-text
                 = current_user.username
             %p.text-success Está na biblioteca
+%br
+%br
+= render partial: 'navbar/navbar' 
     

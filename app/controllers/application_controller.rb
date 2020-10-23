@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
     end
   
     def authorized
-      redirect_to login_path unless logged_in?
+      redirect_to '/login/index' unless logged_in?
+    end
+
+    def require_permission
+      if current_user != User.find(session[:user_id])
+        redirect_to root_path
+      end
     end
 end

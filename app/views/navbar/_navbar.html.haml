@@ -4,7 +4,7 @@
 .icon-bar
   %a{:href => "#", :id => "explore"}
     %i.fas.fa-compass.fa-xs
-  %a.active{:href => "/"}
+  %a{:href => "/", :id => "home", :class => "#{'active' if current_page?(root_path)}"}
     %i.fas.fa-home.fa-xs
-  %a{:href => "#", :id => "user"}
+  %a{:href => "/user", :id => "perfil", :class => "#{'active' if current_page?(user_index_path) || current_page?(login_index_path) } "}
     %i.fas.fa-user-circle.fa-xs

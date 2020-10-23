@@ -7,6 +7,15 @@ RSpec.describe Product, type: :model do
     @category.name = "Doce"
     @category.save
     @photo = fixture_file_upload(File.join(Rails.root, 'public', 'cone.jpg'))
+
+    avatar = fixture_file_upload(File.join(Rails.root, 'public', 'estudante.jpg'))
+
+    @user = User.new
+    @user.username = "Reinaldo do Dogão"
+    @user.email = "reinaldoDoDogao@gmail.com"
+    @user.password = "Rei123"
+    @user.avatar = avatar
+    @user.save
   end
 
   it 'produto valido' do
@@ -16,6 +25,7 @@ RSpec.describe Product, type: :model do
     product.description = "Um delicioso cone trufado!"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_valid
   end
 
@@ -25,6 +35,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -34,6 +45,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -42,6 +54,7 @@ RSpec.describe Product, type: :model do
     product.name = "Cone"
     product.description = "salve"
     product.photo = @photo
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -49,6 +62,7 @@ RSpec.describe Product, type: :model do
     product = Product.new
     product.name = "Cone"
     product.description = "salve"
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -58,6 +72,7 @@ RSpec.describe Product, type: :model do
     product.price = 19.5
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_valid
   end
 
@@ -68,6 +83,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -78,6 +94,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).not_to be_valid
   end
 
@@ -88,6 +105,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_valid
   end
 
@@ -98,6 +116,7 @@ RSpec.describe Product, type: :model do
     product.description = "salve"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_valid
   end
 
@@ -108,6 +127,7 @@ RSpec.describe Product, type: :model do
     product.description = "Desculpa o preço galera a culpa é do PT :("
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_invalid
   end
 
@@ -118,6 +138,7 @@ RSpec.describe Product, type: :model do
     product.description = "Caro? Ah o que importa é a qualidade né"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_invalid
   end
 
@@ -128,6 +149,7 @@ RSpec.describe Product, type: :model do
     product.description = "Cone caro sem tompero. Vergonha da profissión!"
     product.categories << @category
     product.photo = @photo
+    product.user = @user
     expect(product).to be_valid
   end
 
