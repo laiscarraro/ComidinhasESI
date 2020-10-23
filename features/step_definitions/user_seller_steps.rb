@@ -1,13 +1,13 @@
 Dado('que estou na página do vendedor') do
-    pending # Write code here that turns the phrase above into concrete actions
+  visit 'user/show'
   end
   
   Quando('clico no botão de voltar') do
-    pending # Write code here that turns the phrase above into concrete actions
+    click_on 'voltar'
   end
   
   Então('o usuário deve ser redirecionado para a página anterior') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_current_path(request.referrer)
   end
   
   Quando('clico no produto com id {string}') do |string|
