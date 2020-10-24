@@ -1,13 +1,23 @@
 class SuggestionsController < ApplicationController
-  def index
+
+  def initialize_suggestions
     @suggestions = Suggestion.all
+  end
+
+  def index
+    initialize_suggestions
     @suggestion = Suggestion.new
-  end  
+  end
 
   def create
     @suggestion = Suggestion.new
     @suggestion.name = suggestions_params[:name]
-    @suggestion.save
+    if @suggestion.save
+      redirect_to '/suggestions'
+    else
+      initialize_suggestions
+      render 'index'
+    end
   end
 
   private
