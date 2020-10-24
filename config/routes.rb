@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get '/login/index' => 'login#index'
     get '/login/user_exists' => 'login#user_exists'
     post '/login/authenticate' => 'login#authenticate'
+    resources :suggestions
     resources :product, :except => [:index]
 end
