@@ -43,7 +43,7 @@ class ProductController < ApplicationController
 
   def destroy
     Product.destroy(params[:id])
-    redirect_to root_path
+    redirect_to user_index_path
   end
 
   private

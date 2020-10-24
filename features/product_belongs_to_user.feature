@@ -20,9 +20,13 @@ Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
 
+Cenário: Ver Opções do Vendedor
+Dado que estou na página do produto que adicionei
+E que o produto pertence a mim
+Então devo ver a seção "Opções do Vendedor"
+
 Cenário: Remover produto
 Dado que estou na página do produto que adicionei
-Dado que o produto pertence a mim
-Então devo ver a seção "Opções do Vendedor"
-Quando quando clico em "REMOVER"
+E que o produto pertence a mim
+Quando clico em "REMOVER"
 Então devo ser redirecionado para a página de perfil
