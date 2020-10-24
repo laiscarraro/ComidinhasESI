@@ -6,7 +6,6 @@ class ProductController < ApplicationController
   end
 
   def show
-    @product = Product.new
     if @product = Product.find_by(id:params[:id])      
       @categories = @product.categories  
       render 'description'
