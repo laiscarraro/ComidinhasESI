@@ -1,5 +1,10 @@
 
 .wrapper
+  = form_with url: {action: "create"} do |f|
+    .container
+      .row
+        =f.text_field :suggestion, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
+        %button.suggestion-button{type:"submit", id:"add_suggestion"}
+          .i.far.fa-plus-square{style: 'font-size: 25px'}
 
-
-= render partial: 'navbar/navbar' 
+= render partial: 'navbar/navbar'

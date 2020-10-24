@@ -1,3 +1,26 @@
-// Place all the styles related to the Suggestions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+$transparent-grey: rgba(230, 230, 230, 0.2);
+
+.suggestion-input {
+  width: 85%;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  outline-style: none;
+  background-color: $transparent-grey;
+  border: 1px solid transparent;
+  z-index: 1000;
+}
+
+.suggestion-button {
+  color: green;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  padding: 6px 12px;
+
+  :active {
+    outline: none;
+    border: none;
+  }
+}

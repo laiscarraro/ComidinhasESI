@@ -8,13 +8,13 @@ Para que seja possível alguém começar a vender essa comidinha
 Cenário: Adicionar Sugestão com sucesso
 Dado que estou na tela de explorar
 Quando preencho o campo "suggestion" com "Brigadeiro"
-E clico em adicionar
+E clico em sugerir
 Então a sugestão deve ter sido armazenada no banco de dados
 E devo ver a sugestão na tela
 
 Cenário: Adicionar Sugestão com erro - Sem nome
 Dado que estou na tela de explorar
-Quando deixo o campo "sugestion" vazio
+Quando deixo o campo "suggestion" vazio
 E clico em adicionar
 Então deverei ver a mensagem de erro "Sugestão está vazia"
 

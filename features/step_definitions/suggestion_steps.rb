@@ -2,6 +2,10 @@ Dado('que estou na tela de explorar') do
   visit 'suggestions' 
 end
 
+Quando('clico em sugerir') do 
+   click_on 'add_suggestion'
+end
+
 Então('a sugestão deve ter sido armazenada no banco de dados') do
   pending # Write code here that turns the phrase above into concrete actions  
 end
