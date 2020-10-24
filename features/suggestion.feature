@@ -7,7 +7,7 @@ Para que seja possível alguém começar a vender essa comidinha
 
 Cenário: Adicionar Sugestão com sucesso
 Dado que estou na tela de explorar
-Quando preencho o campo "sugestion" com "Brigadeiro"
+Quando preencho o campo "suggestion" com "Brigadeiro"
 E clico em adicionar
 Então a sugestão deve ter sido armazenada no banco de dados
 E devo ver a sugestão na tela
