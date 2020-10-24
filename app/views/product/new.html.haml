@@ -1,6 +1,6 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 
-= render partial: 'header'
+= render partial: '/navbar/header', :locals => {:page_name => "Adicionar produto"}
 
 .wrapper
   - if @product.errors.any?
