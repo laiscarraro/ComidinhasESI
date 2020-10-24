@@ -1,6 +1,8 @@
 #language: pt
 
 Funcionalidade: Adicionar Produto
+Como vendedor
+Para que eu possa mostrar o meu produto 
 
 Contexto: Logado
 Dado que estou cadastrado
