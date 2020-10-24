@@ -1,5 +1,5 @@
 Dado('que estou na tela de explorar') do
-  visit 'suggestions/index' 
+  visit 'suggestions' 
 end
 
 Então('a sugestão deve ter sido armazenada no banco de dados') do
