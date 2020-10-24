@@ -12,7 +12,7 @@ Então('a sugestão deve ter sido armazenada no banco de dados') do
 end
 
 Então('devo ver a sugestão na tela') do
-  pending # Write code here that turns the phrase above into concrete actions  
+  expect(page).to have_content("Brigadeiro")  
 end
 
 Quando('clico em gostei do produto {string}') do |string|

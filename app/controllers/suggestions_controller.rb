@@ -1,16 +1,17 @@
 class SuggestionsController < ApplicationController
   def index
-
+    @suggestions = Suggestion.all
+    @suggestion = Suggestion.new
   end  
 
   def create
     @suggestion = Suggestion.new
-    @suggestion.name = suggestion_params['name']
+    @suggestion.name = suggestions_params[:name]
     @suggestion.save
   end
 
   private
-  def suggestion_params
+  def suggestions_params
     params.require(:suggestion).permit(:name)
   end 
 end

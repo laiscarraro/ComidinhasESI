@@ -1,26 +1,57 @@
 $transparent-grey: rgba(230, 230, 230, 0.2);
 
-.suggestion-input {
-  width: 85%;
-  padding-left: 5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  outline-style: none;
-  background-color: $transparent-grey;
-  border: 1px solid transparent;
-  z-index: 1000;
+.new-suggestions {
+  .suggestion-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-width: 0.8;
+    border-color: #ffffff;
+    border-radius: 8px;
+    background-color: "#fff";
+    margin-bottom: 8;
+    isolation: 2;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
 }
 
-.suggestion-button {
-  color: green;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  padding: 6px 12px;
+.suggestions-input-container {
+  position: fixed;
+  bottom: 15%;
+  left: 0;
+  width: 100%;
+  padding: 5px 10px;
 
-  :active {
-    outline: none;
+  .row {
+    width: 100%;
+  }
+  .suggestion-input {
+    width: 85%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    outline-style: none;
+    background-color: $transparent-grey;
+    border: 1px solid transparent;
+    z-index: 1000;
+  }
+
+  .suggestion-button {
+    color: green;
+    background-color: transparent;
     border: none;
+    outline: none;
+    text-decoration: none;
+    padding: 6px 12px;
+
+    :active {
+      outline: none;
+      border: none;
+    }
   }
 }

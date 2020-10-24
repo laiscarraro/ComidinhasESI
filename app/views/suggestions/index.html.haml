@@ -1,10 +1,19 @@
-
+%ul
+  - @suggestion.errors.each do |attribute, error|
+    %li= error
 .wrapper
-  = form_with url: {action: "create"} do |f|
-    .container
-      .row
-        =f.text_field :suggestion, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
-        %button.suggestion-button{type:"submit", id:"add_suggestion"}
-          .i.far.fa-plus-square{style: 'font-size: 25px'}
+  .new-suggestions
+    -@suggestions.each do |suggestion|
+      .suggestion-card
+        %span 
+          =suggestion.name
+        .i.far.fa-heart
+
+
+  = form_for @suggestion, url: {action: "create"} do |f|
+    .suggestions-input-container
+      =f.text_field :name, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
+      %button.suggestion-button{type:"submit", id:"add_suggestion"}
+        .i.far.fa-plus-square{style: 'font-size: 25px'}
 
 = render partial: 'navbar/navbar'
