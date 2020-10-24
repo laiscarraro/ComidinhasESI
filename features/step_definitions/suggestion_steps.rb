@@ -7,7 +7,8 @@ Quando('clico em sugerir') do
 end
 
 Então('a sugestão deve ter sido armazenada no banco de dados') do
-  pending # Write code here that turns the phrase above into concrete actions  
+  suggestion = Suggestion.order("id").last
+  expect(suggestion.name).to eq("Brigadeiro")
 end
 
 Então('devo ver a sugestão na tela') do
