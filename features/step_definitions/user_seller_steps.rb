@@ -1,5 +1,5 @@
 Dado('que estou na página do vendedor') do
-  visit 'user/show'
+  visit 'user/id'
   end
   
   Quando('clico no botão de voltar') do

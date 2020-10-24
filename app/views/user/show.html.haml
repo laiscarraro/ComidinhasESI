@@ -1,0 +1,36 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%div.container.pb-5
+    %div.laranja
+    %div.sign-out-tela_vendedor 
+        %a{:href=>"", id: "voltar", :class => "sign-out-tela_vendedor"}
+            %h3.glyphicon.glyphicon-arrow-left
+    %div.img-user-center
+        %img{:src =>url_for(@user.avatar), :class => "img-user"}
+    %div.card{:id => "first-card"}
+        %div.card-body
+            %h3.card-title.text-center 
+                = @user.username
+            %p.card-text.text-center Está na biblioteca
+    %h5 Produtos 
+    %div.card
+        %div.card-body
+            %h5.card-title Coquinha gelada
+            %p.card-text
+                = current_user.username
+            %p.text-success Está na biblioteca
+    %div.card
+        %div.card-body
+            %h5.card-title Panecone
+            %p.card-text
+                = current_user.username
+            %p.text-success Está na biblioteca
+    %div.card
+        %div.card-body
+            %h5.card-title Pizza do rossi
+            %p.card-text
+                = current_user.username
+            %p.text-success Está na biblioteca
+%br
+%br
+= render partial: 'navbar/navbar' 
+    

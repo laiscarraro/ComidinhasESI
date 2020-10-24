@@ -2,6 +2,10 @@ class UserController < ApplicationController
     before_action :authorized, only: [:index]
 
     def show
+        if @user = User.find_by(id:params[:id])
+        else
+            redirect_to root_path
+        end 
     end
 
     def index
