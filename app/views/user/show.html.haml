@@ -12,25 +12,9 @@
                 = @user.username
             %p.card-text.text-center Está na biblioteca
     %h5 Produtos 
-    %div.card
-        %div.card-body
-            %h5.card-title Coquinha gelada
-            %p.card-text
-                = current_user.username
-            %p.text-success Está na biblioteca
-    %div.card
-        %div.card-body
-            %h5.card-title Panecone
-            %p.card-text
-                = current_user.username
-            %p.text-success Está na biblioteca
-    %div.card
-        %div.card-body
-            %h5.card-title Pizza do rossi
-            %p.card-text
-                = current_user.username
-            %p.text-success Está na biblioteca
+    = render partial = 'product-card'
 %br
 %br
+
 = render partial: 'navbar/navbar' 
     

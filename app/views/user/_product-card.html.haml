@@ -1,0 +1,15 @@
+
+- if @products.nil?
+    %b.col-lg-3 sem resultados
+- else 
+    .row.mt-3
+        %b.col-lg-1 Populares
+    - @products.each do |product|           
+        .product-card
+            %img.product-img{:src => url_for(product.photo)}
+            .description 
+                =link_to product.name,product_path(id: product.id),{:class=>"product-text stretched-link"}
+                .vendor-text @user.username
+            .bottom-card
+                %b.price-text R$ #{"%0.2f" % [product.price]}
+                %b.local-text Está na Biblioteca

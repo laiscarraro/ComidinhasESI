@@ -2,7 +2,7 @@ Dado('que estou na página do vendedor') do
   visit 'user/id'
   end
   
-  Quando('clico no botão de voltar') do
+  Quando('clico em voltar') do
     click_on 'voltar'
   end
   

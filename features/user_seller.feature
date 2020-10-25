@@ -7,7 +7,7 @@ Para que eu possa ver as informações da página do vendedor
 
 Cenário: Voltar para a página de produto
 Dado que estou na página do vendedor
-Quando clico no botão de voltar
+Quando clico em voltar
 Então o usuário deve ser redirecionado para a página anterior
 
 Cenário: Visualizar produtos do vendedor
