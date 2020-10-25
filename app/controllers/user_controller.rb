@@ -10,6 +10,7 @@ class UserController < ApplicationController
     end
 
     def index
+        @products = Product.joins(:user).where("user_id = #{@user.id}")
     end
 
     def new 

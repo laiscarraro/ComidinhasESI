@@ -3,7 +3,7 @@
 %div.container.pb-5
     %div.laranja
     %div.voltar-tela_vendedor
-        %a{id: "voltar", :href=>"javascript:history.back()", :class => "voltar-tela_vendedor"}
+        %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
             %h3.fas.fa-long-arrow-alt-left
     %div.img-user-center
         %img{:src =>url_for(@user.avatar), :class => "img-user"}
