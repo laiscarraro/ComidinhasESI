@@ -10,3 +10,7 @@ Quando('preencho o campo {string} com {string}') do |string, string2|
     fill_in string, :with => string2  
 end
 
+Quando('clico em {string}') do |string|
+  click_on string
+end
+
