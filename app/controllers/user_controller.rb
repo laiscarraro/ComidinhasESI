@@ -3,6 +3,7 @@ class UserController < ApplicationController
 
     def show
         if @user = User.find_by(id:params[:id])
+           @products = Product.joins(:user).where("user.id = @user.id")
         else
             redirect_to root_path
         end 
