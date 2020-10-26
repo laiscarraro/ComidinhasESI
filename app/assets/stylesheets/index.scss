@@ -40,11 +40,18 @@ body {
     padding: 2%;
 }
 
+.voltar-tela_vendedor {
+    color: white;
+    text-align: left;
+    padding: 2%;
+}
+
 .img-user {
-    width: 100px;
-    height: 100px;
+    --width: 25%;
+    width: var(--width);
+    height: auto;
     position: absolute;
     z-index: 100;
     border-radius: 50%;
-    left: 35%;
+    left: calc(50% - var(--width)/2);
 }
