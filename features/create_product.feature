@@ -1,6 +1,9 @@
 #language: pt
 
 Funcionalidade: Adicionar Produto
+Como vendedor
+Eu quero adicionar meus produtos
+Para que meus clientes consigam encontrá-los 
 
 Contexto: Logado
 Dado que estou cadastrado

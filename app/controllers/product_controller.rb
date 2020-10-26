@@ -6,7 +6,6 @@ class ProductController < ApplicationController
   end
 
   def show
-    @product = Product.new
     if @product = Product.find_by(id:params[:id])      
       @categories = @product.categories  
       render 'description'
@@ -44,7 +43,7 @@ class ProductController < ApplicationController
 
   def destroy
     Product.destroy(params[:id])
-    redirect_to root_path
+    redirect_to user_index_path
   end
 
   private

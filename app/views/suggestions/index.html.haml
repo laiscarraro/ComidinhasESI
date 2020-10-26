@@ -1,0 +1,20 @@
+.wrapper
+  - if @suggestion.errors.count > 0
+    %ul.alert.alert-danger.p-4
+      %b Não foi possível adicionar uma sugestão:
+      - @suggestion.errors.each do |attribute, error|
+        %li= error
+  = form_for @suggestion, url: {action: "create"} do |f|
+    .suggestions-input-container
+      =f.text_field :name, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
+      %button.suggestion-button{type:"submit", id:"add_suggestion"}
+        .i.far.fa-plus-square{style: 'font-size: 25px'}
+
+  .new-suggestions
+    -@suggestions.each do |suggestion|
+      .suggestion-card
+        %span 
+          =suggestion.name
+        .i.far.fa-heart
+
+= render partial: 'navbar/navbar'
