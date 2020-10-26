@@ -1,6 +1,6 @@
 Dado('que estou na página do vendedor') do
   visit "user/1"
-  end
+end
   
   Quando('clico em voltar') do
     click_on 'voltar'
@@ -23,8 +23,11 @@ Dado('que estou na página do vendedor') do
     product1.description = "Cone bom para testes!"
     product1.categories << Category.where("name LIKE 'Categoria para me ajudar a passar em ESI'")
     product1.photo = photo
-    product1.user = @user
+    product1.user = User.find_by({:id => 1})
     product1.save
+
+    visit '/user/1'
+
   end
 
   Então('o usuário deve ver os produtos do vendedor') do
