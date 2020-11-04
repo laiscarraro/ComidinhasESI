@@ -109,10 +109,6 @@ padding:0;
   border-style:ridge;  
 }
 
-.footer-text{
-  margin-left: -35px;
-}
-
 .box-price{
 background-color: #F78100 !important;
 border-radius: 5px 5px;
@@ -132,4 +128,8 @@ margin-bottom: -20px;
   color:white !important;
   box-shadow: 5px 5px 30px 5px #F78100;
   transition: 1s;
+}
+
+.mb-0 {
+  text-align: center !important;
 }
