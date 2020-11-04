@@ -12,7 +12,7 @@
  - Laís Carraro Leme Cavalheiro (10687638) - laiscarraro
  - Amanda Carvalho Venturin (10724080) - amandaventurin
  - Matheus Aquati Kurianski (10687541) - MatKurianski
- - Daniel de Jesus Lima (10723951) - karakurt
+ - Daniel de Jesus Lima (10723951) - karacurt
  - José Luiz Borin Junior (10723670) - joseUSP
  
 ## Descrição do Problema
