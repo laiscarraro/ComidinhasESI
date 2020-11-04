@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   has_one_attached :photo
 
   belongs_to :user
+
+  has_many :ratings
   
   validates :photo, presence: { message: "É obrigatório adicionar uma foto do produto"}
 end

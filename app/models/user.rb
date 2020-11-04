@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :ratings
   
   validates :email, presence: { message: "É obrigatório informar o email" },
             format: {with: URI::MailTo::EMAIL_REGEXP, message: "O email informado é inválido"},
