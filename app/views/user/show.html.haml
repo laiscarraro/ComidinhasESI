@@ -12,6 +12,12 @@
             %h3.card-title.text-center 
                 = @user.username
             %p.card-text.text-center Está na biblioteca
+            %div.card
+                = @products.count
+                %p.card-text.text-center Produtos
+            %div.card
+                %p.card-text.text-center Avaliação
+
     %h5 Produtos 
     = render partial: 'product-card'
     
