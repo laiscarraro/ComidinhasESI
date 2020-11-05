@@ -1,1 +1,8 @@
-%h1 Viva! Funfou!
+= form_with url: {action: "create"} do |f|
+    = f.radio_button :rate_value, 1
+    = f.radio_button :rate_value, 2
+    = f.radio_button :rate_value, 3
+    = f.radio_button :rate_value, 4
+    = f.radio_button :rate_value, 5
+    = f.text_area :commentary
+    %button{:type => "submit"}Bora
