@@ -13,8 +13,23 @@
   .new-suggestions
     -@suggestions.each do |suggestion|
       .suggestion-card
-        %span 
+        %span
           =suggestion.name
-        .i.far.fa-heart
+        .i.fas.fa-heart.coracao{:id => suggestion.id, :onclick => "teste(this.id)"}
 
 = render partial: 'navbar/navbar'
+
+:javascript
+  const activeClass = 'coracao-ativo'
+
+  function teste(id) {
+    const element = document.getElementById(id);
+
+
+    if(element.classList.contains(activeClass)) {
+      element.classList.remove(activeClass)
+    } else {
+      element.classList.add(activeClass)
+    }
+  }
+
