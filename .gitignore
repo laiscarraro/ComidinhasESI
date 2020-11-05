@@ -76,3 +76,6 @@ env
 .project
 .dbeaver/credentials-config.json
 .dbeaver/data-sources.json
+
+# PWA
+public/service-worker.js*
