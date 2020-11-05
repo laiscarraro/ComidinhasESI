@@ -9,9 +9,6 @@ default: &default
   check_yarn_integrity: false
   webpack_compile_output: true
 
-  # Tentativa de transformar em PWA
-  service_workers_entry_path: service_workers
-
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: []
