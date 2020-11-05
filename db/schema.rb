@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2020_11_04_234153) do
   create_table "ratings", force: :cascade do |t|
     t.integer "rate_value"
     t.string "commentary"
-    t.integer "products_id", null: false
-    t.integer "users_id", null: false
+    t.integer "product_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["products_id"], name: "index_ratings_on_products_id"
-    t.index ["users_id"], name: "index_ratings_on_users_id"
+    t.index ["product_id"], name: "index_ratings_on_product_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "suggestions", force: :cascade do |t|
@@ -82,6 +82,6 @@ ActiveRecord::Schema.define(version: 2020_11_04_234153) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "ratings", "products", column: "products_id"
-  add_foreign_key "ratings", "users", column: "users_id"
+  add_foreign_key "ratings", "products"
+  add_foreign_key "ratings", "users"
 end
