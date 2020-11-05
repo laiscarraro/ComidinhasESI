@@ -1,0 +1,18 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%div.container.pb-5
+    %div.laranja
+    %div.voltar-tela_vendedor
+        %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
+            %h3.fas.fa-long-arrow-alt-left
+    %div.card{:id => "first-card"}
+        %div.card-body
+            %h3.card-title.text-center 
+                Métodos de pagamento
+            %div.card
+                %p{class: "card-text text-center", id: "dinheiro"} Dinheiro
+            %div.card
+                %p{class: "card-text text-center", id: "cartao"} Cartão
+             %div.card
+                %p{class: "card-text text-center", id: "vr"} VR
+             %div.card
+                %p{class: "card-text text-center", id: "pix"} Pix
