@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-    def index
+    def new
         if session[:user_id] == nil
             redirect_to '/login/index'
         end
@@ -13,9 +13,16 @@ class RatingsController < ApplicationController
         rating.product = Product.find(params['product_id'])  
         
         if rating.save
-            puts('Salvou!')
+            redirect_to product_path(id: params['product_id'])
         else
-            puts('Não salvou!')
+            error_msg = ActionController::Base.helpers.pluralize(rating.errors.count, "erro")
+            error_msg += " na sua avaliação:"
+            rating.errors.each do |attribute, error|
+                error_msg += "\\n"
+                error_msg += error
+            end
+            
+            render js: "alert('"+error_msg+"');"
         end
     end
 end
