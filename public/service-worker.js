@@ -3,25 +3,21 @@ var CACHE_NAME = CACHE_VERSION + ':sw-cache-';
 
 function onInstall(event) {
   console.log('[Serviceworker]', "Rails Service Worker Installing!", event);
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function prefill(cache) {
-      return cache.addAll([
+  event.waitUntil((async() => {
+    const cache = await caches.open(CACHE_NAME);
 
-        // make sure serviceworker.js is not required by application.js
-        // if you want to reference application.js from here
-        '<%%#= asset_path "application.js" %>',
-
-        '<%%= asset_path "application.css" %>',
-
-        '/offline.html',
-
-      ]);
-    })
-  );
+    await cache.addAll([
+      // make sure serviceworker.js is not required by application.js
+      // if you want to reference application.js from here
+      '<%%#= asset_path "application.js" %>',
+      '<%%= asset_path "application.css" %>',
+    ]);
+  }))
 }
 
 function onActivate(event) {
   console.log('[Serviceworker]', "Rails Service Worker Activating!", event);
+
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
