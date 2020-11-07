@@ -27,6 +27,7 @@ $(function() {
     $(this).closest('.rating').find('.js-score').text($(this).data('value'));
 
     $(this).closest('.rating').data('vote', $(this).data('value'));
+    document.getElementById('rate_value_'+$(this).data('value')).checked = true;
     calculateAverage()
     console.log(parseInt($(this).data('value')));
 

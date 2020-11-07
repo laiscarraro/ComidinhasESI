@@ -4,65 +4,53 @@
 
 = render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
 
-= form_with url: {action: "create"} do |f|
-    = f.radio_button :rate_value, 1, :id => "rate_value_1"
-    = f.radio_button :rate_value, 2, :id => "rate_value_2"
-    = f.radio_button :rate_value, 3, :id => "rate_value_3"
-    = f.radio_button :rate_value, 4, :id => "rate_value_4"
-    = f.radio_button :rate_value, 5, :id => "rate_value_5"
-    = f.text_area :commentary, :id => "commentary"
-    %button{:type => "submit", :id => "submit-rating-btn"} Bora
+= form_with url: {action: "create" , class:"form_rating"} do |f|
+    = f.radio_button :rate_value, 1, :id => "rate_value_1", :class => "rate_values"
+    = f.radio_button :rate_value, 2, :id => "rate_value_2", :class => "rate_values"  
+    = f.radio_button :rate_value, 3, :id => "rate_value_3", :class => "rate_values"
+    = f.radio_button :rate_value, 4, :id => "rate_value_4", :class => "rate_values"
+    = f.radio_button :rate_value, 5, :id => "rate_value_5", :class => "rate_values"
 
-    
-.container.overflow-auto.pt-5.mt-3
-    .container.box-rating.col-lg-8.justify-content-center.border.border-secondary             
-        %span.fa.fa-heart-o.fa-3x.p-1
-            %span.fa.fa-heart-o.fa-3x.p-1
-            %span.fa.fa-heart-o.fa-3x.p-1
-            %span.fa.fa-heart-o.fa-3x.p-1
-            %span.fa.fa-heart-o.fa-3x.p-1
-            .rating{"data-vote" => "0"}
-                .score
-                    %span.score-rating.js-score 0
-                    %span /
-                    %span.total 5  
-                    .average
-                        %span.text Your average score is
-                    .score-average.js-average
+    .container.overflow-auto.pt-5.mt-3
+        .container.box-rating.col-lg-8.justify-content-center.border.border-secondary.rating{"data-vote" => "0"}     
+            
+            .row.align-items-start.justify-content-center.score            
+                %span.score-rating.js-score 0
+                %span /
+                %span.total 5             
+            .row.align-items-center.justify-content-center.mt-1
                 .star.hidden
                     %span.full{"data-value" => "0"}
                     %span.half{"data-value" => "0"}
                     %span.selected
                 .star
                     %span.full{"data-value" => "1"}
-                    %span.half{"data-value" => "0.5"}
+                    %span.half{"data-value" => "1"}
                     %span.selected
                 .star
                     %span.full{"data-value" => "2"}
-                    %span.half{"data-value" => "1.5"}
+                    %span.half{"data-value" => "2"}
                     %span.selected
                 .star
                     %span.full{"data-value" => "3"}
-                    %span.half{"data-value" => "2.5"}
+                    %span.half{"data-value" => "3"}
                     %span.selected
                 .star
                     %span.full{"data-value" => "4"}
-                    %span.half{"data-value" => "3.5"}
+                    %span.half{"data-value" => "4"}
                     %span.selected
                 .star
                     %span.full{"data-value" => "5"}
-                    %span.half{"data-value" => "4.5"}
-                    %span.selected                        
-            
-
-    .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
-        .col-1
-            .col-10
-                %textarea{:name => "commentary1", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
-            .col-1
-        .row.align-items-end.justify-content-center.no-gutters.mt-3
-            .col.col-btn
-                %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit"} Avaliar
-            
+                    %span.half{"data-value" => "5"}
+                    %span.selected         
+            .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
+                .col-1
+                .col-10
+                    %textarea{:name => "commentary", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
+                .col-1
+            .row.align-items-end.justify-content-center.no-gutters.mt-3
+                .col.col-btn
+                    %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit"} Avaliar
                 
-    = render partial: '/product/footer'
+                    
+        = render partial: '/product/footer'

@@ -1,13 +1,6 @@
-body {
-    background-color: lightblue;
-  }
-  
+
   .rating {
-    text-align: center;
-    margin-top: 120px;
-    position: relative;
-    width: 50%;
-    float: left;
+    text-align: center;    
   }
   
   .hidden {
@@ -18,7 +11,7 @@ body {
     display: inline-block;
     margin: 5px;
     font-size: 30px;
-    color: whitesmoke;
+    color:black;
     position: relative;
   
     
@@ -106,7 +99,7 @@ body {
   .score {
     font-family: arial;
     font-size: 20px;
-    color: green;
+    color: black;
     margin-top: 20px;
     margin-left: 50px;
   }
@@ -138,4 +131,7 @@ body {
     .score-average {
       padding-top: 30px;
     }
+  }
+  .rate_values{
+    visibility:hidden
   }

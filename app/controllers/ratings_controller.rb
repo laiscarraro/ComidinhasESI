@@ -24,7 +24,7 @@ class RatingsController < ApplicationController
                 error_msg += "\\n"
                 error_msg += error
             end
-            
+            puts ("valor rating params:" + params['rate_value'])
             render js: "alert('"+error_msg+"');"
         end
     end
