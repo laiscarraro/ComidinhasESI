@@ -1,5 +1,6 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 %link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
+= javascript_include_tag 'application'
 
 = render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
 
@@ -15,15 +16,47 @@
     
 .container.overflow-auto.pt-5.mt-3
     .container.box-rating.col-lg-8.justify-content-center.border.border-secondary             
-        .row.align-items-center.justify-content-center.mt-4
+        %span.fa.fa-heart-o.fa-3x.p-1
             %span.fa.fa-heart-o.fa-3x.p-1
             %span.fa.fa-heart-o.fa-3x.p-1
             %span.fa.fa-heart-o.fa-3x.p-1
             %span.fa.fa-heart-o.fa-3x.p-1
-            %span.fa.fa-heart-o.fa-3x.p-1
-        
-        .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
-            .col-1
+            .rating{"data-vote" => "0"}
+                .score
+                    %span.score-rating.js-score 0
+                    %span /
+                    %span.total 5  
+                    .average
+                        %span.text Your average score is
+                    .score-average.js-average
+                .star.hidden
+                    %span.full{"data-value" => "0"}
+                    %span.half{"data-value" => "0"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "1"}
+                    %span.half{"data-value" => "0.5"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "2"}
+                    %span.half{"data-value" => "1.5"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "3"}
+                    %span.half{"data-value" => "2.5"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "4"}
+                    %span.half{"data-value" => "3.5"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "5"}
+                    %span.half{"data-value" => "4.5"}
+                    %span.selected                        
+            
+
+    .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
+        .col-1
             .col-10
                 %textarea{:name => "commentary1", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
             .col-1
