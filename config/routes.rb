@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post '/login/authenticate' => 'login#authenticate'
     get '/suggestions' => 'suggestions#index'
     post '/suggestions/create' => 'suggestions#create'
+    post '/suggestions_vote/create' => 'suggestion_vote#create'
     resources :suggestions
     resources :product, :except => [:index]
 end

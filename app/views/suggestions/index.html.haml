@@ -15,21 +15,11 @@
       .suggestion-card
         %span
           =suggestion.name
-        .i.fas.fa-heart.coracao{:id => suggestion.id, :onclick => "teste(this.id)"}
+        - if current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
+          = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
+            .i.fas.fa-heart.coracao.coracao-ativo
+        - else
+          = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
+            .i.fas.fa-heart.coracao
 
 = render partial: 'navbar/navbar'
-
-:javascript
-  const activeClass = 'coracao-ativo'
-
-  function teste(id) {
-    const element = document.getElementById(id);
-
-
-    if(element.classList.contains(activeClass)) {
-      element.classList.remove(activeClass)
-    } else {
-      element.classList.add(activeClass)
-    }
-  }
-

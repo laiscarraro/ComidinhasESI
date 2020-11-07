@@ -12,4 +12,5 @@ class User < ApplicationRecord
             confirmation: { message: "Senha não corresponde" }
 
   has_one_attached :avatar
+  has_many :suggestion_votes, dependent: :destroy
 end
