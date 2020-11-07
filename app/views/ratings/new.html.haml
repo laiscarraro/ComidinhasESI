@@ -4,12 +4,13 @@
 = render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
 
 = form_with url: {action: "create"} do |f|
-    = f.radio_button :rate_value, 1
-    = f.radio_button :rate_value, 2
-    = f.radio_button :rate_value, 3
-    = f.radio_button :rate_value, 4
-    = f.radio_button :rate_value, 5
-    = f.text_area :commentary
+    = f.radio_button :rate_value, 1, :id => "rate_value_1"
+    = f.radio_button :rate_value, 2, :id => "rate_value_2"
+    = f.radio_button :rate_value, 3, :id => "rate_value_3"
+    = f.radio_button :rate_value, 4, :id => "rate_value_4"
+    = f.radio_button :rate_value, 5, :id => "rate_value_5"
+    = f.text_area :commentary, :id => "commentary"
+    %button{:type => "submit", :id => "submit-rating-btn"} Bora
 
     
 .container.overflow-auto.pt-5.mt-3
@@ -24,7 +25,7 @@
         .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
             .col-1
             .col-10
-                %textarea{:name => "commentary", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
+                %textarea{:name => "commentary1", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
             .col-1
         .row.align-items-end.justify-content-center.no-gutters.mt-3
             .col.col-btn

@@ -45,7 +45,7 @@
           %span.fa.fa-heart.fa-lg.p-1
         .row.align-items-end.justify-content-center.no-gutters.mt-3
           .col.col-btn
-            =button_to  "Avaliar", new_product_rating_path(product_id:@product.id), {:class=> "button btn-rating btn btn-outline-secondary w-100 p-2", :type => "button", :method => :get}
+            =button_to  "Avaliar", new_product_rating_path(product_id:@product.id), {:id => "Avaliar", :class=> "button btn-rating btn btn-outline-secondary w-100 p-2", :type => "button", :method => :get}
           .col.col-btn
             %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Ver avaliações
   .row.flex-nowrap.row-flex.mt-5
