@@ -6,7 +6,7 @@
         %li= error
   = form_for @suggestion, url: {action: "create"} do |f|
     .suggestions-input-container
-      =f.text_field :name, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
+      =f.text_field :name, id: "suggestion", placeholder: "Insira uma sugestão de produto aqui!", class: 'suggestion-input'
       %button.suggestion-button{type:"submit", id:"add_suggestion"}
         .i.far.fa-plus-square{style: 'font-size: 25px'}
 
@@ -16,7 +16,7 @@
         %span
           =suggestion.name
         %span
-          - if current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
+          - if logged_in? and current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
             = link_to suggestions_vote_destroy_path(:suggestion_id => suggestion.id), method: :delete do
               .i.fas.fa-heart.coracao.coracao-ativo
           - else
