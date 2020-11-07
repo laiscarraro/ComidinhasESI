@@ -15,11 +15,13 @@
       .suggestion-card
         %span
           =suggestion.name
-        - if current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
-          = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
-            .i.fas.fa-heart.coracao.coracao-ativo
-        - else
-          = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
-            .i.fas.fa-heart.coracao
+        %span
+          - if current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
+            = link_to suggestions_vote_destroy_path(:suggestion_id => suggestion.id), method: :delete do
+              .i.fas.fa-heart.coracao.coracao-ativo
+          - else
+            = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
+              .i.fas.fa-heart.coracao
+          #{suggestion.suggestion_votes_count}
 
 = render partial: 'navbar/navbar'
