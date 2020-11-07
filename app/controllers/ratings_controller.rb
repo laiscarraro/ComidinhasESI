@@ -3,7 +3,10 @@ class RatingsController < ApplicationController
         if session[:user_id] == nil
             redirect_to '/login/index'
         end
+        @product = Product.find(params['product_id'])  
     end
+    
+   
 
     def create
         rating = Rating.new

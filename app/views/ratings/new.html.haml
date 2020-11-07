@@ -1,3 +1,8 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
+
+= render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
+
 = form_with url: {action: "create"} do |f|
     = f.radio_button :rate_value, 1
     = f.radio_button :rate_value, 2
@@ -5,4 +10,25 @@
     = f.radio_button :rate_value, 4
     = f.radio_button :rate_value, 5
     = f.text_area :commentary
-    %button{:type => "submit"}Bora
+
+    
+.container.overflow-auto.pt-5.mt-3
+    .container.box-rating.col-lg-8.justify-content-center.border.border-secondary             
+        .row.align-items-center.justify-content-center.mt-4
+            %span.fa.fa-heart-o.fa-3x.p-1
+            %span.fa.fa-heart-o.fa-3x.p-1
+            %span.fa.fa-heart-o.fa-3x.p-1
+            %span.fa.fa-heart-o.fa-3x.p-1
+            %span.fa.fa-heart-o.fa-3x.p-1
+        
+        .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
+            .col-1
+            .col-10
+                %textarea{:name => "commentary", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
+            .col-1
+        .row.align-items-end.justify-content-center.no-gutters.mt-3
+            .col.col-btn
+                %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit"} Avaliar
+            
+                
+    = render partial: '/product/footer'
