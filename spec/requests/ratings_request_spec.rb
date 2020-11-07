@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe "Ratings", type: :request do
     describe "Acessar página de avaliações" do
         it "deveria redirecionar para a página de login quando não estou logado" do
+            allow(Product).to receive(:find)
+
             get new_product_rating_path(product_id: 1)
 
             expect(response).to redirect_to(login_index_path)
@@ -10,6 +12,11 @@ RSpec.describe "Ratings", type: :request do
 
         it "deveria acessar a página de avaliações quando estou logado" do
             allow_any_instance_of(ActionDispatch::Request).to receive(:session) { {user_id: 1} }
+
+            fake_user = double('User', :avatar => nil, :username => nil)
+            fake_product = double('Product', :user => fake_user)
+            allow(Product).to receive(:find) {fake_product}
+            expect(Product).to receive(:find).with("1")
 
             get new_product_rating_path(product_id: 1)
 
