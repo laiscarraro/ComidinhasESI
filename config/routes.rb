@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     get '/suggestions' => 'suggestions#index'
     post '/suggestions/create' => 'suggestions#create'
     resources :suggestions
-    resources :product, :except => [:index]
+    resources :product, :except => [:index] do
+        resources :ratings
+    end
 end
