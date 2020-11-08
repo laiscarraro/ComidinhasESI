@@ -4,7 +4,7 @@
 
 = render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
 
-= form_with url: {action: "create" , class:"form_rating"} do |f|
+= form_with url: {action: "create"} do |f|
     = f.radio_button :rate_value, 1, :id => "rate_value_1", :class => "rate_values"
     = f.radio_button :rate_value, 2, :id => "rate_value_2", :class => "rate_values"  
     = f.radio_button :rate_value, 3, :id => "rate_value_3", :class => "rate_values"
@@ -50,7 +50,7 @@
                 .col-1
             .row.align-items-end.justify-content-center.no-gutters.mt-3
                 .col.col-btn
-                    %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit"} Avaliar
+                    %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit", :id=>"submit-rating-btn"} Avaliar
                 
                     
         = render partial: '/product/footer'
