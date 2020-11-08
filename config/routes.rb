@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     post '/suggestions_vote/create' => 'suggestion_vote#create'
     delete '/suggestions_vote/destroy' => 'suggestion_vote#destroy'
     resources :suggestions
-    resources :product, :except => [:index]
+    resources :product, :except => [:index] do
+        resources :ratings
+    end
 end
