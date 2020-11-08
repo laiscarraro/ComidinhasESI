@@ -9,7 +9,7 @@
       .container.footer-text
         %p.mb-0 Vendido por 
         %b.mb-0
-        %a{class: "login-link", href: "/user/#{@user.id}", id: 'vendedor'}
+        %a{class: "login-link", href: "/user/#{@product.user.id}", id: 'vendedor'}
           = @product.user.username
     .col-3
 %br
