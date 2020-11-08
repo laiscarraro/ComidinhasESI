@@ -2,6 +2,7 @@ const OFFLINE_VERSION = 1;
 const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'offline';
 
+// Tutorial seguido: https://dev.to/coorasse/the-progressive-rails-app-46ma
 self.addEventListener('install', function (event) {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
