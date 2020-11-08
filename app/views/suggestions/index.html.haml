@@ -6,15 +6,22 @@
         %li= error
   = form_for @suggestion, url: {action: "create"} do |f|
     .suggestions-input-container
-      =f.text_field :name, id: "suggestion", placeholder: "Brigadeiro", class: 'suggestion-input'
+      =f.text_field :name, id: "suggestion", placeholder: "Insira uma sugestão de produto aqui!", class: 'suggestion-input'
       %button.suggestion-button{type:"submit", id:"add_suggestion"}
         .i.far.fa-plus-square{style: 'font-size: 25px'}
 
   .new-suggestions
     -@suggestions.each do |suggestion|
       .suggestion-card
-        %span 
+        %span
           =suggestion.name
-        .i.far.fa-heart
+        %span
+          - if logged_in? and current_user.suggestion_votes.exists?({suggestion_id: suggestion.id})
+            = link_to suggestions_vote_destroy_path(:suggestion_id => suggestion.id), method: :delete do
+              .i.fas.fa-heart.coracao.coracao-ativo
+          - else
+            = link_to suggestions_vote_create_path(:suggestion_id => suggestion.id), method: :post do
+              .i.fas.fa-heart.coracao
+          #{suggestion.suggestion_votes_count}
 
 = render partial: 'navbar/navbar'
