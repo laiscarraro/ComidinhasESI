@@ -75,11 +75,11 @@ RSpec.describe "Ratings", type: :request do
 
         it "deveria renderizar uma mensagem javascript quando houver erros ao salvar" do
             custom_errors = [[1,"Erro 1"],[2, "Erro 2"]]
-            fake_rating = double('Rating', :rate_value= => nil, :commentary= => nil, :user= => nil, :product= => nil, :save => false, :errors => custom_errors)
+            fake_rating = double('Rating', :rate_value= => "1", :commentary= => nil, :user= => nil, :product= => nil, :save => false, :errors => custom_errors)
             allow(Rating).to receive(:new) {fake_rating}
             allow(User).to receive(:find)
             allow(Product).to receive(:find)
-
+           
             post product_ratings_path(product_id: 5)
 
             expect(response.body).to eq("alert('2 erros na sua avaliação:\\nErro 1\\nErro 2');")
