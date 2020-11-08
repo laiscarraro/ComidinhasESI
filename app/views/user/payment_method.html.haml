@@ -10,14 +10,14 @@
                 Métodos de pagamento
             %ul.list-group.list-group-flush
                 %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "dinheiro"} 
+                    %input{:money, type: "checkbox", class: "custom-control-input", id: "money"} 
                     %label{class: "custom-control-label", for: "dinheiro"} Dinheiro
                 %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "cartao"} 
+                    %input{:card, type: "checkbox", class: "custom-control-input", id: "card"} 
                     %label{class: "custom-control-label", for: "cartao"} Cartão
                 %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "vr"} 
+                    %input{:vr, type: "checkbox", class: "custom-control-input", id: "vr"} 
                     %label{class: "custom-control-label", for: "vr"} Vale-refeição
                 %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "pix"} 
+                    %input{:pix, type: "checkbox", class: "custom-control-input", id: "pix"} 
                     %label{class: "custom-control-label", for: "pix"} Pix

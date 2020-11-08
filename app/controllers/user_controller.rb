@@ -10,6 +10,8 @@ class UserController < ApplicationController
     end
 
     def payment_method
+        @user = User.find(session[:user_id])
+        @user.update_attributes(user_params) 
     end
 
     def index
@@ -31,7 +33,7 @@ class UserController < ApplicationController
 
     private
         def user_params
-            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation)
+            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation, :money, :card, :vr, :pix)
         end   
 end
 
