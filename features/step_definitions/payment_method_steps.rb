@@ -7,7 +7,8 @@ Dado('que estou na página de usuário') do
   end
   
   Quando('clico nos métodos que eu aceito') do
-    pending # Write code here that turns the phrase above into concrete actions
+    check_on 'money'
+    check_on 'pix'
   end
   
   Então('eles devem aparecer na minha página de vendedor') do
