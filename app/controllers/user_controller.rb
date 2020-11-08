@@ -9,6 +9,9 @@ class UserController < ApplicationController
         end 
     end
 
+    def payment_method
+    end
+
     def index
         @products = Product.joins(:user).where("user_id = #{@user.id}")
     end
