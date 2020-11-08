@@ -1,5 +1,5 @@
 Dado('que estou na tela de explorar') do
-  visit 'suggestions' 
+  visit suggestions_path
 end
 
 Quando('clico em sugerir') do 

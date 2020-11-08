@@ -21,3 +21,10 @@ Cenário: Votem em uma sugestão com sucesso
 Dado que estou na tela de explorar
 Quando voto na sugestão "Brigadeiro"
 Então deverei ver que a contagem mudou para "1"
+
+Cenário: Tentar votar em uma sugestão sem estar logado
+Dado que estou na página do usuário
+Quando clico em sair
+Dado que estou na tela de explorar
+Quando voto na sugestão "Brigadeiro"
+Então o usuário deve ser redirecionado para a página de login
