@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     get '/logout' => 'login#logout'
     root 'home#index'
     get 'home/index'
+    get 'offline', to: 'home#offline', as: :offline
     get 'home/search' => 'home#search'   
     get 'home/category' => 'home#category'
     get '/login/index' => 'login#index'
