@@ -1,7 +1,7 @@
 class SuggestionsController < ApplicationController
 
   def initialize_suggestions
-    @suggestions = Suggestion.all
+    @suggestions = Suggestion.where(created_at: 2.week.ago..Time.now).order('suggestion_votes_count DESC')
   end
 
   def index

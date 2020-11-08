@@ -76,3 +76,4 @@ env
 .project
 .dbeaver/credentials-config.json
 .dbeaver/data-sources.json
+

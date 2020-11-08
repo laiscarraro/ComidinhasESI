@@ -1,0 +1,42 @@
+%html
+  %head    
+    :css
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        display: flex;
+        flex: 1;
+      }
+
+      .container {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .text-center {
+        margin-top: 10px;
+        width: 70%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .drink_image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")/
+    %title Comidinhas
+  %body
+    .container
+      =image_tag "three_cookies.svg" 
+      %span.text-center  
+        Hmmm... 
+        %br Parece que o suco acabou. Assim como a sua internet.....
+    =image_tag "drink.svg", :class => "drink_image" 

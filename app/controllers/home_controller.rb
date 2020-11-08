@@ -5,6 +5,10 @@ class HomeController < ApplicationController
         @products = Product.all
     end
 
+    def offline
+        render 'offline', layout: false
+    end
+
     def search
         @categories = Category.all
         @products = Product.where("name LIKE ?","%"+params[:prodname]+"%")     
