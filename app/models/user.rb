@@ -13,5 +13,5 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 end
