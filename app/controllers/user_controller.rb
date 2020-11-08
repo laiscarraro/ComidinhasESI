@@ -11,6 +11,10 @@ class UserController < ApplicationController
 
     def payment_method
         @user = User.find(session[:user_id])
+    end
+
+    def update
+        @user = User.find(session[:user_id])
         @user.update_attributes(user_params) 
     end
 
