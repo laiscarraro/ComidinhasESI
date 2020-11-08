@@ -8,16 +8,10 @@
         %div.card-body
             %h3.card-title.text-center 
                 Métodos de pagamento
-            %ul.list-group.list-group-flush
-                %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "dinheiro"} 
-                    %label{class: "custom-control-label", for: "dinheiro"} Dinheiro
-                %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "cartao"} 
-                    %label{class: "custom-control-label", for: "cartao"} Cartão
-                %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "vr"} 
-                    %label{class: "custom-control-label", for: "vr"} Vale-refeição
-                %div.custom-control.custom-switch.list-group-item
-                    %input{type: "checkbox", class: "custom-control-input", id: "pix"} 
-                    %label{class: "custom-control-label", for: "pix"} Pix
+            %div.row
+                = form_for @user, url: {action: "update"}, html: { class: "col-sm"} do |f|
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item
+                                = f.check_box :money, id: "dinheiro"
+                    = f.submit("Escolher", id: "update", class: "btn btn-primary")
