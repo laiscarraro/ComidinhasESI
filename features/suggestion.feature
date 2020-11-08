@@ -17,10 +17,3 @@ Dado que estou na tela de explorar
 Quando deixo o campo "suggestion" vazio
 E clico em sugerir
 Então deverei ver a mensagem de erro "Sugestão está vazia"
-
-# TODO
-# Cenário: Votar em Sugestão com sucesso
-# Dado que estou na tela de explorar
-# Quando clico em gostei do produto "Brigadeiro"
-# Então os votos de brigadeiro devem ter sido aumentados no banco de dados
-# E devo ver o número aumentado na tela
