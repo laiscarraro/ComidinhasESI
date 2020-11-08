@@ -15,7 +15,13 @@ class UserController < ApplicationController
 
     def update
         @user = User.find(session[:user_id])
-        @user.update_attributes(user_params) 
+        if @user.update_attributes(user_params)
+            redirect_to "/user/"
+        else 
+            @user.errors do |attribute, errorMsg|
+                puts(errorMsg)
+            end
+        end  
     end
 
     def index
