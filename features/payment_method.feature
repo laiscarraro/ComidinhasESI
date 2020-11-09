@@ -16,4 +16,6 @@ Cenário: Adicionar métodos de pagamento
 Dado que estou na página de usuário
 Quando clico em adicionar métodos de pagamento
 E clico nos métodos que eu aceito
-Então eles devem aparecer na minha página de vendedor 
+E preencho o campo 'password' com 'senha'
+E clico em enviar
+Então eles ser atualizados no banco de dados

@@ -26,4 +26,12 @@
                         %div.form-row
                             %div.custom-control.custom-switch.list-group-item
                                 = f.check_box :pix, id: "pix"
-                    = f.submit :update, class: "btn btn-primary"
+                    %div.form-group
+                        %div.form-row
+                            %p Confirme sua senha &nbsp;
+                        %div.input-icon
+                            %i.fas.fa-lock
+                            = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
+
+                    
+                    = f.submit :Enviar, class: "btn btn-primary", id:'send'

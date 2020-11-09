@@ -7,10 +7,14 @@ Dado('que estou na página de usuário') do
   end
   
   Quando('clico nos métodos que eu aceito') do
-    check_on 'money'
-    check_on 'pix'
+    check 'vr'
   end
   
-  Então('eles devem aparecer na minha página de vendedor') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('clico em enviar') do
+    click_on 'send'
+  end 
+
+  Então('eles ser atualizados no banco de dados') do
+    user = User.order("id").last
+    user.vr == true
   end

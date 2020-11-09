@@ -13,9 +13,18 @@ class UserController < ApplicationController
         @user = User.find(session[:user_id])
     end
 
+    def authenticate
+        @user = User.find_by_username(params[:user])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+        else
+            render js: "alert('Senha incorreta');"
+        end
+    end
+
     def update
         @user = User.find(session[:user_id])
-        if @user.update_attributes(user_params)
+        if @user.update(money: params[:user][:money], card: params[:user][:card], vr: params[:user][:vr], pix: params[:user][:pix], password: :password)
             redirect_to "/user/"
         else 
             @user.errors do |attribute, errorMsg|
