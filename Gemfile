@@ -67,8 +67,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jasmine", "~> 3.6"
 
 gem "haml"
-<<<<<<< HEAD
-=======
-
-gem 'rails-controller-testing'
->>>>>>> 65f91a0698fa82dafa272d3131098e441fc31ff3
