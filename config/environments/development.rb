@@ -61,6 +61,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_storage.service = :local
-  config.assets.check_precompiled_asset = false
+  #config.assets.check_precompiled_asset = false
   config.assets.unknown_asset_fallback = true
 end

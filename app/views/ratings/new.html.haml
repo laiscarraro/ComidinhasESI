@@ -1,5 +1,8 @@
 %script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
 %link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"}    
+    
 /= javascript_include_tag "application"
 
 = render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
@@ -55,8 +58,7 @@
                     
         = render partial: '/product/footer'
 :javascript
-    //= require jquery  
-    //= require_tree .
+    
 
     var starClicked = false;
 
