@@ -6,13 +6,21 @@
         %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
             %h3.fas.fa-long-arrow-alt-left
     %div.img-user-center
-        %img{:src =>url_for(@user.avatar), :class => "img-user"}
+        - if @user.avatar.attached?
+            %img{:src =>url_for(@user.avatar), :class => "img-user"}
     %div.card{:id => "first-card"}
         %div.card-body
             %h3.card-title.text-center 
                 = @user.username
             %p.card-text.text-center Está na biblioteca
-
+            %br
+            %div.row.text-center.font-weight-bold
+                %div.col 
+                    = @products.count
+                %div.col 4.5
+            %div.row.text-center
+                %div.col Produtos 
+                %div.col Estrelas
     %h5 Produtos 
     = render partial: 'product-card'
     

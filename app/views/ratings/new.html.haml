@@ -1,0 +1,56 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
+= javascript_include_tag "application"
+
+= render partial: '/navbar/header', :locals => {:page_name => "Avaliando Produto"}
+
+= form_with url: {action: "create"} do |f|
+    = f.radio_button :rate_value, 1, :id => "rate_value_1", :class => "rate_values"
+    = f.radio_button :rate_value, 2, :id => "rate_value_2", :class => "rate_values"  
+    = f.radio_button :rate_value, 3, :id => "rate_value_3", :class => "rate_values"
+    = f.radio_button :rate_value, 4, :id => "rate_value_4", :class => "rate_values"
+    = f.radio_button :rate_value, 5, :id => "rate_value_5", :class => "rate_values"
+
+    .container.overflow-auto.pt-5.mt-3
+        .container.box-rating.col-lg-8.justify-content-center.border.border-secondary.rating{"data-vote" => "0"}     
+            
+            .row.align-items-start.justify-content-center.score            
+                %span.score-rating.js-score 0
+                %span /
+                %span.total 5             
+            .row.align-items-center.justify-content-center.mt-1
+                .star.hidden
+                    %span.full{"data-value" => "0"}
+                    %span.half{"data-value" => "0"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "1"}
+                    %span.half{"data-value" => "1"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "2"}
+                    %span.half{"data-value" => "2"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "3"}
+                    %span.half{"data-value" => "3"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "4"}
+                    %span.half{"data-value" => "4"}
+                    %span.selected
+                .star
+                    %span.full{"data-value" => "5"}
+                    %span.half{"data-value" => "5"}
+                    %span.selected         
+            .row.align-items-end.justify-content-center.no-gutters.mt-3.align-items-center          
+                .col-1
+                .col-10
+                    %textarea{:name => "commentary", :cols => "100", :rows => "5", :class =>"form-control rounded-0" }
+                .col-1
+            .row.align-items-end.justify-content-center.no-gutters.mt-3
+                .col.col-btn
+                    %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "submit", :id=>"submit-rating-btn"} Avaliar
+                
+                    
+        = render partial: '/product/footer'

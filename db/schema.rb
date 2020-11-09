@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_11_08_195515) do
+=======
+ActiveRecord::Schema.define(version: 2020_11_07_204840) do
+>>>>>>> 65f91a0698fa82dafa272d3131098e441fc31ff3
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +50,15 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.index ["product_id"], name: "index_categories_products_on_product_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "suggestion_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["suggestion_id"], name: "index_likes_on_suggestion_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -55,11 +68,33 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.integer "user_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rate_value"
+    t.string "commentary"
+    t.integer "product_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_ratings_on_product_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "suggestion_votes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "suggestion_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["suggestion_id"], name: "index_suggestion_votes_on_suggestion_id"
+    t.index ["user_id"], name: "index_suggestion_votes_on_user_id"
+  end
+
   create_table "suggestions", force: :cascade do |t|
     t.string "name"
     t.decimal "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "votes_count", default: 0
+    t.integer "suggestion_votes_count", default: 0
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,4 +110,10 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "suggestions"
+  add_foreign_key "likes", "users"
+  add_foreign_key "ratings", "products"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "suggestion_votes", "suggestions"
+  add_foreign_key "suggestion_votes", "users"
 end

@@ -11,15 +11,16 @@
         .row.justify-content-center.p-2
           %b R$ #{@product.price}
 
-  .row.mt-5
-    .product-desc.justify-content-left
-      %b Opções do Vendedor
-      .row.justify-content-around.my-3
-        .col-6.text-center
-          %a{:class => 'btn btn-info'}
-            EDITAR
-        .col-6.text-center
-          =link_to 'REMOVER', @product, {:class => 'btn btn-danger', method: :delete}
+  - if logged_in? and current_user == @product.user
+    .row.mt-5
+      .product-desc.justify-content-left
+        %b Opções do Vendedor
+        .row.justify-content-around.my-3
+          .col-6.text-center
+            %a{:class => 'btn btn-info'}
+              EDITAR
+          .col-6.text-center
+            =link_to 'REMOVER', @product, {:class => 'btn btn-danger', method: :delete}
 
   .row.flex-nowrap.row-flex.mt-4    
     .product-desc.d-flex.justify-content-left
@@ -45,7 +46,7 @@
           %span.fa.fa-heart.fa-lg.p-1
         .row.align-items-end.justify-content-center.no-gutters.mt-3
           .col.col-btn
-            %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Avaliar
+            =button_to  "Avaliar", new_product_rating_path(product_id:@product.id), {:id => "Avaliar", :class=> "button btn-rating btn btn-outline-secondary w-100 p-2", :type => "button", :method => :get}
           .col.col-btn
             %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Ver avaliações
   .row.flex-nowrap.row-flex.mt-5
@@ -68,17 +69,4 @@
         Enviar Mensagem
     .col-2
   - if @product.user.present?
-    .row.row-hr.align-items-end.justify-content-center.no-gutters.mt-5
-    .wrapper.footer-prod-desc    
-      .row.justify-content-center 
-        .col-2.col-lg-4.col-md-3.col-sm-3.col-xl-4     
-        .col-3.col-lg-2.col-md-2.col-sm-3.col-xl-2    
-          %p.mb-0 Vendido por 
-          .container.box-pic.col-md-10.col-lg-8.col-sm-10.col-xl-7    
-            %img.seller-pic.mx-auto{:src =>url_for(@product.user.avatar)}
-            .col-5
-              %b.mb-0
-                %a{class: "login-link", href: "/user/#{@user.id}", id: 'vendedor'} 
-                  = @product.user.username    
-        .col-3
-  %br 
+    = render partial: 'footer'

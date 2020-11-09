@@ -6,7 +6,8 @@
         %a{:href=>"/logout", id: "logout", :class => "sign-out-tela_usuario"}
             %h3.fas.fa-sign-out-alt
     %div.img-user-center
-        %img{:src =>url_for(current_user.avatar), :class => "img-user"}
+        - if current_user.avatar.attached?
+            %img{:src =>url_for(current_user.avatar), :class => "img-user"}
     %div.card{:id => "first-card"}
         %div.card-body
             %h3.card-title.text-center 

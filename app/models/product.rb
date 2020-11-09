@@ -10,4 +10,6 @@ class Product < ApplicationRecord
   belongs_to :user
   
   validates :photo, presence: { message: "É obrigatório adicionar uma foto do produto"}
+
+  has_many :ratings, dependent: :destroy
 end

@@ -1,5 +1,5 @@
 Dado('que estou na tela de explorar') do
-  visit 'suggestions' 
+  visit suggestions_path
 end
 
 Quando('clico em sugerir') do 
@@ -13,16 +13,4 @@ end
 
 Então('devo ver a sugestão na tela') do
   expect(page).to have_content("Brigadeiro")  
-end
-
-Quando('clico em gostei do produto {string}') do |string|
-  pending # Write code here that turns the phrase above into concrete actions  
-end
-
-Então('os votos de brigadeiro devem ter sido aumentados no banco de dados') do 
-  pending # Write code here that turns the phrase above into concrete actions  
-end
-
-Então('devo ver o número aumentado na tela') do
-  pending # Write code here that turns the phrase above into concrete actions  
 end

@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'selenium-webdriver'
 
 # frozen_string_literal: true
 
