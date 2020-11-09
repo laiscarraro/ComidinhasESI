@@ -9,6 +9,30 @@ class UserController < ApplicationController
         end 
     end
 
+    def payment_method
+        @user = User.find(session[:user_id])
+    end
+
+    def authenticate
+        @user = User.find_by_username(params[:user])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+        else
+            render js: "alert('Senha incorreta');"
+        end
+    end
+
+    def update
+        @user = User.find(session[:user_id])
+        if @user.update(money: params[:user][:money], card: params[:user][:card], vr: params[:user][:vr], pix: params[:user][:pix], password: :password)
+            redirect_to "/user/"
+        else 
+            @user.errors do |attribute, errorMsg|
+                puts(errorMsg)
+            end
+        end  
+    end
+
     def index
         @products = Product.joins(:user).where("user_id = #{@user.id}")
     end
@@ -28,7 +52,7 @@ class UserController < ApplicationController
 
     private
         def user_params
-            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation)
+            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation, :money, :card, :vr, :pix)
         end   
 end
 

@@ -1,0 +1,41 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%div.container.pb-5
+    %div.laranja
+    %div.voltar-tela_vendedor
+        %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
+            %h3.fas.fa-long-arrow-alt-left
+    %div.card
+        %div.card-body
+            %h3.card-title.text-center 
+                Métodos de pagamento
+            %div.row
+                = form_for @user, url: {action: "update"}, html: { class: "col-sm"} do |f|
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item
+                                = f.check_box :money, id: "dinheiro"
+                                Dinheiro
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item
+                                = f.check_box :card, id: "card"
+                                Cartão
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item
+                                = f.check_box :vr, id: "vr"
+                                Vale-refeição
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item
+                                = f.check_box :pix, id: "pix"
+                                Pix
+                    %div.form-group
+                        %div.form-row
+                            %p Confirme sua senha &nbsp;
+                        %div.input-icon
+                            %i.fas.fa-lock
+                            = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
+
+                    
+                    = f.submit :Enviar, class: "btn btn-primary", id:'send'
