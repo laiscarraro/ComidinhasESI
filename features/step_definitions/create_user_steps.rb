@@ -14,8 +14,8 @@ Dado('que estou na paǵina de cadastro de usuário') do
     click_on 'create'
   end
   
-  Então('ser redirecionado para a home') do
-    expect(page).to have_current_path(root_path)
+  Então('ser redirecionado para o login') do
+    expect(page).to have_current_path("/login/index")
   end
   
   Dado('que estou na página de cadastro de usuário') do

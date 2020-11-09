@@ -6,7 +6,8 @@ class ProductController < ApplicationController
   end
 
   def show
-    if @product = Product.find_by(id:params[:id])      
+    if @product = Product.find_by(id:params[:id])  
+      @user = @product.user   
       @categories = @product.categories  
       render 'description'
     else

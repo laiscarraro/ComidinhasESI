@@ -15,5 +15,5 @@ class User < ApplicationRecord
   
   has_many :suggestion_votes, dependent: :destroy
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 end

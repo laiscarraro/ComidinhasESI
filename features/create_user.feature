@@ -17,7 +17,7 @@ Quando preencho o campo "password_confirmation" com "senha123"
 E clico em termos
 E clico em criar
 Então o usuario deve ter sido salvo no banco de dados 
-E ser redirecionado para a home
+E ser redirecionado para o login
 
 Cenário: Cadastro de usuário com erro - sem email
 Dado que estou na página de cadastro de usuário
@@ -59,4 +59,4 @@ Quando preencho o campo "password_confirmation" com "senha123"
 E clico em termos
 E clico em criar
 Então o usuario deve ter sido salvo no banco de dados 
-E ser redirecionado para a home
+E ser redirecionado para o login

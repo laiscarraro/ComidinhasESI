@@ -9,7 +9,8 @@
             %img.product-img{:src => url_for(product.photo)}
             .description 
                 =link_to product.name,product_path(id: product.id),{:class=>"product-text stretched-link"}
-                .vendor-text Wilson
+                .vendor-text
+                    = product.user.username
             .bottom-card
                 %b.price-text R$ #{"%0.2f" % [product.price]}
                 %b.local-text Está na Biblioteca

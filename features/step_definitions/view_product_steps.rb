@@ -25,6 +25,7 @@ Dado('que estou na página do produto') do
 
     visit "product/#{product1.id}"
   end  
+
   Então('devo ver as informações atreladas ao produto') do   
       expect(page).to have_content("Cones do Wilson")
       expect(page).to have_content(6.00)
@@ -32,4 +33,11 @@ Dado('que estou na página do produto') do
       expect(page).to have_content("Doce")     
   end    
 
+  Quando('clico no vendedor do produto') do
+    click_on 'vendedor'
+  end
+  
+  Então('devo ser redirecionado para a página do vendedor') do
+    expect(page).to have_current_path("/user/1")
+  end
   
