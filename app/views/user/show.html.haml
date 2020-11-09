@@ -6,7 +6,8 @@
         %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
             %h3.fas.fa-long-arrow-alt-left
     %div.img-user-center
-        %img{:src =>url_for(@user.avatar), :class => "img-user"}
+        - if @user.avatar.attached?
+            %img{:src =>url_for(@user.avatar), :class => "img-user"}
     %div.card{:id => "first-card"}
         %div.card-body
             %h3.card-title.text-center 
