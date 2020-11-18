@@ -10,6 +10,7 @@ Dado que estou na tela do produto
 E há avaliações cadastradas
 Quando aperto em 'Avaliações'
 Então devo ver as avaliações do produto
+E não devo ver as avaliações que não pertencem a ele
 
 Cenário: Não haver avaliações de produto me mostra uma mensagem
 Dado que estou na tela do produto
