@@ -1,0 +1,11 @@
+-rating_count=0
+-if @ratings.empty?
+    %b.col-lg-3 Não há avaliações para este produto
+-else     
+    -@ratings.each do |rating|
+        -rating_count = rating_count+1     
+        .row.mt-3
+            %b.col-lg-1 Avaliações
+            %h1{:id => "username_#{rating_count}"}=rating.user.username
+            %h1{:id => "rate_value_#{rating_count}"}= rating.rate_value
+            %h1= rating.commentary

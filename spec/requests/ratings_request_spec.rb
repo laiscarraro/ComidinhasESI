@@ -85,4 +85,70 @@ RSpec.describe "Ratings", type: :request do
             expect(response.body).to eq("alert('2 erros na sua avaliação:\\nErro 1\\nErro 2');")
         end
     end
+
+    describe "ver uma avaliação" do
+        it "deveria procurar o produto" do
+            expect(Product).to receive(:find).with("1")          
+            fake_product = double('Product')
+            fake_ratings = double('Ratings', :empty? => true)
+            allow(Product).to receive(:find){fake_product}
+            allow(fake_product).to receive(:ratings){fake_ratings}
+           
+
+
+            get product_ratings_path(product_id: 1)
+        end     
+        
+        it "deveria recuperar todas as avaliações do produto" do                 
+            fake_rating = double('Rating', :rate_value= => "1", :commentary= => nil, :user= => nil, :product= => nil, :save => false)
+            fake_product = double('Product')
+            fake_ratings = double('Ratings', :empty? => true)
+            allow(Product).to receive(:find){fake_product}
+            allow(fake_product).to receive(:ratings){fake_ratings}
+            expect(fake_product).to receive(:ratings)
+            
+   
+            get product_ratings_path(product_id: 1)
+        end   
+
+        it "deveria mostrar uma mensagem quando não há avaliações" do                 
+            fake_rating = double('Rating', :rate_value= => "1", :commentary= => nil, :user= => nil, :product= => nil, :save => false)
+            fake_product = double('Product')
+            fake_ratings = double('Ratings', :empty? => true)
+            allow(Product).to receive(:find){fake_product}
+            allow(fake_product).to receive(:ratings){fake_ratings}          
+            
+   
+            get product_ratings_path(product_id: 1)
+
+            expect(response.body).to include("Não há avaliações para este produto")
+        end 
+        
+        
+        it "deveria mostrar a avaliação do usuário" do   
+
+            fake_user_1 = double('User', :username => "Zé linguiçeiro" )
+            fake_rating_1 = double('Rating', :rate_value => "5", :commentary => "Que linguiçona!", :user => fake_user_1)
+            
+            fake_user_2 = double('User', :username => "Dani Bananeiro" )
+            fake_rating_2 = double('Rating', :rate_value => "3", :commentary => "Que linguiçinha!", :user => fake_user_2)
+
+            fake_ratings = [fake_rating_1, fake_rating_2]
+            fake_product = double('Product', :ratings => fake_ratings)       
+           
+                   
+            allow(Product).to receive(:find){fake_product}                  
+            
+   
+            get product_ratings_path(product_id: 1)
+
+            expect(response.body).to include("<h1 id='username_1'>Zé linguiçeiro</h1>")
+            expect(response.body).to include("<h1 id='rate_value_1'>5</h1>")
+            expect(response.body).to include("<h1>Que linguiçona!</h1>")            
+            expect(response.body).to include("<h1 id='username_2'>Dani Bananeiro</h1>")
+            expect(response.body).to include("<h1 id='rate_value_2'>3</h1>")
+            expect(response.body).to include("<h1>Que linguiçinha!</h1>")  
+            
+        end 
+    end
 end
