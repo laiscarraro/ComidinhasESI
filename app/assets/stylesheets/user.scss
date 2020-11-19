@@ -1,7 +1,6 @@
 // Place all the styles related to the Usuarios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
 
 .login-link {
     color: black !important;
@@ -14,7 +13,6 @@
 
 .title {
     margin-top: 10%;
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: bold;
     letter-spacing: -0.8px;
@@ -23,7 +21,6 @@
 }
 
 .subtitle {
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 150%;
@@ -34,7 +31,6 @@
 }
 
 .label-cadastro {
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 500;
     letter-spacing: -0.171429px;
