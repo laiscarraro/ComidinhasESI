@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "card"
-    t.boolean "vr"
-    t.boolean "pix"
-    t.boolean "money"
+    t.boolean "card", default: false
+    t.boolean "vr", default: false
+    t.boolean "pix", default: false
+    t.boolean "money", default: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
