@@ -2,7 +2,7 @@
 %link{:href => "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap", :rel => "stylesheet"}/
 
 = render partial: './navbar/header', :locals => {:page_name => "Avaliações"}
-.container.overflow-auto.pt-5.mt-5
+.container.overflow-auto.pt-5.mt-5.pb-5
     -rating_count=0
     -if @ratings.empty?
         %b.col-lg-3 Não há avaliações para este produto
