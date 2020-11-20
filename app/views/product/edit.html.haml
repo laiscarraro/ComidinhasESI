@@ -14,7 +14,7 @@
     %label{:for => "Preço", class: 'mt-4 label-product'} Preço
     %span{class: "currency-container"}
       R$
-      = f.number_field :price, id: "Preço",value: number_to_currency(f.object.price.to_f, delimiter: ','), min: 0.5, max: 10000, step: 0.01, class: 'form-group currency-input'
+      = f.number_field :price, id: "Preço", min: 0.5, max: 10000, step: 0.01, class: 'form-group currency-input'
     %label{:for => "categories", class: 'mt-4 label-product'} Categorias
     .row.justify-content-around
       - if @categories.length > 0

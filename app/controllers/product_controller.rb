@@ -52,10 +52,12 @@ class ProductController < ApplicationController
   def update
     @product = Product.find_by(id:params[:id]) 
 
-    if @product.update(name: params[:product][:name], price: params[:product][:price], description: params[:product][:description], photo: params[:product][:photo])
+    if @product.update(name: params[:product][:name], 
+      price: params[:product][:price], 
+      description: params[:product][:description])
       redirect_to "/user/"
     else 
-      @product.errors do |attribute, errorMsg|
+      @product.errors.each do |attribute, errorMsg|
           puts(errorMsg)
       end
     end  
