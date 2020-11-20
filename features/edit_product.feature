@@ -1,3 +1,5 @@
+# language: pt
+
 Funcionalidade: Adicionar Produto
 Como vendedor
 Eu quero poder mudar as informações dos meus produtos
@@ -17,3 +19,18 @@ Quando seleciono a categoria "Doce"
 Quando clico em fazer upload de uma foto
 E clico em adicionar
 Então o produto deve ter sido salvo no banco de dados
+
+
+Cenário: Mudar nome do produto existente
+Dado que estou na página de edição de produto
+Então devo ver as informações do produto na tela
+Quando preencho o campo "Nome do Produto" com "Cone"
+E clico em editar
+Então o produto deve ter sido modificado no banco de dados
+
+Cenário: Mudar imagem do produto existente
+Dado que estou na página de edição de produto
+Então devo ver as informações do produto na tela
+Quando clico em fazer upload de uma foto diferente
+E clico em editar
+Então o produto deve ter sido modificado no banco de dados
