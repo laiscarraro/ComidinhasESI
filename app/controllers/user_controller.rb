@@ -3,7 +3,22 @@ class UserController < ApplicationController
 
     def show
         if @user = User.find_by(id:params[:id])
-           @products = Product.joins(:user).where("user_id = #{@user.id}")
+            @products = Product.joins(:user).where("user_id = #{@user.id}")
+            if @products
+                ratings = nil
+                ratings_total = 0
+                @ratings = 0
+                @products.ids.each do |id|
+                    ratings = Product.find(id).ratings
+                    ratings_total += ratings.count
+                    ratings.each do |r|
+                        @ratings = @ratings + r.rate_value
+                    end
+                end
+                if ratings_total != 0
+                    @ratings = @ratings.to_f/ratings_total.to_f
+                end
+            end
         else
             redirect_to root_path
         end 
