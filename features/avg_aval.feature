@@ -15,9 +15,9 @@ Cenário: Vendedor sem avaliações
 Dado que estou na página do vendedor
 E o vendedor possui produtos cadastrados
 Quando todos os produtos não possuem avaliações
-Então devo ver um traço no campo da média de avaliações
+Então devo ver "-" no campo da média de avaliações
 
 Cenário: Vendedor sem produtos
 Dado que estou na página do vendedor
 E o vendedor não possui produtos cadastrados
-Então devo ver um traço no campo da média de avaliações
+Então devo ver "-" no campo da média de avaliações
