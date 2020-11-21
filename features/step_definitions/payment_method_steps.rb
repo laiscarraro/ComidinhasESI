@@ -7,7 +7,7 @@ Dado('que estou na página de usuário') do
   end
   
   Quando('clico nos métodos que eu aceito') do
-    check 'vr'
+    check('vr', allow_label_click: true)
   end
   
   Quando('clico em enviar') do
@@ -16,5 +16,5 @@ Dado('que estou na página de usuário') do
 
   Então('eles ser atualizados no banco de dados') do
     user = User.order("id").last
-    user.vr == true
+    expect(user.vr).to eq(true)
   end
