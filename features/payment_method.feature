@@ -18,4 +18,5 @@ Quando clico em adicionar métodos de pagamento
 E clico nos métodos que eu aceito
 E preencho o campo 'password' com 'senha'
 E clico em enviar
-Então eles ser atualizados no banco de dados
+Então devo ter sido redirecionado para o meu perfil
+E eles ser atualizados no banco de dados
