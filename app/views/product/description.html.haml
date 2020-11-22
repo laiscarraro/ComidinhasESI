@@ -50,7 +50,8 @@
           .col.col-btn
             =button_to  "Avaliar", new_product_rating_path(product_id:@product.id), {:id => "Avaliar", :class=> "button btn-rating btn btn-outline-secondary w-100 p-2", :type => "button", :method => :get}
           .col.col-btn
-            %button.btn-rating.btn.btn-outline-secondary.w-100.p-2{:type => "button"} Ver avaliações
+            =button_to  "Avaliações", product_ratings_path(product_id:@product.id), {:id => "Avaliações", :class=> "button btn-rating btn btn-outline-secondary w-100 p-2", :type => "button", :method => :get}
+          
   .row.flex-nowrap.row-flex.mt-5
     .product-desc.d-flex.justify-content-left
       %b Categorias

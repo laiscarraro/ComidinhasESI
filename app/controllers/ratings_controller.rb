@@ -6,7 +6,10 @@ class RatingsController < ApplicationController
         @product = Product.find(params['product_id'])  
     end
     
-   
+   def index 
+        product = Product.find(params[:product_id])
+        @ratings = product.ratings
+   end
 
     def create
         rating = Rating.new
