@@ -23,7 +23,26 @@
             %div.row.text-center
                 %div.col Produtos 
                 %div.col Estrelas
-    %h5 Produtos 
+
+    %h5.mb-4 Métodos de Pagamento
+    .row.mx-2.justify-content-center
+        - if @user.card
+            .col-3.text-center
+                %i.fas.fa-credit-card
+                %p Cartão
+        - if @user.pix
+            .col-3.text-center
+                %i.fas.fa-qrcode
+                %p Pix
+        - if @user.money
+            .col-3.text-center
+                %i.fas.fa-money-bill-alt
+                %p Dinheiro
+        - if @user.vr
+            .col-3.text-center
+                %i.fas.fa-utensils
+                %p VR
+    %h5.mt-4 Produtos 
     = render partial: 'product-card'
     
 %br
