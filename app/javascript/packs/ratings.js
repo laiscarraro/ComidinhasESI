@@ -204,3 +204,11 @@ document.getElementsByName("rate_value").forEach(element => {
         heartAnimation.changeRating(parseInt(e.target.value));
     });
 });
+
+document.getElementById("commentary").addEventListener('focus', () => {
+    document.getElementById("commentary-border").classList.add("commentary-border");
+});
+
+document.getElementById("commentary").addEventListener('blur', () => {
+    document.getElementById("commentary-border").classList.remove("commentary-border");
+});
