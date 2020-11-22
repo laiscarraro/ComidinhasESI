@@ -9,7 +9,7 @@ class User < ApplicationRecord
           uniqueness: { message: "O username informado já existe"}
 
   validates :password, presence: { message: "É obrigatório informar a senha" },
-            confirmation: { message: "Senha não corresponde" }
+            confirmation: { message: "Senha não corresponde" }, :on => :create
 
   has_one_attached :avatar
   

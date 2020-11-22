@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-    before_action :authorized, only: [:index]
+    before_action :authorized, only: [:index, :payment_method] # verifica se o cara tá logado
+    before_action :authenticate, only: [:update]
 
     def show
         if @user = User.find_by(id:params[:id])
@@ -36,22 +37,22 @@ class UserController < ApplicationController
     end
 
     def authenticate
-        @user = User.find_by_username(params[:user])
-        if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-        else
-            render js: "alert('Senha incorreta');"
+        user = current_user
+        if !user.authenticate(params[:user][:password])
+            @error = "Senha incorreta"
+            render '/user/payment_method'
         end
     end
 
     def update
         @user = User.find(session[:user_id])
-        if @user.update(money: params[:user][:money], card: params[:user][:card], vr: params[:user][:vr], pix: params[:user][:pix], password: :password)
+        if @user.update(money: params[:user][:money], card: params[:user][:card], vr: params[:user][:vr], pix: params[:user][:pix])
             redirect_to "/user/"
         else 
-            @user.errors do |attribute, errorMsg|
+            @user.errors.each do |attribute, errorMsg|
                 puts(errorMsg)
             end
+            redirect_to '/user/payment_method'
         end  
     end
 

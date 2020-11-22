@@ -19,6 +19,25 @@
                 %a{class: "add-product list-group-item", id: "add_product", href: "/product/new"} Adicionar produtos
                 %a{class: "add-product list-group-item", id: "payment_method", href: "/user/payment_method"} Escolher métodos de pagamento
                 %a{class: "list-group-item", href: "#"} Localização
+    %h5.mb-4 Métodos de Pagamento
+    .row.mx-2.justify-content-center
+        - if @user.card
+            .col-3.text-center
+                %i.fas.fa-credit-card
+                %p Cartão
+        - if @user.pix
+            .col-3.text-center
+                %i.fas.fa-qrcode
+                %p Pix
+        - if @user.money
+            .col-3.text-center
+                %i.fas.fa-money-bill-alt
+                %p Dinheiro
+        - if @user.vr
+            .col-3.text-center
+                %i.fas.fa-utensils
+                %p VR
+
     %h5 Produtos 
     = render partial = 'product-card'
 %br
