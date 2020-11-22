@@ -12,7 +12,7 @@
             %h3.card-title.text-center 
                 Métodos de pagamento
             %div.row
-                = form_for @user, url: {action: "update"}, html: { class: "col-sm"} do |f|
+                = form_for @user, url: {action: "update"}, :method => 'put', html: { class: "col-sm"} do |f|
                     %div.form-group
                         %div.form-row
                             %div.custom-control.custom-switch.list-group-item
@@ -39,6 +39,8 @@
                         %div.input-icon
                             %i.fas.fa-lock
                             = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
-
+                        - if @error
+                            .my-3.text-center{:style => "color: red;"}
+                                = @error
                     
                     = f.submit :Enviar, class: "btn btn-primary", id:'send'

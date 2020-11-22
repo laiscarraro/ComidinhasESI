@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
     get '/user/payment_method' => 'user#payment_method'
-    match "/user/payment_method", to: "user#update", via: [:put], as: :update
-    post '/user/payment_method' => 'user#authenticate'
+    put '/user/payment_method' => 'user#update'
     resources :user
     get '/logout' => 'login#logout'
     root 'home#index'
