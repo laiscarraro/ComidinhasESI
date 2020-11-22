@@ -19,7 +19,11 @@
             %div.row.text-center.font-weight-bold
                 %div.col 
                     = @products.count
-                %div.col 4.5
+                %div.col{id: 'avg'}
+                    - if @products.count == 0 or @ratings == 0
+                        %p -
+                    - else
+                        = @ratings
             %div.row.text-center
                 %div.col Produtos 
                 %div.col Estrelas
