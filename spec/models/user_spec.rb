@@ -27,7 +27,6 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
-
   it 'invalido sem username' do
     user = User.new
     user.email = "teste@gmail.com"

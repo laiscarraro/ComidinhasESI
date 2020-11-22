@@ -5,6 +5,17 @@ Como usuário
 Quero poder ver a média de corações das avaliações do vendedor
 Para que eu possa saber se ele é um bom vendedor segundo seu público
 
+Contexto: Existe um usuário cadastrado
+Dado que estou na paǵina de cadastro de usuário
+Quando clico em fazer upload de um avatar
+Quando preencho o campo "email" com "maria@usp.br"
+Quando preencho o campo "username" com "Maria"
+Quando preencho o campo "password" com "senha123"
+Quando preencho o campo "password_confirmation" com "senha123"
+E clico em termos
+E clico em criar
+Então o usuario deve ter sido salvo no banco de dados 
+
 Cenário: Vendedor com avaliações
 Dado que estou na página do vendedor
 E o vendedor possui produtos cadastrados
