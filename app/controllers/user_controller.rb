@@ -4,10 +4,32 @@ class UserController < ApplicationController
 
     def show
         if @user = User.find_by(id:params[:id])
-           @products = Product.joins(:user).where("user_id = #{@user.id}")
+            @products = Product.joins(:user).where("user_id = #{@user.id}")
+            @ratings = ratings_mean(@products)
         else
             redirect_to root_path
         end 
+    end
+
+    def ratings_mean(products)
+        if products.count > 0
+            ratings_array = nil
+            ratings_total = 0
+            ratings = 0
+            products.ids.each do |id|
+                ratings_array = Product.find(id).ratings
+                ratings_total += ratings_array.count
+                ratings_array.each do |r|
+                    ratings = ratings + r.rate_value
+                end
+            end
+            if ratings_total != 0
+                ratings = ratings.to_f/ratings_total.to_f
+            end
+            return ratings
+        else
+            return nil
+        end
     end
 
     def payment_method
