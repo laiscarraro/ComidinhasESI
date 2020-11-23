@@ -42,6 +42,27 @@ class ProductController < ApplicationController
     end
   end
 
+  # screen
+  def edit
+    @product = Product.find_by(id:params[:id]) 
+    @categories = Category.all
+  end
+
+  # function
+  def update
+    @product = Product.find_by(id:params[:id]) 
+
+    if @product.update(name: params[:product][:name], 
+      price: params[:product][:price], 
+      description: params[:product][:description])
+      redirect_to "/user/"
+    else 
+      @product.errors.each do |attribute, errorMsg|
+          puts(errorMsg)
+      end
+    end  
+  end
+
   def destroy
     Product.destroy(params[:id])
     redirect_to user_index_path
