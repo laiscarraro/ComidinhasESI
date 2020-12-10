@@ -61,13 +61,14 @@
         =link_to category.name, home_category_path(id:category.id),{:class=> "category-desc align-items-center col-lg-1 col-md-2 col-sm-2 col-3"}           
 
 
-  .row.flex-nowrap.row-flex.mt-5
+  .row.flex-nowrap.row-flex.mt-5  
     .product-desc.d-flex.justify-content-left
       %b Fale com o vendedor!  
   .row.align-items-end.justify-content-center.mt-3
     .col-2
     .col.col-btn
-      %button.btn.btn-secondary.btn-call.w-100.p-2{:type => "button"} 
+    - if @product.user.phone != ''
+      %button.btn.btn-secondary.btn-call.w-100.p-2{:type => "button", :onclick => "location.href='https://api.whatsapp.com/send?phone=#{@product.user.phone}&text=Gostaria%20de%20comprar%20seu%20produto';"} 
         %i.fa.fa-whatsapp
         Enviar Mensagem
     .col-2
