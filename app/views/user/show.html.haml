@@ -27,7 +27,11 @@
             %div.row.text-center
                 %div.col Produtos 
                 %div.col Estrelas
-
+    %h5.mb-4 Celular
+    .row.mx-2.justify-content-center
+        - if @user.phone != ''
+            .col-3.text-center                
+                %p=@user.phone
     %h5.mb-4 Métodos de Pagamento
     .row.mx-2.justify-content-center
         - if @user.card
@@ -53,4 +57,3 @@
 %br
 
 = render partial: 'navbar/navbar' 
-    

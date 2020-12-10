@@ -18,7 +18,13 @@
             %ul.list-group.list-group-flush
                 %a{class: "add-product list-group-item", id: "add_product", href: "/product/new"} Adicionar produtos
                 %a{class: "add-product list-group-item", id: "payment_method", href: "/user/payment_method"} Escolher métodos de pagamento
+                %a{class: "add-product list-group-item", id: "phone_number", href: "/user/phone_number"} Alterar/Inserir numero de celular
                 %a{class: "list-group-item", href: "#"} Localização
+    %h5.mb-4 Celular
+    .row.mx-2.justify-content-center
+        - if @user.phone != ''
+            .col-3.text-center                
+                %p=@user.phone
     %h5.mb-4 Métodos de Pagamento
     .row.mx-2.justify-content-center
         - if @user.card
@@ -44,4 +50,3 @@
 %br
 %br
 = render partial: 'navbar/navbar' 
-    

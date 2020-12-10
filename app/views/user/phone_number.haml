@@ -1,0 +1,30 @@
+%script{:src => "https://kit.fontawesome.com/7912526426.js", :crossorigin => "anonymous"}
+%link{:rel => "preconnect", :href => "https://fonts.gstatic.com"}
+%link{:href => "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap", :rel => "stylesheet"}
+
+%div.container.pb-5
+    %div.laranja
+    %div.voltar-tela_vendedor
+        %a{:href=>"javascript:history.back()", id: "voltar",  :class => "voltar-tela_vendedor"}
+            %h3.fas.fa-long-arrow-alt-left
+    %div.card
+        %div.card-body
+            %h3.card-title.text-center 
+                Número de celular
+            %div.row
+                = form_for @user, url: {action: "updatephone"}, :method => 'put', html: { class: "col-sm"} do |f|                   
+                    %div.form-group
+                        %div.form-row
+                            %div.custom-control.custom-switch.list-group-item.d-flex                               
+                                = f.text_field :phone, id: "phone", placeholder: (@user.phone != '' ? @user.phone : "(11) 94002-8922"), class: 'form-control'                                                     
+                    %div.form-group
+                        %div.form-row
+                            %p Confirme sua senha &nbsp;
+                        %div.input-icon
+                            %i.fas.fa-lock
+                            = f.text_field :password, type: "password", id: "password", placeholder: "Senha", class: 'form-control'
+                        - if @error
+                            .my-3.text-center{:style => "color: red;"}
+                                = @error
+                    
+                    = f.submit  (@user.phone != ''  ? :Alterar : :Cadastrar ), class: "btn btn-primary", id:'send'

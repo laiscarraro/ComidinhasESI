@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
     get '/user/payment_method' => 'user#payment_method'
+    get '/user/phone_number' => 'user#phone_number'
     put '/user/payment_method' => 'user#update'
+    put '/user/phone_number' => 'user#updatephone'
     resources :user
     get '/logout' => 'login#logout'
     root 'home#index'
