@@ -38,6 +38,13 @@
                     %i.fas.fa-check
             %div.form-group
                 %div.form-row
+                    %label{:for => "phone", :class => "label-cadastro"} Celular (Opcional)
+                %div.input-icon
+                    %i.fa.fa-whatsapp
+                    = f.text_field :phone, id: "phone", placeholder: "(11) 94002-8922", class: 'form-control'
+                    %i.fas.fa-check        
+            %div.form-group
+                %div.form-row
                     %label{:for => "password", :class => "label-cadastro"} Senha
                 %div.input-icon
                     %i.fas.fa-lock

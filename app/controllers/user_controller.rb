@@ -65,17 +65,20 @@ class UserController < ApplicationController
     end
     
     def create
+        
         @user = User.new(user_params)
+       
         if @user.save
-           redirect_to "/login/index"
+             redirect_to "/login/index"
         else
             render 'new'
         end
+       
     end
 
     private
         def user_params
-            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation, :money, :card, :vr, :pix)
+            params.require(:user).permit(:email, :username, :password, :avatar, :password_confirmation, :money, :card, :vr, :pix, :phone)
         end   
 end
 

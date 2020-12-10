@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_195515) do
+ActiveRecord::Schema.define(version: 2020_12_10_005149) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,15 +44,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.integer "product_id", null: false
     t.index ["category_id"], name: "index_categories_products_on_category_id"
     t.index ["product_id"], name: "index_categories_products_on_product_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "suggestion_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["suggestion_id"], name: "index_likes_on_suggestion_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -89,7 +80,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.decimal "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "votes_count", default: 0
     t.integer "suggestion_votes_count", default: 0
   end
 
@@ -103,11 +93,10 @@ ActiveRecord::Schema.define(version: 2020_11_08_195515) do
     t.boolean "vr", default: false
     t.boolean "pix", default: false
     t.boolean "money", default: false
+    t.string "phone"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "likes", "suggestions"
-  add_foreign_key "likes", "users"
   add_foreign_key "ratings", "products"
   add_foreign_key "ratings", "users"
   add_foreign_key "suggestion_votes", "suggestions"
